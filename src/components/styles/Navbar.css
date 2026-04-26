@@ -45,6 +45,26 @@
   font-size: 14px;
   letter-spacing: 0.2px;
 }
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.navbar-resume {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #ccc;
+  padding: 6px 14px;
+  border: 1px solid var(--accentColor);
+  border-radius: 999px;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+.navbar-resume:hover {
+  background-color: var(--accentColor);
+  color: #0a0e17;
+}
 @media only screen and (min-width: 500px) {
   .header {
     padding: 20px 0px;
@@ -59,6 +79,9 @@
   }
   .navbar-title {
     font-size: 16px;
+  }
+  .navbar-resume {
+    font-size: 13px;
   }
 }
 @media only screen and (min-width: 900px) {
@@ -79,5 +102,9 @@
   }
   .navbar-title {
     font-size: 18px;
+  }
+  .navbar-resume {
+    font-size: 14px;
+    padding: 7px 16px;
   }
 }

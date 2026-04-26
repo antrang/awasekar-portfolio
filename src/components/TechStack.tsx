@@ -5,8 +5,12 @@ const MATRIX_CHARS =
 
 const SKILL_SETS = [
   ["React", "Next.js", "Node.js", "TypeScript", "JavaScript"],
-  ["Python", "SQL", "Snowflake", "AWS", "MongoDB"],
-  ["Express", "MySQL", "Metabase", "Tableau", "Apache Superset"],
+  ["Python", "SQL", "Snowflake", "Redshift", "PostgreSQL"],
+  ["AWS", "Looker", "Metabase", "Tableau", "Apache Superset"],
+  ["GitHub", "n8n", "Vercel", "Postman", "Supabase"],
+  ["Claude", "Minimax", "Gemini", "OpenCode", "AntiGravity"],
+  ["Web Development", "Data Engineering", "Data Visualization", "Machine Learning", "AI"],
+  ["Automation", "API Integration", "ETL Pipelines", "Backend Development", "Data Analysis"],
 ];
 
 const CYCLE_DURATION = 3000;
@@ -98,7 +102,7 @@ const TechStack = () => {
 
   return (
     <div className="techstack">
-      <h2>Techstack &amp; Skills</h2>
+      <h2>TechStack &amp; Skills</h2>
       <div className={`skills-matrix ${phase === "out" ? "skills-out" : "skills-in"}`}>
         {currentSet.map((skill, i) => (
           <SkillItem

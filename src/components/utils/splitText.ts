@@ -16,7 +16,7 @@ export default function setSplitText() {
   const paras: NodeListOf<ParaElement> = document.querySelectorAll(".para");
   const titles: NodeListOf<ParaElement> = document.querySelectorAll(".title");
 
-  const TriggerStart = window.innerWidth <= 1024 ? "top 60%" : "20% 60%";
+  const TriggerStart = window.innerWidth <= 1024 ? "top 85%" : "top 80%";
   const ToggleAction = "play pause resume reverse";
 
   paras.forEach((para: ParaElement) => {
@@ -41,10 +41,10 @@ export default function setSplitText() {
           toggleActions: ToggleAction,
           start: TriggerStart,
         },
-        duration: 1,
+        duration: 0.6,
         ease: "power3.out",
         y: 0,
-        stagger: 0.02,
+        stagger: 0.012,
       }
     );
   });
@@ -67,11 +67,11 @@ export default function setSplitText() {
           toggleActions: ToggleAction,
           start: TriggerStart,
         },
-        duration: 0.8,
+        duration: 0.5,
         ease: "power2.inOut",
         y: 0,
         rotate: 0,
-        stagger: 0.03,
+        stagger: 0.018,
       }
     );
   });

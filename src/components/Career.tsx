@@ -5,8 +5,8 @@ const Career = () => {
     <div className="career-section section-container">
       <div className="career-container">
         <h2>
-          My career <span>&</span>
-          <br /> experience
+          My Career <span>&</span>
+          <br /> Experience
         </h2>
         <div className="career-info">
           <div className="career-timeline">
@@ -21,7 +21,7 @@ const Career = () => {
               <h3>NOW</h3>
             </div>
             <p>
-              building data pipelines, optimising data warehouses and automating AI-powered data insights via in-house semantic layer
+              Building data pipelines, optimising data warehouses and automating AI-powered data insights via in-house semantic layer
             </p>
           </div>
           <div className="career-info-box">
@@ -30,11 +30,12 @@ const Career = () => {
                 <h4>Lead Business Analyst</h4>
                 <h5>Turing</h5>
               </div>
-              <h3>Dec 2024 - May 2025</h3>
+              <h3>Nov 2024 - May 2025</h3>
             </div>
             <p>
-              Business Analyst (Dec 2024 – Feb 2025).
-              Lead Business Analyst (Feb 2025 – May 2025)
+              Led the Business Analytics team and managed
+              RLHF & AI fine-tuning programs across multiple LLM clients.
+              Created multiple Looker dashboards across projects to track contributor performance.
             </p>
           </div>
           <div className="career-info-box">
@@ -47,7 +48,20 @@ const Career = () => {
             </div>
             <p>
               Built in-house custom automated billing management software.
-              Devised and launched end-to-end on-boarding, auth and access control features.
+              Devised and launched end-to-end on-boarding, auth, access control and custom Streamlit dashboards features.
+            </p>
+          </div>
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>Associate Product Manager</h4>
+                <h5>Crimson AI</h5>
+              </div>
+              <h3>Jan 2023 - Apr 2023</h3>
+            </div>
+            <p>
+              Drove product discovery and roadmap for AI-assisted research workflows.
+              Partnered with engineering and data teams to ship LLM-driven features.
             </p>
           </div>
           <div className="career-info-box">

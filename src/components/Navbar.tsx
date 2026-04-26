@@ -41,9 +41,20 @@ const Navbar = () => {
   return (
     <>
       <div className="header">
-        <a href="/#" className="navbar-title" data-cursor="disable">
-          AW
-</a>
+        <div className="navbar-left">
+          <a href="/#" className="navbar-title" data-cursor="disable">
+            AW
+          </a>
+          <a
+            href="/Awasekar_Sourabh_Resume_2026.pdf"
+            className="navbar-resume"
+            data-cursor="disable"
+            target="_blank"
+            rel="noreferrer"
+          >
+            RESUME
+          </a>
+        </div>
         <a
           href="https://www.linkedin.com/in/awasekar/"
           className="navbar-connect"
