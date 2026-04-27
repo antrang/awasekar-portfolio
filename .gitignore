@@ -28,9 +28,8 @@ backup/
 .env
 ._*
 
-# 3D models and encryption (keep private)
-public/models/
-*.enc
+# 3D models and encryption (deprecated)
+# public/models/
 
 # Agent/tool directories
 .claude/
