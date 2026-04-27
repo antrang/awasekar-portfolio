@@ -7,7 +7,7 @@
 }
 
 .contact-section h3 {
-  font-size: 60px;
+  font-size: 68px;
   font-weight: 400;
   text-transform: uppercase;
   margin: 0;
@@ -19,6 +19,7 @@
 }
 
 .contact-flex h4 {
+  font-size: 24px;
   font-weight: 500;
   margin: 0;
   opacity: 0.6;
@@ -30,18 +31,23 @@
 }
 
 .contact-flex p {
+  font-size: 20px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
+.contact-flex a:not(.contact-social) {
+  font-size: 20px;
+}
+
 a.contact-social {
-  font-size: 25px;
+  font-size: 31px;
   border-bottom: 1px solid #ccc;
 }
 
 .contact-box h2 {
   font-weight: 400;
-  font-size: 23px;
+  font-size: 27px;
   margin: 0;
 }
 
@@ -50,7 +56,7 @@ a.contact-social {
 }
 
 .contact-box h5 {
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 500;
   line-height: 20px;
   display: flex;
@@ -60,29 +66,47 @@ a.contact-social {
 
 @media only screen and (max-width: 1600px) {
   .contact-section h3 {
-    font-size: 50px;
+    font-size: 56px;
   }
 
   .contact-box h2 {
-    font-size: 20px;
+    font-size: 24px;
+  }
+
+  .contact-flex h4 {
+    font-size: 22px;
+  }
+
+  .contact-flex p,
+  .contact-flex a:not(.contact-social) {
+    font-size: 18px;
   }
 
   a.contact-social {
-    font-size: 22px;
+    font-size: 26px;
   }
 }
 
 @media only screen and (max-width: 1300px) {
   .contact-section h3 {
-    font-size: 40px;
+    font-size: 46px;
   }
 
   .contact-box h2 {
+    font-size: 22px;
+  }
+
+  .contact-flex h4 {
+    font-size: 22px;
+  }
+
+  .contact-flex p,
+  .contact-flex a:not(.contact-social) {
     font-size: 18px;
   }
 
   a.contact-social {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .contact-flex p {
