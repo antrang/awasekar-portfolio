@@ -1,0 +1,12 @@
+{
+  "name": "Sourabh Awasekar",
+  "short_name": "Awasekar",
+  "description": "Sourabh Awasekar — Data Engineer, AI & Product",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

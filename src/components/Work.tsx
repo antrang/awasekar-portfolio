@@ -22,7 +22,7 @@ const projects = [
     title: "plectrum.live",
     category: "Music Platform",
     tools: "Next.js, Neon DB, audio streaming, artist tooling",
-    image: "/images/plectrum.png",
+    image: "/images/plectrum.webp",
     link: "https://plectrum.live",
   },
   {
@@ -36,14 +36,14 @@ const projects = [
     title: "5X Data — Billing & Onboarding",
     category: "In-house Product at 5X Data",
     tools: "Automated billing, onboarding flows, auth & access control",
-    image: "/images/5x.png",
+    image: "/images/5x.webp",
     link: "https://5x.co",
   },
   {
     title: "Junglee Games — Analytics Suite",
     category: "Product & Marketing Analytics",
     tools: "Tableau dashboards, SQL automation, A/B testing, RCA",
-    image: "/images/junglee.png",
+    image: "/images/junglee.webp",
     link: "https://jungleegames.com",
   },
 ];
