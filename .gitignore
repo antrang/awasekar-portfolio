@@ -27,3 +27,12 @@ dist-ssr
 backup/
 .env
 ._*
+
+# 3D models and encryption (keep private)
+public/models/
+*.enc
+
+# Agent/tool directories
+.claude/
+.repowise/
+.mcp.json
