@@ -6,7 +6,13 @@ const Landing = () => {
       <div className="landing-section" id="landingDiv">
         <div className="landing-container">
           <div className="landing-photo">
-            <img src="/Sourabh_Awasekar_Picture.png" alt="Sourabh Awasekar" />
+            <img
+              src="/Sourabh_Awasekar_Picture.webp"
+              alt="Sourabh Awasekar"
+              width="320"
+              height="320"
+              fetchpriority="high"
+            />
           </div>
           <div className="landing-intro">
             <h2>Hello! I'm</h2>
