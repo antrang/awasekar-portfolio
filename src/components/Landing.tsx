@@ -9,9 +9,9 @@ const Landing = () => {
             <img
               src="/Sourabh_Awasekar_Picture.webp"
               alt="Sourabh Awasekar"
-              width="320"
-              height="320"
-              fetchpriority="high"
+              width={320}
+              height={320}
+              fetchPriority="high"
             />
           </div>
           <div className="landing-intro">
