@@ -8,14 +8,14 @@ const projects = [
     title: "amber Radar",
     category: "Market Research Decision Tool — Student Accommodation",
     tools: "Market intel, ELT pipelines, decision dashboards, AI summaries",
-    image: "/images/placeholder.webp",
+    image: "/images/radar.webp",
     link: "https://amberstudent.com",
   },
   {
     title: "amber Ocean",
     category: "Internal Semantic-Layer AI Data Chatbot",
     tools: "LLM agents, semantic layer, NL→SQL, charts & tables, retrieval",
-    image: "/images/placeholder.webp",
+    image: "/images/ocean.webp",
     link: "https://amberstudent.com",
   },
   {
