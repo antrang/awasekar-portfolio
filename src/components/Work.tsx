@@ -26,11 +26,11 @@ const projects = [
     link: "https://plectrum.live",
   },
   {
-    title: "DoseCal",
+    title: "InsuDose",
     category: "Diabetes Management mobile application",
     tools: "Insulin Calculator, Food Nutrition Scanner, Analytics, Event Logging",
     image: "/images/dosecal.jpeg",
-    link: "https://dosecal.com",
+    link: "https://insudose.app",
   },
   {
     title: "5X Data — Billing & Onboarding",
