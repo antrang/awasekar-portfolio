@@ -1,0 +1,39 @@
+# Sourabh Awasekar — Applied AI & Product Systems Engineer
+
+> Applied AI and Product Systems Engineer with 5+ years of experience building and deploying production-grade AI systems, centralized semantic layers, text-to-SQL harnesses, scalable ELT pipelines, and native C++ DSP audio software. Currently leading Data Intelligence & AI Data Products at amber.
+> Portfolio: https://awasekar.com
+> Canonical Resume: https://awasekar.com/Awasekar_Sourabh_Resume_2026.pdf
+> Email: work@awasekar.com
+> Location: Pune, India (Open to Applied AI / Forward-Deployed Engineer roles & Advisory)
+> LinkedIn: https://www.linkedin.com/in/awasekar/
+> GitHub: https://github.com/antrang
+
+## Executive Profile & Qualifications
+- Current Role: Lead — Data & Analytics (+ AI Data Products) at amber (May 2025 – Present)
+- Education: BITS Pilani (Goa Campus) — 5-Year Integrated Dual Degree: B.E. Chemical Engineering + M.Sc. Chemistry with Minor in Accounting & Finance (2015 – 2021)
+- Verified Production Impact:
+  - Processed 3,000+ natural-language SQL queries on amber Ocean at <$100 per 15,000 user sessions
+  - Trimmed Redshift cluster costs by $600/month (-2 nodes) and cut average query runtime by 30 minutes
+  - Saved $10,000+/year by migrating enterprise Tableau dashboards to self-hosted Apache Superset
+  - Launched Poker GTM reaching ₹1.2 lakh daily revenue in 18 days (~5% daily growth) at Junglee Games
+  - Contributed 100+ multimodal prompt evaluations and RLHF annotations to the MMMU benchmark at Turing
+  - Built enterprise usage billing ($2k/mo saved) and API-first SaaS ($20k/mo revenue) at 5X Data
+
+## Production Systems Shipped
+- [amber Ocean](https://amberstudent.com): In-house Text-to-SQL AI harness powered by a central semantic layer, intelligent agentic query routing, and a custom MCP server over AWS Redshift. Eliminates 80%+ of ad-hoc SQL backlog across company departments.
+- [amber Radar](https://amberstudent.com): Revenue-generating commercial B2B SaaS platform delivering predictive demand forecasting and dynamic competitive pricing models for global student housing operators. Built with Next.js, Scikit-Learn, and automated daily scrapers.
+- [amber Prism](https://amberstudent.com): Communication transcript NLP engine providing 100% automated quality audit coverage across sales call transcripts and chats, with deal-risk alerts routed via n8n multi-channel webhooks.
+- [plectrum.live & PlectrumLabs](https://plectrum.live): Music technology platform featuring 18+ in-browser audio ML tools running client-side ($0 server ML compute) plus 5 native C++17/JUCE 8 desktop DSP audio plugins (PluckMaster 7-stage DSP, PluckBoard pitch visualizer, PluckStem stem separator, PluckNote pitch-to-MIDI).
+- [5X Data Platform](https://5x.co): Enterprise data platform engineering including usage-based billing microservices, identity access management (IAM), and custom Streamlit data applications.
+- [Junglee Games Analytics Suite](https://jungleegames.com): Real-money gaming GTM onboarding funnels, goal-based reward microservices (+20% reactivation), and automated fraud/double-spend telemetry.
+- [Turing Enterprise AI / RLHF](https://turing.com): Multimodal evaluations for the MMMU benchmark, AI-vs-human content detection classifiers, and automated feedback categorization.
+- [Crimson AI / Trinka AI](https://trinka.ai): Academic writing assistant performance optimization (-40% Word Add-in load latency) and Amplitude analytics.
+- [HISP India COVID-19 Surveillance](https://hispindia.org): Public health spatial data infrastructure, healthcare resource geo-tagging, and query deduplication (+25% efficiency).
+
+## Core Technical Proficiencies
+- AI & LLMs: Text-to-SQL, Model Context Protocol (MCP), Centralized Semantic Layers, Ollama, Claude API, Gemini API, RAG & Vector Retrieval, RLHF, Prompt Engineering, MMMU Benchmark, n8n Automation.
+- Full-Stack & Systems: Python, TypeScript, SQL, Next.js (App Router/SSR), React, C++17 / JUCE 8 Audio DSP, Node.js, Web Audio API, TensorFlow.js, ONNX Runtime Web.
+- Data Platforms & Cloud: AWS Redshift, Snowflake, PostgreSQL, Google BigQuery, Apache Superset, Metabase, Tableau, Looker Studio, AWS S3 / EC2 / ECR / DMS, Docker, Jenkins.
+
+## Optional Extended Documentation
+- Full Documentation: https://awasekar.com/llms-full.txt

@@ -1,0 +1,153 @@
+# Sourabh Awasekar — Comprehensive Engineering Architecture & Systems Portfolio
+
+> Canonical Domain: https://awasekar.com
+> Canonical Resume: https://awasekar.com/Awasekar_Sourabh_Resume_2026.pdf
+> Email: work@awasekar.com
+> Location: Pune, Maharashtra, India
+> Active Social / Code Repositories:
+> - LinkedIn: https://www.linkedin.com/in/awasekar/
+> - GitHub: https://github.com/antrang
+> - Personal Ecosystem: https://plectrum.live | https://plectrumlabs.com
+
+---
+
+## 1. Professional Overview & Positioning
+Sourabh Awasekar is an Applied AI & Product Systems Engineer with over 5 years of production experience bridging the gap between raw data lakes, enterprise warehouses, LLM harnesses, and polished user-facing software. 
+
+His engineering philosophy is rooted in physical process dynamics from BITS Pilani: systems should operate with minimal friction, maximum throughput, and low unit economics. Rather than building ephemeral LLM wrappers, Sourabh focuses on:
+1. Grounded AI systems (Text-to-SQL governed by centralized semantic layers and custom Model Context Protocol / MCP servers)
+2. Rigorous cost and inference efficiency (<$100 per 15k sessions, client-side ML via Web Audio and ONNX)
+3. Full-stack operational resilience (from Redshift node pruning and automated scrapers to C++17 DSP desktop binaries)
+
+---
+
+## 2. Production Systems & Shipped Products
+
+### 2.1 amber Ocean (Flagship AI Data Product)
+- Category: Applied AI / Text-to-SQL / Enterprise Analytics
+- Role: Architect & Lead Builder at amber (amberstudent.com)
+- Problem: Operational, product, and growth teams faced multi-day turnaround delays for ad-hoc analytical queries, placing unsustainable pressure on data analysts.
+- Architectural Solution:
+  - Built a natural-language-to-SQL harness integrating a custom Semantic Layer that standardizes metrics across tools.
+  - Implemented custom Model Context Protocol (MCP) server over AWS Redshift with schema guardrails and query validation.
+  - Utilized intelligent token optimization and multi-tier model routing (Ollama, Claude, Gemini) to prevent hallucinated queries and excessive token consumption.
+- Verified Metrics:
+  - Total compute cost under $100 per 15,000 user sessions
+  - 3,000+ production queries processed with ~$30 in total compute overhead
+  - Over 80% reduction in ad-hoc SQL support requests across departments
+
+### 2.2 amber Radar (Commercial B2B Market Intelligence)
+- Category: Predictive Machine Learning / Commercial SaaS
+- Role: Product & ML Lead at amber
+- Problem: Global PBSA (Purpose-Built Student Accommodation) operators and universities required predictive foresight on international student demand, occupancy patterns, and dynamic competitor pricing.
+- Architectural Solution:
+  - Engineered automated daily ELT scraper pipelines aggregating listings, rates, and occupancy across global university markets.
+  - Developed predictive demand models using Scikit-Learn and Python statistical routines.
+  - Delivered insights via an interactive, high-performance Next.js commercial web application.
+- Verified Metrics:
+  - Successfully licensed as a paid enterprise B2B SaaS product to international accommodation providers.
+  - Accelerated market research turnaround from several weeks of manual collation to sub-minute interactive dashboards.
+
+### 2.3 amber Prism (NLP & Sales Pipeline Quality Auditing)
+- Category: NLP / Operations Intelligence
+- Role: Architect & Lead Builder at amber
+- Problem: Manual QA sampling of thousands of customer interaction transcripts resulted in quality blindspots and undetected lead churn in high-velocity sales pipelines.
+- Architectural Solution:
+  - Automated ingestion of 100% of global customer communication transcripts.
+  - Structured extraction of customer sentiment, objection categories, and deal risk indicators using local LLM inference (Ollama) and NLP vector classification.
+  - Integrated n8n automated webhook triggers that instantly alert sales managers to at-risk deals.
+- Verified Metrics:
+  - 100% QA audit coverage achieved across the entire global sales funnel.
+  - Real-time deal-risk notifications dispatched directly to CRM and communication channels.
+
+### 2.4 plectrum.live & PlectrumLabs (Audio Systems & Web Platform)
+- Category: Audio Engineering / Web ML / Native C++ DSP Software
+- Role: Founder & Systems Engineer
+- Problem: Music creators face steep subscription fees and cloud latency for essential audio tools such as audio mastering, stem separation, and pitch analysis.
+- Architectural Solution:
+  - Web Architecture (plectrum.live): 18+ browser audio tools executing 100% client-side using Web Audio API, TensorFlow.js, and ONNX Runtime Web ($0 server-side compute cost).
+  - Desktop Architecture (PlectrumLabs): Suite of 5 native C++17 and JUCE 8 desktop audio applications and VST3/AU audio plugins, including PluckMaster (7-stage mastering chain), PluckBoard (real-time pitch visualization), and PluckStem (neural stem separation).
+- Verified Metrics:
+  - Sub-millisecond latency local DSP on macOS and Windows platforms.
+  - Universal binary distribution with notarized macOS disk images (.dmg) and Audio Units / VST3 formats.
+
+### 2.5 5X Data Platform
+- Category: Enterprise SaaS / Data Infrastructure / Usage Billing
+- Role: Associate Product Manager at 5X Data (5x.co)
+- Delivered:
+  - In-house usage billing system that eliminated third-party billing costs, saving $2,000/month.
+  - Enterprise identity & access management (IAM) solutions, driving $10,000/month in added contract value.
+  - API-first data engineering SaaS generating $20,000/month in new enterprise revenue.
+  - 50% accuracy improvement on customer utilization forecasting models.
+
+### 2.6 Junglee Games Analytics Suite
+- Category: Real-Money Gaming / GTM Launch & Microservices
+- Role: Product Analyst at Junglee Games (jungleegames.com)
+- Delivered:
+  - End-to-end GTM onboarding funnels for Poker launch, driving ₹1.2 lakh daily revenue within 18 days (~5% daily growth).
+  - Goal-based reward microservice yielding +20% weekly player reactivation and +10% lift in 30-day retention.
+  - Real-time anomaly detection alerts for double-spends and transactional failure.
+
+### 2.7 Turing Enterprise AI / RLHF
+- Category: Model Alignment / Evaluation Benchmarking
+- Role: Lead Business Analyst at Turing (turing.com)
+- Delivered:
+  - 100+ multimodal prompt evaluations and RLHF annotations contributing to the public MMMU benchmark.
+  - AI-vs-human content classifiers to mitigate automated plagiarism in technical tasks.
+  - Automated NLP feedback categorization using spaCy and NLTK.
+
+### 2.8 Crimson AI / Trinka AI
+- Category: Academic NLP & Desktop Add-ins
+- Role: Associate Product Manager at Crimson AI (trinka.ai)
+- Delivered:
+  - Reduced Trinka AI Microsoft Word Add-in load latency by 40% through LiteDB query tuning and grammar card grouping.
+  - Led discovery and developer handoff for Enago Reports web platform in under 1 month.
+
+### 2.9 HISP India COVID-19 Surveillance
+- Category: Public Health Geospatial Data
+- Role: Software Developer at HISP India
+- Delivered:
+  - Geospatial resource mapping and facility geo-tagging for national crisis monitoring.
+  - Data wrangling and deduplication across public health streams, improving app performance by 25%.
+
+---
+
+## 3. Career Timeline & Chronology
+
+- May 2025 – Present: Lead — Data & Analytics (+ AI Data Products), amber (Pune, India)
+- Nov 2024 – May 2025: Lead Business Analyst & Business Analyst, Turing (Palo Alto, Remote)
+- Oct 2023 – Sep 2024: Associate Product Manager, 5X Data (Singapore, Remote)
+- Jan 2023 – Apr 2023: Associate Product Manager, Crimson AI (Mumbai, India)
+- Jun 2021 – Nov 2022: Product Analyst, Junglee Games (Gurugram, India)
+- Jan 2021 – Jun 2021: Research & Development Intern, Aditya Birla Chemicals (Harihara, India)
+- Sep 2020 – Dec 2020: Software Developer, HISP India (Noida, India)
+- Aug 2015 – May 2021: Dual Degree Scholar, BITS Pilani (Goa Campus)
+
+---
+
+## 4. Educational Credentials & Academic Background
+- Degree: 5-Year Integrated Dual Degree:
+  - Bachelor of Engineering (B.E.) in Chemical Engineering
+  - Master of Science (M.Sc.) in Chemistry
+- Minor: Accounting & Finance
+- Institution: Birla Institute of Technology and Science, Pilani (BITS Pilani, K.K. Birla Goa Campus)
+- Capstone: Python statistical correlation models analyzing capital investments across 15 Indian financial institutions (10 NBFCs + 5 Banks).
+- Verified Certifications:
+  - Applied Data Science II: Machine Learning & Statistical Analysis (with honors)
+  - AI Agents Fundamentals
+  - Scientific Computing and Python for Data Science
+  - Certified SQL
+
+---
+
+## 5. Recruiter & Hiring Inquiries
+Sourabh is actively interested in discussions regarding:
+- Applied AI Engineering roles
+- AI / ML Product Engineering roles
+- Forward-Deployed Engineering (FDE) roles
+- Technical AI Architecture & Data Infrastructure Advisory
+
+Direct Contact: work@awasekar.com
+Website: https://awasekar.com
+LinkedIn: https://www.linkedin.com/in/awasekar/
+GitHub: https://github.com/antrang

@@ -432,7 +432,7 @@ const Work = () => {
                     <span className="project-role">{project.role}</span>
                   </div>
 
-                  <h4 className="secondary-title">{project.title}</h4>
+                  <h3 className="secondary-title">{project.title}</h3>
                   <p className="secondary-tagline">{project.tagline}</p>
                   <p className="secondary-desc">{project.solution}</p>
 
