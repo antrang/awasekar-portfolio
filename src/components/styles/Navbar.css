@@ -1,110 +1,151 @@
 .header {
-  display: flex;
-  max-width: var(--cMaxWidth);
-  width: var(--cWidth);
-  justify-content: space-between;
-  padding: 20px 0px;
-  margin-bottom: -100px;
-  box-sizing: border-box;
   position: fixed;
+  top: 16px;
   left: 50%;
   transform: translateX(-50%);
-  top: 0;
+  width: min(calc(100% - 32px), var(--cMaxWidth));
   z-index: 9999;
+  box-sizing: border-box;
+  pointer-events: none;
 }
-.header ul {
-  font-size: 12px;
+
+.navbar-container {
   display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  column-gap: 40px;
-  row-gap: 8px;
-  align-items: end;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  background: rgba(13, 18, 29, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--borderColor);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  pointer-events: auto;
 }
-.header ul li {
-  margin-left: 0px;
-  letter-spacing: 1px;
-  color: #ccc;
-  font-weight: 600;
-  cursor: pointer;
-}
-.navbar-connect {
-  position: absolute;
-  display: none;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 15px;
-  letter-spacing: 1px;
-  font-weight: 500;
-}
-.navbar-title {
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.2px;
-}
+
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+  color: var(--textPrimary);
+}
+
+.brand-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accentColor);
+  display: inline-block;
+  box-shadow: 0 0 8px var(--accentColor);
+}
+
 .navbar-resume {
-  font-size: 12px;
-  letter-spacing: 2px;
+  font-family: var(--fontMono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
   font-weight: 600;
-  color: #ccc;
+  color: var(--accentColor);
   padding: 6px 14px;
-  border: 1px solid var(--accentColor);
-  border-radius: 999px;
-  transition: 0.3s;
+  background: var(--accentMuted);
+  border: 1px solid var(--accentBorder);
+  border-radius: 9999px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
+
 .navbar-resume:hover {
-  background-color: var(--accentColor);
-  color: #0a0e17;
+  background: var(--accentColor);
+  color: #070a11;
+  transform: translateY(-1px);
 }
-@media only screen and (min-width: 500px) {
-  .header {
-    padding: 20px 0px;
-  }
-  .header ul {
-    flex-direction: row;
-    align-items: center;
-    font-size: 14px;
-  }
-  .header ul li {
-    color: #eae5ec;
-  }
-  .navbar-title {
-    font-size: 16px;
-  }
-  .navbar-resume {
-    font-size: 13px;
-  }
+
+.navbar-connect {
+  display: none;
+  font-family: var(--fontMono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--textMuted);
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.04);
 }
+
+.connect-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--signalEmerald);
+  box-shadow: 0 0 6px var(--signalEmerald);
+}
+
+.navbar-connect:hover {
+  color: var(--textPrimary);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.navbar-nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 24px;
+  font-family: var(--fontMono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--textSecondary);
+}
+
+.navbar-nav ul li a {
+  color: var(--textMuted);
+  transition: color 0.2s ease;
+}
+
+.navbar-nav ul li a:hover {
+  color: var(--accentColor);
+}
+
+.nav-fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: linear-gradient(to bottom, rgba(7, 10, 17, 0.95), transparent);
+  pointer-events: none;
+  z-index: 9990;
+}
+
 @media only screen and (min-width: 900px) {
   .navbar-connect {
-    display: block;
+    display: inline-flex;
   }
 }
-@media only screen and (min-width: 1200px) {
+
+@media only screen and (max-width: 768px) {
   .header {
-    padding: 35px 0px;
+    top: 10px;
+    width: calc(100% - 20px);
   }
-  .header ul {
-    column-gap: 80px;
-    font-size: 16px;
+
+  .navbar-container {
+    padding: 10px 16px;
   }
-  .navbar-connect {
-    font-size: 16px;
-  }
-  .navbar-title {
-    font-size: 18px;
-  }
-  .navbar-resume {
-    font-size: 14px;
-    padding: 7px 16px;
+
+  .navbar-nav {
+    display: none;
   }
 }

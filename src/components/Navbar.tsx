@@ -6,15 +6,15 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import "./styles/Navbar.css";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
-export let smoother: ScrollSmoother;
+let smoother: ScrollSmoother;
 
 const Navbar = () => {
   useEffect(() => {
     smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
-      smooth: 1.7,
-      speed: 1.7,
+      smooth: 1.5,
+      speed: 1.5,
       effects: true,
       autoResize: true,
       ignoreMobileResize: true,
@@ -22,69 +22,92 @@ const Navbar = () => {
 
     smoother.scrollTop(0);
 
-    let links = document.querySelectorAll(".header ul a");
+    const links = document.querySelectorAll(".header ul a");
     links.forEach((elem) => {
-      let element = elem as HTMLAnchorElement;
+      const element = elem as HTMLAnchorElement;
       element.addEventListener("click", (e) => {
-        if (window.innerWidth > 1024) {
+        const section = element.getAttribute("data-href");
+        if (section && window.innerWidth > 1024) {
           e.preventDefault();
-          let elem = e.currentTarget as HTMLAnchorElement;
-          let section = elem.getAttribute("data-href");
           smoother.scrollTo(section, true, "top top");
         }
       });
     });
-    window.addEventListener("resize", () => {
+
+    const handleResize = () => {
       ScrollSmoother.refresh(true);
-    });
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
   return (
     <>
-      <div className="header">
-        <div className="navbar-left">
-          <a href="/#" className="navbar-title" data-cursor="disable">
-            AW
-          </a>
+      <header className="header" role="banner">
+        <div className="navbar-container">
+          <div className="navbar-left">
+            <a href="/#" className="navbar-brand" data-cursor="disable">
+              <span className="brand-monogram">AW</span>
+              <span className="brand-dot"></span>
+            </a>
+            <a
+              href="/Awasekar_Sourabh_Resume_2026.pdf"
+              className="navbar-resume"
+              data-cursor="disable"
+              target="_blank"
+              rel="noreferrer"
+              download="Awasekar_Sourabh_Resume_2026.pdf"
+            >
+              RESUME PDF
+            </a>
+          </div>
+
           <a
-            href="/Awasekar_Sourabh_Resume_2026.pdf"
-            className="navbar-resume"
+            href="https://www.linkedin.com/in/awasekar/"
+            className="navbar-connect"
             data-cursor="disable"
             target="_blank"
             rel="noreferrer"
           >
-            RESUME
+            <span className="connect-indicator"></span>
+            linkedin.com/in/awasekar
           </a>
-        </div>
-        <a
-          href="https://www.linkedin.com/in/awasekar/"
-          className="navbar-connect"
-          data-cursor="disable"
-          target="_blank"
-          rel="noreferrer"
-        >
-          linkedin.com/in/awasekar
-        </a>
-        <ul>
-          <li>
-            <a data-href="#about" href="#about">
-              <HoverLinks text="ABOUT" />
-            </a>
-          </li>
-          <li>
-            <a data-href="#work" href="#work">
-              <HoverLinks text="WORK" />
-            </a>
-          </li>
-          <li>
-            <a data-href="#contact" href="#contact">
-              <HoverLinks text="CONTACT" />
-            </a>
-          </li>
-        </ul>
-      </div>
 
-      <div className="landing-circle1"></div>
-      <div className="landing-circle2"></div>
+          <nav className="navbar-nav" aria-label="Main Navigation">
+            <ul>
+              <li>
+                <a data-href="#about" href="#about">
+                  <HoverLinks text="ABOUT" />
+                </a>
+              </li>
+              <li>
+                <a data-href="#pillars" href="#pillars">
+                  <HoverLinks text="PILLARS" />
+                </a>
+              </li>
+              <li>
+                <a data-href="#work" href="#work">
+                  <HoverLinks text="SYSTEMS" />
+                </a>
+              </li>
+              <li>
+                <a data-href="#career" href="#career">
+                  <HoverLinks text="CAREER" />
+                </a>
+              </li>
+              <li>
+                <a data-href="#contact" href="#contact">
+                  <HoverLinks text="CONTACT" />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
       <div className="nav-fade"></div>
     </>
   );

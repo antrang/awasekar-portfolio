@@ -1,107 +1,133 @@
 import { useEffect, useRef } from "react";
 import "./styles/MatrixBackground.css";
 
-const CHARS = "01アイウエオカキクケコABCDEF<>{}[]!@#$%^&01100101";
-const FS = 13;
+interface Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  size: number;
+  alpha: number;
+}
 
 const MatrixBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current!;
-    const container = containerRef.current!;
-    const ctx = canvas.getContext("2d")!;
+    const canvas = canvasRef.current;
+    const container = containerRef.current;
+    if (!canvas || !container) return;
 
-    let w = window.innerWidth;
-    let h = window.innerHeight;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
-    const init = () => {
-      w = window.innerWidth;
-      h = window.innerHeight;
-      canvas.width = w;
-      canvas.height = h;
-      ctx.fillStyle = "#050810";
-      ctx.fillRect(0, 0, w, h);
-      cols = Math.floor(w / FS);
-      drops = Array.from({ length: cols }, () => Math.random() * -(h / FS) * 2);
-      speeds = Array.from({ length: cols }, () => 0.35 + Math.random() * 0.55);
-    };
+    let w = (canvas.width = window.innerWidth);
+    let h = (canvas.height = window.innerHeight);
 
-    let cols = Math.floor(w / FS);
-    let drops: number[] = [];
-    let speeds: number[] = [];
-    init();
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    // Generate gentle particle constellation
+    const particleCount = Math.floor(Math.min(w, 1400) / 24);
+    const particles: Particle[] = [];
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: prefersReducedMotion ? 0 : (Math.random() - 0.5) * 0.3,
+        vy: prefersReducedMotion ? 0 : (Math.random() - 0.5) * 0.3,
+        size: Math.random() * 1.5 + 0.5,
+        alpha: Math.random() * 0.4 + 0.15,
+      });
+    }
 
     let mouseX = -9999;
     let mouseY = -9999;
 
-    const draw = () => {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.07)";
-      ctx.fillRect(0, 0, w, h);
-      ctx.font = `${FS}px 'Courier New', monospace`;
-
-      for (let i = 0; i < cols; i++) {
-        const x = i * FS;
-        const y = drops[i] * FS;
-        const char = CHARS[Math.floor(Math.random() * CHARS.length)];
-
-        const dx = x - mouseX;
-        const dy = y - mouseY;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        const glow = Math.max(0, 1 - dist / 180);
-
-        if (glow > 0.1) {
-          ctx.shadowColor = "#5eead4";
-          ctx.shadowBlur = 14 * glow;
-          const alpha = 0.5 + glow * 0.5;
-          ctx.fillStyle =
-            glow > 0.6
-              ? `rgba(255, 255, 255, ${alpha})`
-              : `rgba(180, 255, 240, ${alpha})`;
-        } else {
-          ctx.shadowBlur = 0;
-          ctx.fillStyle = `rgba(94, 234, 212, ${0.35 + Math.random() * 0.25})`;
-        }
-
-        ctx.fillText(char, x, y);
-
-        if (y > h && Math.random() > 0.975) {
-          drops[i] = 0;
-          speeds[i] = 0.35 + Math.random() * 0.55;
-        }
-        drops[i] += speeds[i];
-      }
-      ctx.shadowBlur = 0;
+    const handleResize = () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
     };
 
-    let rafId: number;
-    let lastTime = 0;
-    const loop = (t: number) => {
-      if (t - lastTime > 40) {
-        draw();
-        lastTime = t;
-      }
-      rafId = requestAnimationFrame(loop);
-    };
-    rafId = requestAnimationFrame(loop);
-
-    const onResize = () => init();
-
-    const onMove = (e: MouseEvent) => {
+    const handleMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
       container.style.setProperty("--mx", `${e.clientX}px`);
       container.style.setProperty("--my", `${e.clientY}px`);
     };
 
-    window.addEventListener("resize", onResize);
-    window.addEventListener("mousemove", onMove);
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("mousemove", handleMouseMove);
+
+    let animationFrameId: number;
+
+    const render = () => {
+      ctx.clearRect(0, 0, w, h);
+
+      // Draw subtle background grid points
+      const gridSize = 48;
+      ctx.fillStyle = "rgba(255, 255, 255, 0.02)";
+      for (let x = 0; x < w; x += gridSize) {
+        for (let y = 0; y < h; y += gridSize) {
+          ctx.fillRect(x, y, 1, 1);
+        }
+      }
+
+      // Draw and connect particles
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+
+        if (!prefersReducedMotion) {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0) p.x = w;
+          if (p.x > w) p.x = 0;
+          if (p.y < 0) p.y = h;
+          if (p.y > h) p.y = 0;
+        }
+
+        // Distance to cursor
+        const dx = p.x - mouseX;
+        const dy = p.y - mouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const isNearCursor = dist < 140;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = isNearCursor
+          ? `rgba(45, 212, 191, ${Math.min(1, p.alpha + 0.4)})`
+          : `rgba(148, 163, 184, ${p.alpha})`;
+        ctx.fill();
+
+        // Connect nearby particles
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dist2 = Math.hypot(p.x - p2.x, p.y - p2.y);
+          if (dist2 < 100) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            const lineAlpha = (1 - dist2 / 100) * 0.12;
+            ctx.strokeStyle = `rgba(45, 212, 191, ${lineAlpha})`;
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+        }
+      }
+
+      animationFrameId = requestAnimationFrame(render);
+    };
+
+    render();
 
     return () => {
-      cancelAnimationFrame(rafId);
-      window.removeEventListener("resize", onResize);
-      window.removeEventListener("mousemove", onMove);
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 

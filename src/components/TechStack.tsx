@@ -1,119 +1,133 @@
-import { useState, useEffect, useRef } from "react";
+import { MdWorkspacePremium } from "react-icons/md";
+import "./styles/TechStack.css";
 
-const MATRIX_CHARS =
-  "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*<>/\\|{}[]";
+interface SkillCategory {
+  title: string;
+  tag: string;
+  skills: { name: string; note: string }[];
+}
 
-const SKILL_SETS = [
-  ["React", "Next.js", "Node.js", "TypeScript", "JavaScript"],
-  ["Python", "SQL", "Snowflake", "Redshift", "PostgreSQL"],
-  ["AWS", "Looker", "Metabase", "Tableau", "Apache Superset"],
-  ["GitHub", "n8n", "Vercel", "Postman", "Supabase"],
-  ["Claude", "Minimax", "Gemini", "OpenCode", "AntiGravity"],
-  ["Web Development", "Data Engineering", "Data Visualization", "Machine Learning", "AI"],
-  ["Automation", "API Integration", "ETL Pipelines", "Backend Development", "Data Analysis"],
+const skillCategories: SkillCategory[] = [
+  {
+    title: "Applied AI & Agentic Systems",
+    tag: "LLMs & HARNESSES",
+    skills: [
+      { name: "Ollama", note: "Local & Private LLM inference" },
+      { name: "Custom MCP Servers", note: "Model Context Protocol tools" },
+      { name: "Semantic Layers", note: "Central metric definitions" },
+      { name: "Claude & Gemini APIs", note: "Structured extraction & analysis" },
+      { name: "RAG & Vector Retrieval", note: "Injection-guarded retrieval" },
+      { name: "RLHF & Model Evals", note: "MMMU benchmark annotations" },
+      { name: "n8n Workflow Triggers", note: "Multi-channel automated alerts" },
+      { name: "Token Optimization", note: "<$100 / 15k user sessions" },
+    ],
+  },
+  {
+    title: "Languages & Core Systems",
+    tag: "SOFTWARE & CODE",
+    skills: [
+      { name: "Python", note: "Pandas, Scikit-Learn, SQLAlchemy" },
+      { name: "TypeScript", note: "Strict type-safe applications" },
+      { name: "SQL (Certified)", note: "Advanced query tuning & ELT" },
+      { name: "C++17", note: "JUCE 8 native desktop DSP" },
+      { name: "Next.js 15/16", note: "App Router, SSR, Turbopack" },
+      { name: "React 18/19", note: "Modern state & leaf rendering" },
+      { name: "Node.js", note: "Streaming & RESTful APIs" },
+      { name: "Web Audio & ONNX", note: "Client-side ML inference" },
+    ],
+  },
+  {
+    title: "Data Warehousing & BI",
+    tag: "DATA PLATFORMS",
+    skills: [
+      { name: "AWS Redshift", note: "Node downsizing (-2 nodes, -$600/mo)" },
+      { name: "Apache Superset", note: "Self-hosted, $10k+/yr saved" },
+      { name: "Snowflake", note: "Warehouse modeling & transforms" },
+      { name: "PostgreSQL", note: "Production relational data" },
+      { name: "Google BigQuery", note: "Serverless analytical queries" },
+      { name: "Metabase", note: "Query caching & operational dashboards" },
+      { name: "Tableau", note: "Enterprise BI & conversion funnels" },
+      { name: "Looker Studio", note: "Cross-functional team visibility" },
+    ],
+  },
+  {
+    title: "Cloud, MLOps & Delivery",
+    tag: "INFRASTRUCTURE",
+    skills: [
+      { name: "AWS S3 & ECR", note: "Artifact & asset storage pipelines" },
+      { name: "AWS EC2 & Lambda", note: "Compute instances & serverless triggers" },
+      { name: "AWS DMS", note: "Database migration & query tuning" },
+      { name: "Docker", note: "Containerized deployments" },
+      { name: "Jenkins", note: "Automated daily scraper pipelines" },
+      { name: "Vercel", note: "Edge hosting & deployment" },
+      { name: "Supabase", note: "Auth, database & edge functions" },
+      { name: "PostHog & Sentry", note: "Consent-gated telemetry & error tracking" },
+    ],
+  },
 ];
 
-const CYCLE_DURATION = 3000;
-const SCRAMBLE_FRAMES = 18;
-const FRAME_MS = 35;
-
-function useScramble(target: string, trigger: number, startDelay: number) {
-  const [display, setDisplay] = useState(target);
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    let frame = 0;
-
-    const step = () => {
-      if (frame >= SCRAMBLE_FRAMES) {
-        setDisplay(target);
-        return;
-      }
-      const progress = frame / SCRAMBLE_FRAMES;
-      const resolved = Math.floor(progress * target.length);
-      setDisplay(
-        target
-          .split("")
-          .map((ch, i) => {
-            if (ch === " ") return " ";
-            if (i < resolved) return ch;
-            return MATRIX_CHARS[
-              Math.floor(Math.random() * MATRIX_CHARS.length)
-            ];
-          })
-          .join("")
-      );
-      frame++;
-      timerRef.current = setTimeout(step, FRAME_MS);
-    };
-
-    timerRef.current = setTimeout(step, startDelay);
-    return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
-    };
-  }, [target, trigger, startDelay]);
-
-  return display;
-}
-
-function SkillItem({
-  name,
-  index,
-  trigger,
-}: {
-  name: string;
-  index: number;
-  trigger: number;
-}) {
-  const text = useScramble(name, trigger, index * 100);
-
-  return (
-    <div className="skill-row" style={{ animationDelay: `${index * 70}ms` }}>
-      <span className="skill-idx">{String(index + 1).padStart(2, "0")}</span>
-      <span className="skill-name">{text}</span>
-      <span className="skill-bar" />
-    </div>
-  );
-}
+const certifications = [
+  "Applied Data Science II: Machine Learning & Statistical Analysis (with honors)",
+  "AI Agents Fundamentals",
+  "Scientific Computing and Python for Data Science",
+  "Certified SQL",
+];
 
 const TechStack = () => {
-  const [setIndex, setSetIndex] = useState(0);
-  const [trigger, setTrigger] = useState(0);
-  const [phase, setPhase] = useState<"in" | "out">("in");
-
-  useEffect(() => {
-    const outTimer = setTimeout(() => {
-      setPhase("out");
-    }, CYCLE_DURATION - 500);
-
-    const switchTimer = setTimeout(() => {
-      setSetIndex((prev) => (prev + 1) % SKILL_SETS.length);
-      setTrigger((prev) => prev + 1);
-      setPhase("in");
-    }, CYCLE_DURATION);
-
-    return () => {
-      clearTimeout(outTimer);
-      clearTimeout(switchTimer);
-    };
-  }, [trigger]);
-
-  const currentSet = SKILL_SETS[setIndex];
-
   return (
-    <div className="techstack">
-      <h2>TechStack &amp; Skills</h2>
-      <div className={`skills-matrix ${phase === "out" ? "skills-out" : "skills-in"}`}>
-        {currentSet.map((skill, i) => (
-          <SkillItem
-            key={`${setIndex}-${skill}`}
-            name={skill}
-            index={i}
-            trigger={trigger}
-          />
-        ))}
+    <section className="techstack-section" id="techstack">
+      <div className="section-container">
+        <div className="section-header-tag">05 / SYSTEMS &amp; MLOPS MATRIX</div>
+
+        <div className="techstack-header">
+          <h2 className="techstack-title">
+            Technical Stack &amp; <span className="text-accent">Tooling Spectrum</span>
+          </h2>
+          <p className="techstack-subtitle">
+            An inventory of the languages, frameworks, data warehouses, and MLOps tooling I use to deploy production-ready systems.
+          </p>
+        </div>
+
+        <div className="techstack-grid">
+          {skillCategories.map((cat, idx) => (
+            <div className="tech-category-card" key={idx}>
+              <div className="cat-top">
+                <span className="cat-tag">{cat.tag}</span>
+                <h3 className="cat-title">{cat.title}</h3>
+              </div>
+
+              <div className="cat-skills-list">
+                {cat.skills.map((skill, sIdx) => (
+                  <div className="cat-skill-item" key={sIdx}>
+                    <div className="skill-name-row">
+                      <span className="skill-item-name">{skill.name}</span>
+                      <span className="skill-item-note">{skill.note}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Certifications Strip */}
+        <div className="certifications-box">
+          <div className="cert-header">
+            <MdWorkspacePremium className="cert-icon" />
+            <span className="cert-title">VERIFIED CERTIFICATIONS &amp; HONORS</span>
+          </div>
+
+          <div className="cert-grid">
+            {certifications.map((cert, idx) => (
+              <div className="cert-item" key={idx}>
+                <span className="cert-bullet">◈</span>
+                <span className="cert-text">{cert}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,219 +1,102 @@
-import { useEffect, useRef } from "react";
+import { MdAutoAwesome, MdCode, MdStorage } from "react-icons/md";
 import "./styles/WhatIDo.css";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+const pillars = [
+  {
+    icon: <MdAutoAwesome />,
+    tag: "PILLAR 01",
+    title: "Applied AI & Agentic Systems",
+    summary:
+      "Engineering production-grade LLM applications, centralized semantic layers, and autonomous text-to-SQL harnesses that deliver reliable intelligence at scale.",
+    deliverables: [
+      "Text-to-SQL data harnesses with agentic routing & custom MCP servers",
+      "Centralized Semantic Layer for consistent metric calculation across tools",
+      "Cost-optimized LLM pipelines (<$100 per 15k user sessions on amber Ocean)",
+      "Communication transcript NLP & QA auditing (amber Prism)",
+      "Multimodal prompt engineering & RLHF evaluations (MMMU benchmark at Turing)",
+    ],
+    tech: ["Ollama", "Claude API", "Gemini", "Python", "Custom MCP", "n8n", "RAG & Evals"],
+  },
+  {
+    icon: <MdCode />,
+    tag: "PILLAR 02",
+    title: "Production Software & Full-Stack",
+    summary:
+      "End-to-end product engineering from database schemas and streaming APIs to polished web interfaces and high-performance native desktop software.",
+    deliverables: [
+      "Modern full-stack web applications (Next.js 15/16, React, TypeScript)",
+      "In-browser ML inference & audio tools (TensorFlow.js, ONNX Runtime Web)",
+      "Native desktop C++17 & JUCE 8 audio DSP software (PluckMaster, PluckBoard)",
+      "In-house automated billing management & enterprise IAM (5X Data)",
+      "Performance optimization & sub-second load times",
+    ],
+    tech: ["Next.js", "React", "TypeScript", "C++17 / JUCE 8", "Node.js", "REST APIs", "Web Audio"],
+  },
+  {
+    icon: <MdStorage />,
+    tag: "PILLAR 03",
+    title: "Data Systems & MLOps Infrastructure",
+    summary:
+      "High-throughput ELT pipelines, warehouse cluster optimization, and robust telemetry that guarantee data reliability and sub-second querying.",
+    deliverables: [
+      "Warehouse downsizing: cut 2 Redshift nodes, saving $600/month at amber",
+      "BI migration: moved Tableau to self-hosted Superset, saving $10,000+/year",
+      "Reduced average query runtimes by 30 mins via DMS & Metabase caching",
+      "Daily automated ELT pipelines (APIs, scrapers, S3, ECR, EC2, Jenkins)",
+      "Self-healing telemetry & alerting for zero-downtime operation",
+    ],
+    tech: ["AWS Redshift", "Snowflake", "PostgreSQL", "Apache Superset", "AWS S3 / ECR / EC2", "Docker", "Jenkins"],
+  },
+];
 
 const WhatIDo = () => {
-  const containerRef = useRef<(HTMLDivElement | null)[]>([]);
-  const setRef = (el: HTMLDivElement | null, index: number) => {
-    containerRef.current[index] = el;
-  };
-  useEffect(() => {
-    if (ScrollTrigger.isTouch) {
-      containerRef.current.forEach((container) => {
-        if (container) {
-          container.classList.remove("what-noTouch");
-          container.addEventListener("click", () => handleClick(container));
-        }
-      });
-    }
-    return () => {
-      containerRef.current.forEach((container) => {
-        if (container) {
-          container.removeEventListener("click", () => handleClick(container));
-        }
-      });
-    };
-  }, []);
   return (
-    <div className="whatIDO">
-      <div className="what-box">
-        <h2 className="title">
-          W<span className="hat-h2">HAT</span>
-          <div>
-            I<span className="do-h2"> DO</span>
-          </div>
-        </h2>
-      </div>
-      <div className="what-box">
-        <div className="what-box-in">
-          <div className="what-border2">
-            <svg width="100%">
-              <line
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="100%"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="7,7"
-              />
-              <line
-                x1="100%"
-                y1="0"
-                x2="100%"
-                y2="100%"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="7,7"
-              />
-            </svg>
-          </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 0)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="0"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
+    <section className="pillars-section" id="pillars">
+      <div className="section-container">
+        <div className="section-header-tag">02 / CORE CAPABILITIES</div>
 
-            <div className="what-content-in">
-              <h3>DATA ENGINEERING &amp; BI</h3>
-              <h4>ELT pipelines, warehouses, dashboards</h4>
-              <p>
-                Cooking intel out of raw data — ELT pipelines into Snowflake/Redshift,
-                semantic layers, and dashboards stakeholders actually trust. ELT &gt;&gt;&gt; ETL.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">SQL</div>
-                <div className="what-tags">Python</div>
-                <div className="what-tags">Snowflake</div>
-                <div className="what-tags">Redshift</div>
-                <div className="what-tags">Metabase</div>
-                <div className="what-tags">Looker</div>
-                <div className="what-tags">Tableau</div>
-                <div className="what-tags">Superset</div>
+        <div className="pillars-header">
+          <h2 className="pillars-title">
+            Systems Architecture &amp; <span className="text-accent">Applied Engineering</span>
+          </h2>
+          <p className="pillars-subtitle">
+            I don't just write scripts or train toys—I architect, ship, and operate production-grade software that generates measurable business leverage.
+          </p>
+        </div>
+
+        <div className="pillars-grid">
+          {pillars.map((pillar, idx) => (
+            <div className="pillar-card" key={idx}>
+              <div className="pillar-top">
+                <div className="pillar-icon">{pillar.icon}</div>
+                <span className="pillar-tag">{pillar.tag}</span>
               </div>
-              <div className="what-arrow"></div>
-            </div>
-          </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 1)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="0"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
-            <div className="what-content-in">
-              <h3>PRODUCT ENGINEERING</h3>
-              <h4>Full-stack builds, APIs, shipping fast</h4>
-              <p>
-                Building production-ready products end-to-end — frontend,
-                backend, data, and infra. From prototype to shipped feature
-                without waiting on a hand-off.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">React</div>
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Python</div>
-                <div className="what-tags">REST APIs</div>
-                <div className="what-tags">PostgreSQL</div>
-                <div className="what-tags">Vercel &amp; AWS</div>
+
+              <h3 className="pillar-card-title">{pillar.title}</h3>
+              <p className="pillar-summary">{pillar.summary}</p>
+
+              <div className="pillar-deliverables-wrap">
+                <span className="deliverables-heading">Core Systems Shipped</span>
+                <ul className="pillar-deliverables">
+                  {pillar.deliverables.map((item, itemIdx) => (
+                    <li key={itemIdx}>{item}</li>
+                  ))}
+                </ul>
               </div>
-              <div className="what-arrow"></div>
-            </div>
-          </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 2)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
-            <div className="what-content-in">
-              <h3>AI &amp; AUTOMATION</h3>
-              <h4>LLM agents, agentic workflows, integrations</h4>
-              <p>
-                Designing and shipping AI automation — agentic flows in n8n,
-                LLM integrations, and RAG pipelines that move models from
-                demo to production.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">Claude</div>
-                <div className="what-tags">Gemini</div>
-                <div className="what-tags">Minimax</div>
-                <div className="what-tags">n8n</div>
-                <div className="what-tags">RAG &amp; retrieval</div>
-                <div className="what-tags">Evals</div>
-                <div className="what-tags">API integration</div>
+
+              <div className="pillar-tech-wrap">
+                {pillar.tech.map((tool, toolIdx) => (
+                  <span className="tech-chip" key={toolIdx}>
+                    {tool}
+                  </span>
+                ))}
               </div>
-              <div className="what-arrow"></div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default WhatIDo;
-
-function handleClick(container: HTMLDivElement) {
-  container.classList.toggle("what-content-active");
-  container.classList.remove("what-sibling");
-  if (container.parentElement) {
-    const siblings = Array.from(container.parentElement.children);
-
-    siblings.forEach((sibling) => {
-      if (sibling !== container) {
-        sibling.classList.remove("what-content-active");
-        sibling.classList.toggle("what-sibling");
-      }
-    });
-  }
-}
