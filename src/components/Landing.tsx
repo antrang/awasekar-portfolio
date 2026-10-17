@@ -91,8 +91,8 @@ const Landing = () => {
             <div className="proof-label">User sessions on amber Ocean AI</div>
           </div>
           <div className="proof-item">
-            <div className="proof-metric">$10k+/yr</div>
-            <div className="proof-label">Saved via Superset migration</div>
+            <div className="proof-metric">$40k+/yr</div>
+            <div className="proof-label">Saved via Superset migration (120 seats)</div>
           </div>
           <div className="proof-item">
             <div className="proof-metric">BITS Pilani</div>

@@ -40,7 +40,7 @@ const pillars = [
       "High-throughput ELT pipelines, warehouse cluster optimization, and robust telemetry that guarantee data reliability and sub-second querying.",
     deliverables: [
       "Warehouse downsizing: cut 2 Redshift nodes, saving $600/month at amber",
-      "BI migration: moved Tableau to self-hosted Superset, saving $10,000+/year",
+      "BI migration: replaced 120 Tableau Cloud seats with self-hosted Superset, saving $40,000+/year",
       "Reduced average query runtimes by 30 mins via DMS & Metabase caching",
       "Daily automated ELT pipelines (APIs, scrapers, S3, ECR, EC2, Jenkins)",
       "Self-healing telemetry & alerting for zero-downtime operation",

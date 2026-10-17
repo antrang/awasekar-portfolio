@@ -99,6 +99,11 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
+                <a data-href="#commits" href="#commits">
+                  <HoverLinks text="COMMITS" />
+                </a>
+              </li>
+              <li>
                 <a data-href="#contact" href="#contact">
                   <HoverLinks text="CONTACT" />
                 </a>

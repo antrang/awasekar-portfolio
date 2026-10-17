@@ -41,7 +41,7 @@ const skillCategories: SkillCategory[] = [
     tag: "DATA PLATFORMS",
     skills: [
       { name: "AWS Redshift", note: "Node downsizing (-2 nodes, -$600/mo)" },
-      { name: "Apache Superset", note: "Self-hosted, $10k+/yr saved" },
+      { name: "Apache Superset", note: "Self-hosted, $40k+/yr saved (120 seats)" },
       { name: "Snowflake", note: "Warehouse modeling & transforms" },
       { name: "PostgreSQL", note: "Production relational data" },
       { name: "Google BigQuery", note: "Serverless analytical queries" },

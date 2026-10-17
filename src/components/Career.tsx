@@ -32,7 +32,7 @@ const careerHistory: CareerItem[] = [
       "Developed amber Radar: revenue-generating predictive market intelligence platform using ML forecasting & Next.js",
       "Built amber Prism: communication transcript NLP engine automating 100% of sales QA audits",
       "Trimmed Redshift cluster costs by $600/month (freed 2 nodes) & reduced avg query time by 30 minutes",
-      "Migrated Tableau dashboards to self-hosted Apache Superset, saving $10,000+/year with 25% faster rendering",
+      "Migrated 120-seat Tableau Cloud deployment to self-hosted Apache Superset, saving $40,000+/year with 25% faster rendering",
       "Automated multi-channel reporting using Python, Ollama LLM insights, and n8n workflow triggers",
     ],
     takeaway:

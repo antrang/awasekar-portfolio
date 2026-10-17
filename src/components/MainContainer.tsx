@@ -12,6 +12,7 @@ import Work from "./Work";
 import setSplitText from "./utils/splitText";
 
 const TechStack = lazy(() => import("./TechStack"));
+const CommitChart = lazy(() => import("./CommitChart"));
 
 const MainContainer = () => {
   useEffect(() => {
@@ -45,6 +46,9 @@ const MainContainer = () => {
             <Career />
             <Suspense fallback={<div className="section-container" style={{ textAlign: "center", color: "var(--textMuted)" }}>Loading Systems Matrix...</div>}>
               <TechStack />
+            </Suspense>
+            <Suspense fallback={<div className="section-container" style={{ textAlign: "center", color: "var(--textMuted)" }}>Loading Code Telemetry...</div>}>
+              <CommitChart />
             </Suspense>
             <Contact />
           </main>

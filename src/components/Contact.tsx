@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <footer className="contact-section" id="contact">
       <div className="section-container">
-        <div className="section-header-tag">06 / GET IN TOUCH</div>
+        <div className="section-header-tag">07 / GET IN TOUCH</div>
         <h2 className="sr-only">Contact Channels, Founder Advisory &amp; Recruiting Inquiries</h2>
 
         <div className="contact-grid">

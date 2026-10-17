@@ -44,7 +44,7 @@ const About = () => {
                   <strong>Model Evaluation &amp; RLHF:</strong> 100+ multimodal annotations for the MMMU benchmark, AI-vs-human detection models at Turing.
                 </li>
                 <li>
-                  <strong>Cost &amp; Warehouse Scaling:</strong> Cut Redshift cluster costs by $600/month (-2 nodes), cut query times by 30 mins, and saved $10,000+/yr migrating to self-hosted Superset.
+                  <strong>Cost &amp; Warehouse Scaling:</strong> Cut Redshift cluster costs by $600/month (-2 nodes), cut query times by 30 mins, and saved $40,000+/yr migrating 120 seats from Tableau Cloud to self-hosted Apache Superset.
                 </li>
                 <li>
                   <strong>Engineering Scope:</strong> Python, TypeScript, SQL, Next.js, and native C++17 audio DSP.
