@@ -14,8 +14,7 @@ interface DayData {
 interface HoveredCell {
   date: string;
   count: number;
-  x: number;
-  y: number;
+  level: number;
 }
 
 const MONTH_NAMES = [
@@ -108,12 +107,10 @@ export const CommitChart: React.FC = () => {
 
     setHoveredCell((prev) => {
       if (prev?.date === day.date) return prev;
-      const rect = target.getBoundingClientRect();
       return {
         date: day.date,
         count: day.count,
-        x: rect.left + rect.width / 2,
-        y: rect.top,
+        level: day.level,
       };
     });
   };
@@ -216,14 +213,26 @@ export const CommitChart: React.FC = () => {
               <strong>{summary.totalCommits.toLocaleString()} commits</strong> in the last 12 months
             </div>
 
-            <div className="heatmap-legend">
-              <span className="legend-label">Less</span>
-              <span className="legend-cell level-0"></span>
-              <span className="legend-cell level-1"></span>
-              <span className="legend-cell level-2"></span>
-              <span className="legend-cell level-3"></span>
-              <span className="legend-cell level-4"></span>
-              <span className="legend-label">More</span>
+            {/* Static Telemetry Inspector Badge */}
+            <div
+              className={`heatmap-status-badge ${hoveredCell ? "active" : "idle"}`}
+              aria-live="polite"
+            >
+              {hoveredCell ? (
+                <>
+                  <span className={`status-indicator level-${hoveredCell.level}`} />
+                  <span className="status-commits">
+                    <strong>{hoveredCell.count}</strong> {hoveredCell.count === 1 ? "commit" : "commits"}
+                  </span>
+                  <span className="status-divider">·</span>
+                  <span className="status-date">{formatDisplayDate(hoveredCell.date)}</span>
+                </>
+              ) : (
+                <>
+                  <span className="status-indicator idle-dot" />
+                  <span className="status-idle-text">Hover a day to inspect activity</span>
+                </>
+              )}
             </div>
           </div>
 
@@ -288,20 +297,18 @@ export const CommitChart: React.FC = () => {
             </div>
           </div>
 
-          {/* Interactive Floating Tooltip */}
-          {hoveredCell && (
-            <div
-              className="heatmap-tooltip"
-              style={{
-                left: `${hoveredCell.x}px`,
-                top: `${hoveredCell.y - 12}px`,
-              }}
-            >
-              <div className="tooltip-title">
-                <strong>{hoveredCell.count} {hoveredCell.count === 1 ? "commit" : "commits"}</strong> on {formatDisplayDate(hoveredCell.date)}
-              </div>
+          {/* Heatmap Footer Legend Bar */}
+          <div className="heatmap-grid-footer">
+            <div className="heatmap-legend">
+              <span className="legend-label">Less</span>
+              <span className="legend-cell level-0"></span>
+              <span className="legend-cell level-1"></span>
+              <span className="legend-cell level-2"></span>
+              <span className="legend-cell level-3"></span>
+              <span className="legend-cell level-4"></span>
+              <span className="legend-label">More</span>
             </div>
-          )}
+          </div>
 
           {/* Multi-Profile Distribution Disclaimer Note */}
           <div className="heatmap-footer-note">
