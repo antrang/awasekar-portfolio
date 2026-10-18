@@ -6,85 +6,105 @@ const Cursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Disable custom cursor on touch/mobile devices
+    if (window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 900) {
+      return;
+    }
+
+    const cursor = cursorRef.current;
+    if (!cursor) return;
+
     let hover = false;
-    const cursor = cursorRef.current!;
-    const mousePos = { x: 0, y: 0 };
-    const cursorPos = { x: 0, y: 0 };
+    const mousePos = { x: -100, y: -100 };
+    const cursorPos = { x: -100, y: -100 };
+    let rafId: number | null = null;
+    let isRunning = false;
+
+    const setPosition = gsap.quickSetter(cursor, "css");
+
+    function tick() {
+      if (!hover) {
+        const delay = 5;
+        const dx = mousePos.x - cursorPos.x;
+        const dy = mousePos.y - cursorPos.y;
+
+        if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+          cursorPos.x += dx / delay;
+          cursorPos.y += dy / delay;
+          setPosition({ x: cursorPos.x, y: cursorPos.y });
+          rafId = requestAnimationFrame(tick);
+        } else {
+          // Idle: mouse has stopped, stop RAF loop to conserve 100% CPU
+          cursorPos.x = mousePos.x;
+          cursorPos.y = mousePos.y;
+          setPosition({ x: cursorPos.x, y: cursorPos.y });
+          isRunning = false;
+          rafId = null;
+        }
+      } else {
+        rafId = requestAnimationFrame(tick);
+      }
+    }
 
     const onMouseMove = (e: MouseEvent) => {
       mousePos.x = e.clientX;
       mousePos.y = e.clientY;
-    };
-    document.addEventListener("mousemove", onMouseMove);
 
-    let rafId: number;
-    function loop() {
-      if (!hover) {
-        const delay = 6;
-        cursorPos.x += (mousePos.x - cursorPos.x) / delay;
-        cursorPos.y += (mousePos.y - cursorPos.y) / delay;
-        gsap.to(cursor, { x: cursorPos.x, y: cursorPos.y, duration: 0.1, overwrite: "auto" });
-      } else {
-        cursorPos.x = mousePos.x;
-        cursorPos.y = mousePos.y;
+      if (!isRunning && !hover) {
+        isRunning = true;
+        rafId = requestAnimationFrame(tick);
       }
-      rafId = requestAnimationFrame(loop);
-    }
-    rafId = requestAnimationFrame(loop);
-
-    const socialEl = document.querySelector('[data-cursor="icons"]') as HTMLElement | null;
-    const onSocialEnter = () => {
-      if (!socialEl) return;
-      const rect = socialEl.getBoundingClientRect();
-      cursor.classList.add("cursor-icons");
-      cursor.style.setProperty("--cursorW", `${rect.width}px`);
-      cursor.style.setProperty("--cursorH", `${rect.height}px`);
-      gsap.to(cursor, {
-        x: rect.left,
-        y: rect.top,
-        duration: 0.2,
-        ease: "power2.out",
-        overwrite: "auto",
-      });
-      hover = true;
     };
 
-    const onSocialLeave = () => {
-      cursor.classList.remove("cursor-icons");
-      cursor.style.removeProperty("--cursorW");
-      cursor.style.removeProperty("--cursorH");
-      hover = false;
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+
+      const iconsEl = target.closest('[data-cursor="icons"]') as HTMLElement | null;
+      if (iconsEl) {
+        const rect = iconsEl.getBoundingClientRect();
+        cursor.classList.add("cursor-icons");
+        cursor.style.setProperty("--cursorW", `${rect.width}px`);
+        cursor.style.setProperty("--cursorH", `${rect.height}px`);
+        gsap.to(cursor, {
+          x: rect.left,
+          y: rect.top,
+          duration: 0.2,
+          ease: "power2.out",
+          overwrite: "auto",
+        });
+        hover = true;
+        return;
+      }
+
+      if (hover) {
+        cursor.classList.remove("cursor-icons");
+        cursor.style.removeProperty("--cursorW");
+        cursor.style.removeProperty("--cursorH");
+        hover = false;
+      }
+
+      const disableEl = target.closest('[data-cursor="disable"]');
+      if (disableEl) {
+        cursor.classList.add("cursor-disable");
+      } else {
+        cursor.classList.remove("cursor-disable");
+      }
     };
 
-    if (socialEl) {
-      socialEl.addEventListener("mouseenter", onSocialEnter);
-      socialEl.addEventListener("mouseleave", onSocialLeave);
-    }
-
-    const disableEls = document.querySelectorAll('[data-cursor="disable"]');
-    const onDisableEnter = () => cursor.classList.add("cursor-disable");
-    const onDisableLeave = () => cursor.classList.remove("cursor-disable");
-
-    disableEls.forEach((el) => {
-      el.addEventListener("mouseenter", onDisableEnter);
-      el.addEventListener("mouseleave", onDisableLeave);
-    });
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
+    document.addEventListener("mouseover", handleMouseOver, { passive: true });
 
     return () => {
-      document.removeEventListener("mousemove", onMouseMove);
-      cancelAnimationFrame(rafId);
-      if (socialEl) {
-        socialEl.removeEventListener("mouseenter", onSocialEnter);
-        socialEl.removeEventListener("mouseleave", onSocialLeave);
+      window.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mouseover", handleMouseOver);
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
       }
-      disableEls.forEach((el) => {
-        el.removeEventListener("mouseenter", onDisableEnter);
-        el.removeEventListener("mouseleave", onDisableLeave);
-      });
     };
   }, []);
 
-  return <div className="cursor-main" ref={cursorRef}></div>;
+  return <div className="cursor-main" ref={cursorRef} aria-hidden="true" />;
 };
 
 export default Cursor;

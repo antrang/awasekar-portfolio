@@ -46,6 +46,9 @@ const MatrixBackground = () => {
 
     let mouseX = -9999;
     let mouseY = -9999;
+    let pendingMouseX = -9999;
+    let pendingMouseY = -9999;
+    let mouseUpdateScheduled = false;
 
     const handleResize = () => {
       w = canvas.width = window.innerWidth;
@@ -53,31 +56,35 @@ const MatrixBackground = () => {
     };
 
     const handleMouseMove = (e: MouseEvent) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      container.style.setProperty("--mx", `${e.clientX}px`);
-      container.style.setProperty("--my", `${e.clientY}px`);
+      pendingMouseX = e.clientX;
+      pendingMouseY = e.clientY;
+
+      if (!mouseUpdateScheduled) {
+        mouseUpdateScheduled = true;
+        requestAnimationFrame(() => {
+          mouseX = pendingMouseX;
+          mouseY = pendingMouseY;
+          container.style.setProperty("--mx", `${pendingMouseX}px`);
+          container.style.setProperty("--my", `${pendingMouseY}px`);
+          mouseUpdateScheduled = false;
+        });
+      }
     };
 
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("resize", handleResize, { passive: true });
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
 
     let animationFrameId: number;
+    let isPaused = false;
 
     const render = () => {
+      if (isPaused) return;
+
       ctx.clearRect(0, 0, w, h);
 
-      // Draw subtle background grid points
-      const gridSize = 48;
-      ctx.fillStyle = "rgba(255, 255, 255, 0.02)";
-      for (let x = 0; x < w; x += gridSize) {
-        for (let y = 0; y < h; y += gridSize) {
-          ctx.fillRect(x, y, 1, 1);
-        }
-      }
-
-      // Draw and connect particles
-      for (let i = 0; i < particles.length; i++) {
+      // Draw and connect particles (static grid is handled natively by CSS background)
+      const count = particles.length;
+      for (let i = 0; i < count; i++) {
         const p = particles[i];
 
         if (!prefersReducedMotion) {
@@ -93,8 +100,8 @@ const MatrixBackground = () => {
         // Distance to cursor
         const dx = p.x - mouseX;
         const dy = p.y - mouseY;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        const isNearCursor = dist < 140;
+        const distSq = dx * dx + dy * dy;
+        const isNearCursor = distSq < 19600; // 140^2
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
@@ -103,15 +110,19 @@ const MatrixBackground = () => {
           : `rgba(148, 163, 184, ${p.alpha})`;
         ctx.fill();
 
-        // Connect nearby particles
-        for (let j = i + 1; j < particles.length; j++) {
+        // Connect nearby particles (using distSq to avoid expensive Math.hypot/Math.sqrt when out of range)
+        for (let j = i + 1; j < count; j++) {
           const p2 = particles[j];
-          const dist2 = Math.hypot(p.x - p2.x, p.y - p2.y);
-          if (dist2 < 100) {
+          const pdx = p.x - p2.x;
+          const pdy = p.y - p2.y;
+          const pdistSq = pdx * pdx + pdy * pdy;
+
+          if (pdistSq < 10000) { // 100^2
+            const dist = Math.sqrt(pdistSq);
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            const lineAlpha = (1 - dist2 / 100) * 0.12;
+            const lineAlpha = (1 - dist / 100) * 0.12;
             ctx.strokeStyle = `rgba(45, 212, 191, ${lineAlpha})`;
             ctx.lineWidth = 0.6;
             ctx.stroke();
@@ -122,10 +133,22 @@ const MatrixBackground = () => {
       animationFrameId = requestAnimationFrame(render);
     };
 
-    render();
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        isPaused = true;
+        cancelAnimationFrame(animationFrameId);
+      } else {
+        isPaused = false;
+        animationFrameId = requestAnimationFrame(render);
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    animationFrameId = requestAnimationFrame(render);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", handleMouseMove);
     };

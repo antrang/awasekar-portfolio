@@ -9,25 +9,14 @@ import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
-import setSplitText from "./utils/splitText";
+import { initialFX } from "./utils/initialFX";
 
 const TechStack = lazy(() => import("./TechStack"));
 const CommitChart = lazy(() => import("./CommitChart"));
 
 const MainContainer = () => {
   useEffect(() => {
-    import("./utils/initialFX").then((m) => m.initialFX());
-  }, []);
-
-  useEffect(() => {
-    const resizeHandler = () => {
-      setSplitText();
-    };
-    resizeHandler();
-    window.addEventListener("resize", resizeHandler);
-    return () => {
-      window.removeEventListener("resize", resizeHandler);
-    };
+    initialFX();
   }, []);
 
   return (
@@ -36,24 +25,20 @@ const MainContainer = () => {
       <Cursor />
       <Navbar />
       <SocialIcons />
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
-          <main className="container-main">
-            <Landing />
-            <About />
-            <WhatIDo />
-            <Work />
-            <Career />
-            <Suspense fallback={<div className="section-container" style={{ textAlign: "center", color: "var(--textMuted)" }}>Loading Systems Matrix...</div>}>
-              <TechStack />
-            </Suspense>
-            <Suspense fallback={<div className="section-container" style={{ textAlign: "center", color: "var(--textMuted)" }}>Loading Code Telemetry...</div>}>
-              <CommitChart />
-            </Suspense>
-            <Contact />
-          </main>
-        </div>
-      </div>
+      <main className="container-main">
+        <Landing />
+        <About />
+        <WhatIDo />
+        <Work />
+        <Career />
+        <Suspense fallback={<div className="section-container" style={{ textAlign: "center", color: "var(--textMuted)" }}>Loading Systems Matrix...</div>}>
+          <TechStack />
+        </Suspense>
+        <Suspense fallback={<div className="section-container" style={{ textAlign: "center", color: "var(--textMuted)" }}>Loading Code Telemetry...</div>}>
+          <CommitChart />
+        </Suspense>
+        <Contact />
+      </main>
     </div>
   );
 };

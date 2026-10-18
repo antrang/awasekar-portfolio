@@ -250,6 +250,8 @@ export const CommitChart: React.FC = () => {
                         return (
                           <div
                             key={dIdx}
+                            role="gridcell"
+                            aria-label={`${day.count} commits on ${day.date}`}
                             className={`calendar-cell level-${day.level}`}
                             onMouseEnter={(e) => handleCellMouseEnter(e, day)}
                             onMouseLeave={handleCellMouseLeave}

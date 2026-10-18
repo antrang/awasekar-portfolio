@@ -6,6 +6,8 @@
   --mx: -9999px;
   --my: -9999px;
   overflow: hidden;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 /* Cursor-driven radial spotlight */

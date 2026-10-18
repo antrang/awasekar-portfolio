@@ -1,55 +1,23 @@
-import { useEffect } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React from "react";
 import HoverLinks from "./HoverLinks";
-import { gsap } from "gsap";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
 import "./styles/Navbar.css";
 
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
-let smoother: ScrollSmoother;
-
 const Navbar = () => {
-  useEffect(() => {
-    smoother = ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1.5,
-      speed: 1.5,
-      effects: true,
-      autoResize: true,
-      ignoreMobileResize: true,
-    });
-
-    smoother.scrollTop(0);
-
-    const links = document.querySelectorAll(".header ul a");
-    links.forEach((elem) => {
-      const element = elem as HTMLAnchorElement;
-      element.addEventListener("click", (e) => {
-        const section = element.getAttribute("data-href");
-        if (section && window.innerWidth > 1024) {
-          e.preventDefault();
-          smoother.scrollTo(section, true, "top top");
-        }
-      });
-    });
-
-    const handleResize = () => {
-      ScrollSmoother.refresh(true);
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, "", href);
+    }
+  };
 
   return (
     <>
       <header className="header" role="banner">
         <div className="navbar-container">
           <div className="navbar-left">
-            <a href="/#" className="navbar-brand" data-cursor="disable">
+            <a href="/#" className="navbar-brand" data-cursor="disable" aria-label="Sourabh Awasekar Home">
               <span className="brand-monogram">AW</span>
               <span className="brand-dot"></span>
             </a>
@@ -79,32 +47,32 @@ const Navbar = () => {
           <nav className="navbar-nav" aria-label="Main Navigation">
             <ul>
               <li>
-                <a data-href="#about" href="#about">
+                <a href="#about" onClick={(e) => handleNavClick(e, "#about")}>
                   <HoverLinks text="ABOUT" />
                 </a>
               </li>
               <li>
-                <a data-href="#pillars" href="#pillars">
+                <a href="#pillars" onClick={(e) => handleNavClick(e, "#pillars")}>
                   <HoverLinks text="PILLARS" />
                 </a>
               </li>
               <li>
-                <a data-href="#work" href="#work">
+                <a href="#work" onClick={(e) => handleNavClick(e, "#work")}>
                   <HoverLinks text="SYSTEMS" />
                 </a>
               </li>
               <li>
-                <a data-href="#career" href="#career">
+                <a href="#career" onClick={(e) => handleNavClick(e, "#career")}>
                   <HoverLinks text="CAREER" />
                 </a>
               </li>
               <li>
-                <a data-href="#commits" href="#commits">
+                <a href="#commits" onClick={(e) => handleNavClick(e, "#commits")}>
                   <HoverLinks text="COMMITS" />
                 </a>
               </li>
               <li>
-                <a data-href="#contact" href="#contact">
+                <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
                   <HoverLinks text="CONTACT" />
                 </a>
               </li>

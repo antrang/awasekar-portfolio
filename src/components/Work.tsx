@@ -339,7 +339,10 @@ const FlagshipCard = ({ project }: { project: Project }) => {
               <img
                 src={currentImg.src}
                 alt={`${project.title} — ${currentImg.label}`}
+                width={800}
+                height={500}
                 loading="lazy"
+                decoding="async"
                 className="media-img"
               />
             </div>

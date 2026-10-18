@@ -71,6 +71,7 @@ const Landing = () => {
                 className="landing-photo"
                 loading="eager"
                 decoding="async"
+                fetchPriority="high"
               />
               <div className="photo-caption">
                 <span className="photo-tag">Pune, India</span>

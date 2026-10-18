@@ -1,18 +1,12 @@
-import { lazy, Suspense } from "react";
-import "./App.css";
-
-const MainContainer = lazy(() => import("./components/MainContainer"));
+import MainContainer from "./components/MainContainer";
 import { LoadingProvider } from "./context/LoadingProvider";
+import "./App.css";
 
 const App = () => {
   return (
-    <>
-      <LoadingProvider>
-        <Suspense>
-          <MainContainer />
-        </Suspense>
-      </LoadingProvider>
-    </>
+    <LoadingProvider>
+      <MainContainer />
+    </LoadingProvider>
   );
 };
 
