@@ -30,7 +30,11 @@ const MatrixBackground = () => {
     ).matches;
 
     // Generate gentle particle constellation
-    const particleCount = Math.floor(Math.min(w, 1400) / 24);
+    // Cap density on mobile / low-power devices to keep the O(n²) connection loop cheap
+    const isMobile = window.matchMedia("(pointer: coarse)").matches || w < 768;
+    const densityDivisor = isMobile ? 48 : 24;
+    const maxParticles = isMobile ? 24 : 58;
+    const particleCount = Math.min(Math.floor(Math.min(w, 1400) / densityDivisor), maxParticles);
     const particles: Particle[] = [];
 
     for (let i = 0; i < particleCount; i++) {

@@ -30,7 +30,7 @@ export const CommitChart: React.FC = () => {
   const { summary, calendarDays } = gitData;
 
   // Group into 53 weeks
-  const { weeks, monthLabels } = useMemo(() => {
+  const { weeks, monthLabels, dayByDate } = useMemo(() => {
     const rawDays = calendarDays as DayData[];
     const weekCols: (DayData | null)[][] = [];
     let currentWeek: (DayData | null)[] = [];
@@ -84,13 +84,29 @@ export const CommitChart: React.FC = () => {
       }
     });
 
-    return { weeks: weekCols, monthLabels: labels };
+    const dayMap = new Map<string, DayData>();
+    for (const d of rawDays) {
+      dayMap.set(d.date, d);
+    }
+
+    return { weeks: weekCols, monthLabels: labels, dayByDate: dayMap };
   }, [calendarDays]);
 
-  const handleCellMouseEnter = (e: React.MouseEvent<HTMLDivElement>, day: DayData | null) => {
-    if (!day) return;
-    const rect = e.currentTarget.getBoundingClientRect();
+  const handleGridMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = (e.target as HTMLElement).closest("[data-date]") as HTMLElement | null;
+    if (!target) {
+      setHoveredCell(null);
+      return;
+    }
 
+    const date = target.dataset.date;
+    const day = date ? dayByDate.get(date) : undefined;
+    if (!day) {
+      setHoveredCell(null);
+      return;
+    }
+
+    const rect = target.getBoundingClientRect();
     setHoveredCell({
       date: day.date,
       count: day.count,
@@ -99,7 +115,7 @@ export const CommitChart: React.FC = () => {
     });
   };
 
-  const handleCellMouseLeave = () => {
+  const handleGridMouseLeave = () => {
     setHoveredCell(null);
   };
 
@@ -240,7 +256,11 @@ export const CommitChart: React.FC = () => {
                 </div>
 
                 {/* 53 Columns */}
-                <div className="weeks-container">
+                <div
+                  className="weeks-container"
+                  onMouseMove={handleGridMouseMove}
+                  onMouseLeave={handleGridMouseLeave}
+                >
                   {weeks.map((week, wIdx) => (
                     <div className="week-column" key={wIdx}>
                       {week.map((day, dIdx) => {
@@ -253,8 +273,6 @@ export const CommitChart: React.FC = () => {
                             role="gridcell"
                             aria-label={`${day.count} commits on ${day.date}`}
                             className={`calendar-cell level-${day.level}`}
-                            onMouseEnter={(e) => handleCellMouseEnter(e, day)}
-                            onMouseLeave={handleCellMouseLeave}
                             data-date={day.date}
                             data-count={day.count}
                           />

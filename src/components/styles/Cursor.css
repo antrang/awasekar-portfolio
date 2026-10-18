@@ -23,7 +23,8 @@
   background-color: rgba(45, 212, 191, 0.16) !important;
   box-shadow: 0 0 28px 4px rgba(45, 212, 191, 0.4) !important;
   mix-blend-mode: normal !important;
-  transition: width 0.2s ease-out, height 0.2s ease-out, border-radius 0.2s ease-out, background-color 0.2s ease-out !important;
+  transition: transform 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out,
+    border-radius 0.2s ease-out, background-color 0.2s ease-out !important;
 }
 .cursor-disable {
   --size: 0px;

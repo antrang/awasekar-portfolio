@@ -92,17 +92,6 @@ main {
   position: relative;
 }
 
-.split-line {
-  overflow: hidden;
-}
-
-.split-h2 {
-  overflow: hidden;
-  display: flex;
-  white-space: nowrap;
-  flex-wrap: nowrap;
-}
-
 @media screen and (min-width: 1024px) {
   :root {
     --cWidth: 88%;
@@ -117,6 +106,22 @@ main {
     padding: 60px 0;
     width: 92%;
   }
+}
+
+/* Entrance animation: replaces GSAP fade-in on load */
+@keyframes fx-fade-in-up {
+  from {
+    opacity: 0.85;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fx-fade-in-up {
+  animation: fx-fade-in-up 0.6s cubic-bezier(0.33, 1, 0.68, 1) both;
 }
 
 /* Accessibility: Screen-reader-only utility for semantic heading outlines */

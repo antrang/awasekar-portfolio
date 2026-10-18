@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import "./styles/Cursor.css";
-import gsap from "gsap";
 
 const Cursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -20,7 +19,9 @@ const Cursor = () => {
     let rafId: number | null = null;
     let isRunning = false;
 
-    const setPosition = gsap.quickSetter(cursor, "css");
+    const setPosition = (x: number, y: number) => {
+      cursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    };
 
     function tick() {
       if (!hover) {
@@ -31,13 +32,13 @@ const Cursor = () => {
         if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
           cursorPos.x += dx / delay;
           cursorPos.y += dy / delay;
-          setPosition({ x: cursorPos.x, y: cursorPos.y });
+          setPosition(cursorPos.x, cursorPos.y);
           rafId = requestAnimationFrame(tick);
         } else {
           // Idle: mouse has stopped, stop RAF loop to conserve 100% CPU
           cursorPos.x = mousePos.x;
           cursorPos.y = mousePos.y;
-          setPosition({ x: cursorPos.x, y: cursorPos.y });
+          setPosition(cursorPos.x, cursorPos.y);
           isRunning = false;
           rafId = null;
         }
@@ -66,13 +67,7 @@ const Cursor = () => {
         cursor.classList.add("cursor-icons");
         cursor.style.setProperty("--cursorW", `${rect.width}px`);
         cursor.style.setProperty("--cursorH", `${rect.height}px`);
-        gsap.to(cursor, {
-          x: rect.left,
-          y: rect.top,
-          duration: 0.2,
-          ease: "power2.out",
-          overwrite: "auto",
-        });
+        setPosition(rect.left, rect.top);
         hover = true;
         return;
       }

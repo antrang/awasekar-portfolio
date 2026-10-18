@@ -182,7 +182,6 @@ function generateTelemetry(commits) {
   // Calculate streaks
   const sortedDays = Array.from(dailyMap.keys()).sort();
   let longestStreak = 0;
-  let currentStreak = 0;
   let tempStreak = 0;
   let prevDate = null;
 

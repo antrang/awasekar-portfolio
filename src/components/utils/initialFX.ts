@@ -1,5 +1,3 @@
-import gsap from "gsap";
-
 export function initialFX() {
   if (typeof window === "undefined") return;
 
@@ -7,25 +5,19 @@ export function initialFX() {
     return;
   }
 
-  // Smooth entrance without abrupt opacity dip
+  // Hero title entrance
   const heroNameEl = document.querySelector(".landing-name");
   if (heroNameEl) {
-    gsap.fromTo(
-      heroNameEl,
-      { y: 15, opacity: 0.85 },
-      { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }
-    );
+    (heroNameEl as HTMLElement).style.animationDelay = "0s";
+    heroNameEl.classList.add("fx-fade-in-up");
   }
 
-  gsap.fromTo(
-    [".landing-badge-wrap", ".landing-eyebrow", ".landing-tagline", ".landing-cta-group", ".landing-photo-card", ".proof-bar"],
-    { y: 12, opacity: 0.85 },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: "power2.out",
-      stagger: 0.05,
-    }
+  // Staggered entrance for supporting hero elements
+  const elements = document.querySelectorAll(
+    ".landing-badge-wrap, .landing-eyebrow, .landing-tagline, .landing-cta-group, .landing-photo-card, .proof-bar"
   );
+  elements.forEach((el, idx) => {
+    (el as HTMLElement).style.animationDelay = `${0.05 * (idx + 1)}s`;
+    el.classList.add("fx-fade-in-up");
+  });
 }

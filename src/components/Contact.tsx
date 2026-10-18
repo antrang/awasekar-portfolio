@@ -118,7 +118,7 @@ const Contact = () => {
             <span className="colophon-divider">·</span>
             <span>Pune, India</span>
             <span className="colophon-divider">·</span>
-            <span>Built with React 18, TypeScript, Vite &amp; GSAP</span>
+            <span>Built with React 18, TypeScript &amp; Vite</span>
           </div>
 
           <div className="colophon-right">
