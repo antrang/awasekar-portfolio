@@ -24,26 +24,28 @@ const Cursor = () => {
     };
 
     function tick() {
-      if (!hover) {
-        const delay = 5;
-        const dx = mousePos.x - cursorPos.x;
-        const dy = mousePos.y - cursorPos.y;
+      if (hover) {
+        isRunning = false;
+        rafId = null;
+        return;
+      }
 
-        if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
-          cursorPos.x += dx / delay;
-          cursorPos.y += dy / delay;
-          setPosition(cursorPos.x, cursorPos.y);
-          rafId = requestAnimationFrame(tick);
-        } else {
-          // Idle: mouse has stopped, stop RAF loop to conserve 100% CPU
-          cursorPos.x = mousePos.x;
-          cursorPos.y = mousePos.y;
-          setPosition(cursorPos.x, cursorPos.y);
-          isRunning = false;
-          rafId = null;
-        }
-      } else {
+      const delay = 5;
+      const dx = mousePos.x - cursorPos.x;
+      const dy = mousePos.y - cursorPos.y;
+
+      if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+        cursorPos.x += dx / delay;
+        cursorPos.y += dy / delay;
+        setPosition(cursorPos.x, cursorPos.y);
         rafId = requestAnimationFrame(tick);
+      } else {
+        // Idle: mouse has stopped, stop RAF loop to conserve 100% CPU
+        cursorPos.x = mousePos.x;
+        cursorPos.y = mousePos.y;
+        setPosition(cursorPos.x, cursorPos.y);
+        isRunning = false;
+        rafId = null;
       }
     }
 
@@ -67,7 +69,14 @@ const Cursor = () => {
         cursor.classList.add("cursor-icons");
         cursor.style.setProperty("--cursorW", `${rect.width}px`);
         cursor.style.setProperty("--cursorH", `${rect.height}px`);
+        cursorPos.x = rect.left;
+        cursorPos.y = rect.top;
         setPosition(rect.left, rect.top);
+        if (rafId !== null) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+        isRunning = false;
         hover = true;
         return;
       }
@@ -77,6 +86,10 @@ const Cursor = () => {
         cursor.style.removeProperty("--cursorW");
         cursor.style.removeProperty("--cursorH");
         hover = false;
+        if (!isRunning) {
+          isRunning = true;
+          rafId = requestAnimationFrame(tick);
+        }
       }
 
       const disableEl = target.closest('[data-cursor="disable"]');

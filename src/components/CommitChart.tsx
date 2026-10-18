@@ -95,28 +95,31 @@ export const CommitChart: React.FC = () => {
   const handleGridMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = (e.target as HTMLElement).closest("[data-date]") as HTMLElement | null;
     if (!target) {
-      setHoveredCell(null);
+      setHoveredCell((prev) => (prev ? null : prev));
       return;
     }
 
     const date = target.dataset.date;
     const day = date ? dayByDate.get(date) : undefined;
     if (!day) {
-      setHoveredCell(null);
+      setHoveredCell((prev) => (prev ? null : prev));
       return;
     }
 
-    const rect = target.getBoundingClientRect();
-    setHoveredCell({
-      date: day.date,
-      count: day.count,
-      x: rect.left + rect.width / 2,
-      y: rect.top,
+    setHoveredCell((prev) => {
+      if (prev?.date === day.date) return prev;
+      const rect = target.getBoundingClientRect();
+      return {
+        date: day.date,
+        count: day.count,
+        x: rect.left + rect.width / 2,
+        y: rect.top,
+      };
     });
   };
 
   const handleGridMouseLeave = () => {
-    setHoveredCell(null);
+    setHoveredCell((prev) => (prev ? null : prev));
   };
 
   const formatDisplayDate = (dStr: string) => {

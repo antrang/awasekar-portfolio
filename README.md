@@ -32,7 +32,6 @@ After hours: music, side projects, breaking things to learn how they work.
 
 - React 18 + TypeScript
 - Vite 8
-- GSAP for motion
 - react-fast-marquee, react-icons
 - CSS — hand-rolled, no UI lib
 
