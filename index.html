@@ -19,6 +19,8 @@
 
   <link rel="canonical" href="https://awasekar.com/" />
   <link rel="alternate" hreflang="en" href="https://awasekar.com/" />
+  <link rel="help" type="text/plain" href="https://awasekar.com/llms.txt" title="LLM Context" />
+  <link rel="alternate" type="text/plain" href="https://awasekar.com/llms-full.txt" title="Full Architecture Documentation for AI Agents" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Sourabh Awasekar — Applied AI &amp; Product Systems Engineer" />
@@ -26,7 +28,9 @@
   <meta property="og:type" content="profile" />
   <meta property="og:url" content="https://awasekar.com/" />
   <meta property="og:site_name" content="Sourabh Awasekar" />
-  <meta property="og:image" content="https://awasekar.com/Sourabh_Awasekar_Picture.png" />
+  <meta property="og:image" content="https://awasekar.com/Sourabh_Awasekar_Picture_opt.png" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="800" />
   <meta property="og:image:alt" content="Sourabh Awasekar — Applied AI &amp; Product Systems Engineer" />
   <meta property="og:locale" content="en_US" />
 
@@ -34,7 +38,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sourabh Awasekar — Applied AI &amp; Product Systems Engineer" />
   <meta name="twitter:description" content="Building and deploying production-ready AI products, semantic layers, text-to-SQL harnesses, and full-stack systems. Currently leading Data Intelligence @ amber." />
-  <meta name="twitter:image" content="https://awasekar.com/Sourabh_Awasekar_Picture.png" />
+  <meta name="twitter:image" content="https://awasekar.com/Sourabh_Awasekar_Picture_opt.png" />
 
   <!-- JSON-LD: Comprehensive E-E-A-T & Knowledge Graph Schema -->
   <script type="application/ld+json">
@@ -48,10 +52,20 @@
         "givenName": "Sourabh",
         "familyName": "Awasekar",
         "url": "https://awasekar.com",
-        "image": "https://awasekar.com/Sourabh_Awasekar_Picture.png",
-        "jobTitle": "Applied AI & Product Systems Engineer",
+        "image": "https://awasekar.com/Sourabh_Awasekar_Picture_opt.png",
+        "jobTitle": [
+          "Lead — Data & Analytics",
+          "Applied AI & Product Systems Engineer",
+          "Forward Deployed Engineer"
+        ],
         "description": "Applied AI & Product Systems Engineer specializing in production text-to-SQL harnesses, centralized semantic layers, Model Context Protocol (MCP), and resilient data platforms. Alumnus of BITS Pilani.",
         "email": "mailto:work@awasekar.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Pune",
+          "addressRegion": "Maharashtra",
+          "addressCountry": "IN"
+        },
         "worksFor": {
           "@type": "Organization",
           "name": "amber",
@@ -62,12 +76,20 @@
           "name": "Birla Institute of Technology and Science, Pilani (BITS Pilani)",
           "url": "https://www.bits-pilani.ac.in/"
         },
-        "hasOccupation": {
-          "@type": "Occupation",
-          "name": "Applied AI Engineer",
-          "occupationalCategory": "15-1252.00",
-          "skills": "Text-to-SQL, Model Context Protocol, Semantic Layer, LLM Systems, Python, TypeScript, SQL, Next.js, C++17 Audio DSP, AWS Redshift, Apache Superset"
-        },
+        "hasOccupation": [
+          {
+            "@type": "Occupation",
+            "name": "Applied AI Engineer",
+            "occupationalCategory": "15-1252.00",
+            "skills": "Text-to-SQL, Model Context Protocol, Semantic Layer, LLM Systems, Python, TypeScript, SQL, Next.js, C++17 Audio DSP, AWS Redshift, Apache Superset"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Forward Deployed Engineer",
+            "occupationalCategory": "15-1252.00",
+            "skills": "Enterprise AI Deployment, Agentic Workflows, MCP Servers, Data Warehousing, Production Systems"
+          }
+        ],
         "sameAs": [
           "https://www.linkedin.com/in/awasekar/",
           "https://github.com/antrang",
@@ -79,8 +101,8 @@
           "Applied AI",
           "Text-to-SQL",
           "Model Context Protocol (MCP)",
-          "Semantic Layer Architecture",
-          "LLM Systems & Token Optimization",
+          "Centralized Semantic Layer Architecture",
+          "LLM Systems Architecture & Token Optimization",
           "Agentic Workflows",
           "RLHF & Multimodal Benchmarking",
           "MLOps & Warehouse Scaling",
@@ -105,7 +127,53 @@
         },
         "about": { "@id": "https://awasekar.com/#person" },
         "mainEntity": { "@id": "https://awasekar.com/#person" },
-        "dateModified": "2026-09-26"
+        "dateModified": "2026-10-18"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://awasekar.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What roles and engineering opportunities is Sourabh Awasekar seeking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sourabh is open to high-impact roles in Applied AI Engineering, Forward-Deployed Engineering (FDE), AI Product Systems Engineering, and Lead Data & Analytics roles, as well as selective technical advisory for high-growth startups."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Sourabh Awasekar's experience in Text-to-SQL and Model Context Protocol (MCP)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sourabh architected amber Ocean, an in-house natural-language Text-to-SQL harness powered by amber's centralized Semantic Layer, intelligent agentic query routing, and a custom MCP server over AWS Redshift. The system has processed over 3,000 production queries at an operating cost under $100 per 15,000 user sessions with near-zero compute overhead."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What verified systems and business impact has Sourabh Awasekar delivered at amber?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "At amber, Sourabh architected amber Ocean (Text-to-SQL with Semantic Layer & MCP), amber Radar (commercial B2B SaaS for predictive student housing demand forecasting), and amber Prism (transcript NLP engine automating 100% of sales QA audits). He also saved $40,000+/year by migrating 120 seats to self-hosted Apache Superset and trimmed Redshift cluster costs by $600/month by freeing 2 nodes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Sourabh Awasekar's educational background and alma mater?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sourabh graduated from BITS Pilani (Goa Campus) with a 5-year Integrated Dual Degree: Bachelor of Engineering (B.E.) in Chemical Engineering and Master of Science (M.Sc.) in Chemistry, complemented by a Minor in Accounting & Finance."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can recruiters and engineering leaders contact Sourabh Awasekar or download his resume?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Recruiters can contact Sourabh via email at work@awasekar.com, connect on LinkedIn at linkedin.com/in/awasekar, or download his canonical resume directly at https://awasekar.com/Awasekar_Sourabh_Resume_2026.pdf."
+            }
+          }
+        ]
       },
       {
         "@type": "ItemList",
@@ -148,6 +216,33 @@
             "url": "https://5x.co"
           }
         ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://awasekar.com/#amber-ocean",
+        "name": "amber Ocean",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Cloud / AWS Redshift",
+        "description": "In-house Text-to-SQL AI harness with centralized semantic layer & custom Model Context Protocol (MCP) server over AWS Redshift.",
+        "creator": { "@id": "https://awasekar.com/#person" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://awasekar.com/#amber-radar",
+        "name": "amber Radar",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web / Next.js",
+        "description": "Commercial B2B predictive market intelligence SaaS for student accommodation operators and universities.",
+        "creator": { "@id": "https://awasekar.com/#person" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://awasekar.com/#plectrum-live",
+        "name": "plectrum.live & PlectrumLabs",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Web / macOS / Windows",
+        "description": "Suite of 18+ client-side browser audio ML tools and 5 native C++17/JUCE 8 desktop DSP audio plugins.",
+        "creator": { "@id": "https://awasekar.com/#person" }
       }
     ]
   }
@@ -434,22 +529,13 @@
       .proof-item { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.06); padding-bottom: 12px; }
       .proof-item:last-child { border-bottom: none; padding-bottom: 0; }
     }
-
-    noscript {
-      display: block;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      line-height: 1.6;
-      color: #cbd5e1;
-    }
-    noscript h1, noscript h2, noscript h3 { color: #f8fafc; }
-    noscript a { color: #2dd4bf; }
   </style>
 </head>
 
 <body>
+  <!-- Pre-Rendered Semantic DOM for Search Crawlers, AI Engines & Accessibility -->
   <div id="root">
+    <!-- Landing Hero -->
     <section class="landing-section" id="landingDiv">
       <div class="landing-container section-container">
         <div class="landing-badge-wrap">
@@ -543,66 +629,133 @@
         </div>
       </div>
     </section>
-  </div>
 
-  <!-- Semantic Pre-Rendered Content for AI Search Crawlers, Non-JS Clients & Accessibility -->
-  <noscript>
-    <header>
-      <h1>Sourabh Awasekar</h1>
-      <p><strong>Applied AI &amp; Product Systems Engineer · Forward-Deployed Engineer</strong></p>
-      <p>Leading Data Intelligence @ amber · Alumnus of BITS Pilani · Based in Pune, India</p>
-      <nav aria-label="Quick links">
-        <a href="https://awasekar.com/Awasekar_Sourabh_Resume_2026.pdf">Download Canonical Resume (PDF)</a> |
-        <a href="https://www.linkedin.com/in/awasekar/">LinkedIn Profile</a> |
-        <a href="https://github.com/antrang">GitHub Profile</a> |
-        <a href="mailto:work@awasekar.com">Email: work@awasekar.com</a> |
-        <a href="https://awasekar.com/llms.txt">llms.txt for AI Agents</a>
-      </nav>
-    </header>
+    <!-- Recruiter Fast-Track Hub -->
+    <section class="recruiter-brief-section" id="recruiter-brief" aria-label="Recruiter Fast-Track Executive Brief">
+      <div class="section-container">
+        <header>
+          <h2>Recruiter &amp; Hiring Fast-Track</h2>
+          <p><strong>Target Positions:</strong> Applied AI Engineer · Forward Deployed Engineer (FDE) · AI Product Systems Engineer · Lead Data &amp; Analytics</p>
+          <p><strong>Location:</strong> Pune, India (Open to Remote &amp; Select Relocation) · <strong>Notice:</strong> Open to high-impact opportunities</p>
+          <p><strong>Alma Mater:</strong> BITS Pilani (Goa Campus) — BE Chem + MSc Chem + Minor in Finance</p>
+        </header>
+        <div>
+          <h3>Verified Production Proof Points</h3>
+          <ul>
+            <li><strong>amber Ocean:</strong> In-house Text-to-SQL harness with Semantic Layer &amp; custom MCP over AWS Redshift at &lt;$100 per 15k sessions (3,000+ queries processed).</li>
+            <li><strong>amber Radar:</strong> Commercial B2B SaaS for predictive student housing demand forecasting &amp; competitor pricing.</li>
+            <li><strong>BI &amp; Warehouse Scaling:</strong> Cut 2 Redshift nodes (-$600/mo) and saved $40,000+/year migrating 120 seats to self-hosted Apache Superset.</li>
+            <li><strong>Frontier AI Alignment:</strong> 100+ multimodal prompt evaluations &amp; RLHF annotations for MMMU benchmark at Turing.</li>
+          </ul>
+          <p>
+            <a href="/Awasekar_Sourabh_Resume_2026.pdf" download="Awasekar_Sourabh_Resume_2026.pdf">Download Canonical Resume (PDF)</a> |
+            <a href="mailto:work@awasekar.com">Email: work@awasekar.com</a> |
+            <a href="https://www.linkedin.com/in/awasekar/">LinkedIn Profile</a> |
+            <a href="https://awasekar.com/llms.txt">llms.txt for AI Search</a>
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <main>
-      <section id="about-summary">
-        <h2>About &amp; Engineering Philosophy</h2>
+    <!-- Background & Engineering Philosophy -->
+    <section class="about-section" id="about">
+      <div class="section-container">
+        <h2>From Process Dynamics to Production AI Systems</h2>
         <p>
-          Sourabh Awasekar builds data infrastructure and AI products that turn raw warehouse architectures into high-performance semantic layers, autonomous text-to-SQL harnesses, and scalable software.
-          His engineering foundation started at BITS Pilani with a dual degree in Chemical Engineering and Chemistry, complemented by a Minor in Finance. Over the last 5+ years, he has architected production systems that operate with minimal friction, strict unit economics, and measurable business leverage.
+          Sourabh Awasekar builds data infrastructure and AI products that let companies see what is happening in their business and act before insights go stale.
         </p>
-      </section>
+        <p>
+          Engineering foundation started at <strong>BITS Pilani</strong> with a dual degree in Chemical Engineering and Chemistry, complemented by a Minor in Finance. Process optimization, thermodynamics, and mass transfer dynamics mapped directly into distributed data architectures: tracking state, optimizing bottlenecks, and transforming raw streams into high-value yields.
+        </p>
+        <p>
+          Over the last 5+ years, he architected <strong>amber Ocean</strong> (a cost-efficient text-to-SQL harness with a centralized semantic layer and custom MCP server over Redshift), <strong>amber Radar</strong> (B2B forecasting platform), and <strong>amber Prism</strong> (transcript QA engine).
+        </p>
+      </div>
+    </section>
 
-      <section id="systems-showcase">
+    <!-- Core Capabilities & Systems Architecture -->
+    <section class="pillars-section" id="pillars">
+      <div class="section-container">
+        <h2>Systems Architecture &amp; Applied Engineering Capabilities</h2>
+        <div>
+          <h3>Pillar 01: Applied AI &amp; Agentic Systems</h3>
+          <p>Engineering production-grade LLM applications, centralized semantic layers, and autonomous text-to-SQL harnesses that deliver reliable intelligence at scale.</p>
+          <ul>
+            <li>Text-to-SQL data harnesses with agentic routing &amp; custom MCP servers</li>
+            <li>Centralized Semantic Layer for consistent metric calculation across tools</li>
+            <li>Cost-optimized LLM pipelines (&lt;$100 per 15k user sessions on amber Ocean)</li>
+            <li>Communication transcript NLP &amp; QA auditing (amber Prism)</li>
+            <li>Multimodal prompt engineering &amp; RLHF evaluations (MMMU benchmark at Turing)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Pillar 02: Production Software &amp; Full-Stack</h3>
+          <p>End-to-end product engineering from database schemas and streaming APIs to polished web interfaces and high-performance native desktop software.</p>
+          <ul>
+            <li>Modern full-stack web applications (Next.js 15/16, React, TypeScript)</li>
+            <li>In-browser ML inference &amp; audio tools (TensorFlow.js, ONNX Runtime Web)</li>
+            <li>Native desktop C++17 &amp; JUCE 8 audio DSP software (PluckMaster, PluckBoard)</li>
+            <li>In-house automated billing management &amp; enterprise IAM (5X Data)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Pillar 03: Data Systems &amp; MLOps Infrastructure</h3>
+          <p>High-throughput ELT pipelines, warehouse cluster optimization, and robust telemetry guaranteeing data reliability and sub-second querying.</p>
+          <ul>
+            <li>Warehouse downsizing: cut 2 Redshift nodes, saving $600/month at amber</li>
+            <li>BI migration: replaced 120 Tableau Cloud seats with self-hosted Superset, saving $40,000+/year</li>
+            <li>Reduced average query runtimes by 30 mins via DMS &amp; Metabase caching</li>
+            <li>Daily automated ELT pipelines (APIs, scrapers, S3, ECR, EC2, Jenkins)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shipped Flagship Production Systems -->
+    <section class="work-section" id="work">
+      <div class="section-container">
         <h2>Flagship Shipped Systems &amp; Production AI</h2>
 
-        <article>
+        <article id="amber-ocean">
           <h3>amber Ocean — AI Data Product &amp; Text-to-SQL Harness</h3>
-          <p>Devised and architected a natural-language AI data harness powered by amber&apos;s centralized Semantic Layer, agentic query routing, and a custom MCP server over AWS Redshift.</p>
+          <p><strong>Role:</strong> Architect &amp; Lead Builder · amber</p>
+          <p>In-house natural-language text-to-SQL AI harness powered by amber's centralized Semantic Layer, agentic query routing, and custom Model Context Protocol (MCP) server over AWS Redshift.</p>
+          <p><strong>Architecture Pipeline:</strong> Natural User Prompt → Semantic Layer (metric/schema validation) → Custom MCP Server (tool calling &amp; AST validation) → AWS Redshift (guardrailed execution) → Response Stream.</p>
+          <p><strong>Key Architectural Decision:</strong> Built a centralized Semantic Layer rather than raw LLM prompt-to-SQL. Standardized business metrics, eliminated hallucinated column references, and cut token consumption by 65% across multi-turn sessions.</p>
           <ul>
-            <li>Under $100 per 15,000 user sessions via strict token and model routing optimizations</li>
+            <li>&lt;$100 per 15,000 user sessions via strict token and model routing optimizations</li>
             <li>3,000+ production queries processed with near-zero compute overhead (~$30)</li>
             <li>Eliminated 80%+ of ad-hoc SQL backlog across company departments</li>
           </ul>
         </article>
 
-        <article>
+        <article id="amber-radar">
           <h3>amber Radar — Commercial B2B SaaS &amp; ML Forecasting</h3>
-          <p>Architected an end-to-end predictive market intelligence platform combining automated daily ELT scrapers, machine learning predictive models, and an interactive Next.js application.</p>
+          <p><strong>Role:</strong> Product &amp; ML Lead · amber</p>
+          <p>Revenue-generating commercial B2B SaaS platform combining automated daily ELT scrapers, machine learning predictive models, and an interactive Next.js application for student housing demand forecasting.</p>
+          <p><strong>Key Architectural Decision:</strong> Decoupled daily scraper ingestion pipelines from customer-facing serving through S3 staging and automated ELT, guaranteeing high dashboard responsiveness with zero downtime.</p>
           <ul>
             <li>Revenue-generating B2B SaaS licensed by international accommodation providers</li>
             <li>Compressed research and reporting cycles from several weeks to minutes</li>
           </ul>
         </article>
 
-        <article>
-          <h3>amber Prism — Sales Pipeline Transcript NLP Engine</h3>
-          <p>Engineered an automated communication transcript analysis pipeline using local LLM inference (Ollama) and NLP vector classification, alerting sales managers to high-risk deals via n8n multi-channel webhooks.</p>
+        <article id="amber-prism">
+          <h3>amber Prism — NLP &amp; Sales Pipeline Quality Auditing</h3>
+          <p><strong>Role:</strong> Architect &amp; Builder · amber</p>
+          <p>Automated communication transcript analysis pipeline using local LLM inference (Ollama) and NLP vector classification, alerting sales managers to high-risk deals via n8n multi-channel webhooks.</p>
+          <p><strong>Key Architectural Decision:</strong> Employed local Ollama inference on dedicated instances for high-throughput batch transcript classification, saving $1,500/month in cloud LLM API costs while enforcing strict privacy.</p>
           <ul>
             <li>100% automated transcript QA coverage across the global sales pipeline</li>
-            <li>Real-time deal-risk notifications dispatched directly to sales management</li>
+            <li>Real-time deal-risk notifications routed via n8n multi-channel webhooks</li>
           </ul>
         </article>
 
-        <article>
-          <h3>plectrum.live &amp; PlectrumLabs — Audio Systems &amp; Web Platform</h3>
-          <p>Built plectrum.live with client-side ML (TensorFlow.js, ONNX Runtime Web, Tone.js) plus a family of 5 native C++17/JUCE 8 desktop DSP audio plugins (PluckMaster, PluckBoard, PluckStem, PluckNote).</p>
+        <article id="plectrum">
+          <h3>plectrum.live &amp; PlectrumLabs — Audio Systems &amp; Desktop DSP</h3>
+          <p><strong>Role:</strong> Founder &amp; Systems Engineer</p>
+          <p>Music tech platform with 18+ browser audio tools executing 100% client-side (TensorFlow.js, ONNX Runtime Web, Tone.js) and 5 native C++17/JUCE 8 desktop DSP audio plugins.</p>
+          <p><strong>Key Architectural Decision:</strong> Executed browser ML via ONNX Runtime Web and Web Audio API rather than server-side inference, achieving zero server compute costs with sub-millisecond local DSP.</p>
           <ul>
             <li>18+ browser audio tools running client-side with $0 server-side ML compute</li>
             <li>5 native desktop audio products shipped with signed .dmg and AU/VST3 plugins</li>
@@ -610,36 +763,79 @@
           </ul>
         </article>
 
-        <article>
+        <article id="5x-data">
           <h3>5X Data Platform — Enterprise SaaS &amp; Data Apps</h3>
-          <p>Spearheaded end-to-end agile product engineering across custom Streamlit data apps, in-house usage billing, and enterprise identity &amp; access governance.</p>
-          <ul>
-            <li>$20,000/month in new enterprise revenue from API-first data SaaS</li>
-            <li>$10,000/month added revenue from enterprise IAM rollout</li>
-            <li>$2,000/month saved by eliminating third-party billing dependencies</li>
-          </ul>
+          <p><strong>Role:</strong> Associate Product Manager · 5X Data</p>
+          <p>Customizable Streamlit data apps, in-house usage billing system ($2k/mo saved), and enterprise identity access governance ($10k/mo added revenue).</p>
         </article>
-      </section>
 
-      <section id="career-chronology">
+        <article id="junglee-games">
+          <h3>Junglee Games Analytics Suite — Real-Money Gaming &amp; GTM</h3>
+          <p><strong>Role:</strong> Product Analyst · Junglee Games</p>
+          <p>Poker GTM launch reaching ₹1.2 lakh daily revenue in 18 days (~5% daily growth), goal-based reward microservice (+20% reactivation), and automated fraud alerts.</p>
+        </article>
+
+        <article id="turing-ai">
+          <h3>Turing Enterprise AI / RLHF — Model Alignment &amp; Evaluation</h3>
+          <p><strong>Role:</strong> Lead Business Analyst · Turing</p>
+          <p>100+ prompt engineering and RLHF annotations for the MMMU benchmark, AI-vs-human content classifiers, and automated feedback categorization using spaCy and NLTK.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Career Chronology -->
+    <section class="career-section" id="career">
+      <div class="section-container">
         <h2>Career Flightpath &amp; Chronology</h2>
         <ul>
           <li><strong>May 2025 – Present:</strong> Lead — Data &amp; Analytics (+ AI Data Products), amber (Pune, India)</li>
-          <li><strong>Nov 2024 – May 2025:</strong> Lead Business Analyst &amp; Business Analyst, Turing (Palo Alto, Remote) — Led MMMU benchmark RLHF evaluations and AI content detection</li>
-          <li><strong>Oct 2023 – Sep 2024:</strong> Associate Product Manager, 5X Data (Singapore, Remote) — Built usage billing, IAM, and enterprise data SaaS</li>
-          <li><strong>Jan 2023 – Apr 2023:</strong> Associate Product Manager, Crimson AI (Mumbai, India) — Optimized Trinka AI Word Add-in load latency by 40%</li>
-          <li><strong>Jun 2021 – Nov 2022:</strong> Product Analyst, Junglee Games (Gurugram, India) — Poker GTM launch (₹1.2L daily revenue in 18 days) and retention microservices</li>
-          <li><strong>Aug 2015 – May 2021:</strong> BITS Pilani (Goa Campus) — Dual Degree: B.E. Chemical Engineering + M.Sc. Chemistry with Minor in Finance</li>
+          <li><strong>Nov 2024 – May 2025:</strong> Lead Business Analyst &amp; Business Analyst, Turing (Palo Alto, Remote)</li>
+          <li><strong>Oct 2023 – Sep 2024:</strong> Associate Product Manager, 5X Data (Singapore, Remote)</li>
+          <li><strong>Jan 2023 – Apr 2023:</strong> Associate Product Manager, Crimson AI (Mumbai, India)</li>
+          <li><strong>Jun 2021 – Nov 2022:</strong> Product Analyst, Junglee Games (Gurugram, India)</li>
+          <li><strong>Aug 2015 – May 2021:</strong> BITS Pilani (Goa Campus) — 5-Year Integrated Dual Degree: B.E. Chemical Engineering + M.Sc. Chemistry with Minor in Accounting &amp; Finance</li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section id="contact-info">
-        <h2>Contact &amp; Hiring</h2>
+    <!-- Systems & MLOps Matrix -->
+    <section class="techstack-section" id="techstack">
+      <div class="section-container">
+        <h2>Technical Stack &amp; Systems Tooling Spectrum</h2>
+        <div>
+          <h3>Applied AI &amp; Agentic Systems</h3>
+          <p>Ollama, Custom MCP Servers, Semantic Layers, Claude &amp; Gemini APIs, RAG &amp; Vector Retrieval, RLHF, MMMU Benchmark, n8n Automation, Token Budget Optimization.</p>
+        </div>
+        <div>
+          <h3>Software Engineering &amp; Languages</h3>
+          <p>Python (Pandas, Scikit-Learn, SQLAlchemy), TypeScript, Certified SQL, C++17 (JUCE 8 Audio DSP), Next.js 15/16, React, Node.js, Web Audio API, ONNX Runtime Web.</p>
+        </div>
+        <div>
+          <h3>Data Warehouses &amp; Platforms</h3>
+          <p>AWS Redshift, Apache Superset, Snowflake, PostgreSQL, Google BigQuery, Metabase, Tableau, Looker Studio.</p>
+        </div>
+        <div>
+          <h3>Cloud Infrastructure &amp; MLOps</h3>
+          <p>AWS S3 / ECR / EC2 / DMS / Lambda, Docker, Jenkins, Vercel, Supabase, PostHog.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Recruiter Inquiries -->
+    <footer class="contact-section" id="contact">
+      <div class="section-container">
+        <h2>Get in Touch &amp; Recruiter Inquiries</h2>
         <p>Available for high-impact Applied AI Engineering, AI/ML Product Engineering, and Forward-Deployed Engineering roles, as well as selective technical advisory.</p>
-        <p>Email: <a href="mailto:work@awasekar.com">work@awasekar.com</a> · LinkedIn: <a href="https://www.linkedin.com/in/awasekar/">linkedin.com/in/awasekar</a></p>
-      </section>
-    </main>
-  </noscript>
+        <p>
+          Email: <a href="mailto:work@awasekar.com">work@awasekar.com</a> ·
+          LinkedIn: <a href="https://www.linkedin.com/in/awasekar/">linkedin.com/in/awasekar</a> ·
+          GitHub: <a href="https://github.com/antrang">github.com/antrang</a> ·
+          Canonical Resume: <a href="/Awasekar_Sourabh_Resume_2026.pdf">Download PDF</a>
+        </p>
+        <p>© 2026 Sourabh Awasekar · Pune, India · awasekar.com</p>
+      </div>
+    </footer>
+  </div>
 
   <script type="module" src="/src/main.tsx"></script>
 </body>

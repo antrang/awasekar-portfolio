@@ -1,0 +1,226 @@
+.recruiter-brief-section {
+  position: relative;
+  padding: 20px 0 60px 0;
+}
+
+.recruiter-brief-card {
+  padding: 32px;
+  background: linear-gradient(180deg, rgba(16, 22, 34, 0.85) 0%, rgba(13, 18, 29, 0.85) 100%);
+  border: 1px solid rgba(45, 212, 191, 0.22);
+  border-radius: 20px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  position: relative;
+}
+
+.brief-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--borderColor);
+}
+
+.brief-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(45, 212, 191, 0.1);
+  border: 1px solid var(--accentBorder);
+  font-family: var(--fontMono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accentColor);
+  text-transform: uppercase;
+}
+
+.brief-badge-icon {
+  font-size: 14px;
+}
+
+.brief-subtag {
+  font-family: var(--fontMono);
+  font-size: 12px;
+  color: var(--textMuted);
+  letter-spacing: 0.03em;
+}
+
+.brief-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.brief-col-title {
+  font-family: var(--fontMono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accentColor);
+  margin-bottom: 14px;
+}
+
+.brief-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0 0 20px 0;
+  list-style: none;
+}
+
+.brief-pill {
+  font-family: var(--fontMono);
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--borderColor);
+  color: var(--textPrimary);
+}
+
+.role-pill {
+  background: rgba(45, 212, 191, 0.06);
+  border-color: rgba(45, 212, 191, 0.2);
+  color: var(--textPrimary);
+}
+
+.brief-meta-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.brief-meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.meta-label {
+  font-family: var(--fontMono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--textMuted);
+}
+
+.meta-value {
+  font-size: 13.5px;
+  color: var(--textPrimary);
+  font-weight: 500;
+}
+
+.brief-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.brief-checklist li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--textSecondary);
+}
+
+.brief-checklist li::before {
+  content: "◈";
+  position: absolute;
+  left: 0;
+  color: var(--accentColor);
+  font-size: 12px;
+}
+
+.brief-checklist strong {
+  color: var(--textPrimary);
+  font-weight: 600;
+}
+
+.brief-checklist em {
+  color: var(--accentColor);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.brief-actions {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--borderColor);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.brief-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.brief-btn {
+  font-size: 13px;
+  padding: 10px 18px;
+  min-height: 44px;
+}
+
+.copy-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--borderColor);
+  color: var(--textSecondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: rgba(45, 212, 191, 0.08);
+  border-color: var(--accentBorder);
+  color: var(--accentColor);
+}
+
+.copy-icon-success {
+  color: var(--signalEmerald);
+  font-size: 16px;
+}
+
+.brief-direct-link {
+  font-family: var(--fontMono);
+  font-size: 12px;
+  color: var(--textMuted);
+}
+
+.brief-direct-link a {
+  color: var(--accentColor);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media screen and (max-width: 900px) {
+  .brief-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .brief-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .brief-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

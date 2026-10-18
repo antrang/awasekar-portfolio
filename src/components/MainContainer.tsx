@@ -4,6 +4,7 @@ import Career from "./Career";
 import Contact from "./Contact";
 import Cursor from "./Cursor";
 import Landing from "./Landing";
+import RecruiterBrief from "./RecruiterBrief";
 import MatrixBackground from "./MatrixBackground";
 import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
@@ -27,6 +28,7 @@ const MainContainer = () => {
       <SocialIcons />
       <main className="container-main">
         <Landing />
+        <RecruiterBrief />
         <About />
         <WhatIDo />
         <Work />

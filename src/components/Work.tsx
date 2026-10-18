@@ -22,6 +22,7 @@ interface Project {
   images?: ProjectImage[];
   link?: string;
   isFlagship?: boolean;
+  tradeoff?: string;
 }
 
 const allProjects: Project[] = [
@@ -51,6 +52,8 @@ const allProjects: Project[] = [
     ],
     link: "https://amberstudent.com",
     isFlagship: true,
+    tradeoff:
+      "Built a centralized Semantic Layer rather than raw LLM prompt-to-SQL. Standardized business metrics, eliminated hallucinated column references, and cut token consumption by 65% across multi-turn sessions.",
   },
   {
     id: "amber-radar",
@@ -78,6 +81,8 @@ const allProjects: Project[] = [
     ],
     link: "https://amberstudent.com",
     isFlagship: true,
+    tradeoff:
+      "Decoupled daily scraper ingestion pipelines from customer-facing serving through S3 staging and automated ELT, guaranteeing high dashboard responsiveness with 0 downtime.",
   },
   {
     id: "amber-prism",
@@ -98,6 +103,8 @@ const allProjects: Project[] = [
     tech: ["Python", "NLP", "Ollama LLM", "Vector Analysis", "n8n Automations"],
     link: "https://amberstudent.com",
     isFlagship: true,
+    tradeoff:
+      "Employed local Ollama inference on dedicated instances for high-throughput batch transcript classification, saving $1,500/month in cloud LLM API costs while enforcing strict privacy.",
   },
   {
     id: "plectrum",
@@ -130,6 +137,8 @@ const allProjects: Project[] = [
     ],
     link: "https://plectrum.live",
     isFlagship: true,
+    tradeoff:
+      "Executed browser ML via ONNX Runtime Web and Web Audio API rather than server-side inference, achieving zero server compute costs with sub-millisecond local DSP.",
   },
   {
     id: "5x-data",
@@ -158,6 +167,8 @@ const allProjects: Project[] = [
     ],
     link: "https://5x.co",
     isFlagship: false,
+    tradeoff:
+      "Engineered in-house usage metering and billing microservices directly into PostgreSQL/Redis, removing expensive third-party billing vendors and saving $2,000/month.",
   },
   {
     id: "junglee-games",
@@ -185,6 +196,8 @@ const allProjects: Project[] = [
     ],
     link: "https://jungleegames.com",
     isFlagship: false,
+    tradeoff:
+      "Architected real-time anomaly detection pipelines over transaction logs, reducing double-spend discovery latency from 24 hours to under 60 seconds.",
   },
   {
     id: "turing-ai",
@@ -204,6 +217,8 @@ const allProjects: Project[] = [
     ],
     tech: ["Python", "NLP (spaCy, NLTK)", "RLHF", "MMMU Benchmark", "Looker Studio"],
     isFlagship: false,
+    tradeoff:
+      "Implemented automated feedback classification using spaCy and NLTK, accelerating contributor QA loops by 3x across multimodal prompt evaluations.",
   },
   {
     id: "crimson-ai",
@@ -223,6 +238,8 @@ const allProjects: Project[] = [
     ],
     tech: ["LiteDB", "Word Add-in", "Amplitude Analytics", "Web & Plugins"],
     isFlagship: false,
+    tradeoff:
+      "Optimized LiteDB index structures and grammar card grouping, cutting Microsoft Word Add-in load latency by 40% on heavy documents.",
   },
   {
     id: "hisp-india",
@@ -242,6 +259,8 @@ const allProjects: Project[] = [
     ],
     tech: ["Python", "SQL", "GIS / Geo-Tagging", "Query Optimization"],
     isFlagship: false,
+    tradeoff:
+      "Streamlined SQL spatial query plans and deduplicated hospital resource feeds, improving application responsiveness by 25% during active crisis response.",
   },
 ];
 
@@ -251,15 +270,53 @@ const FlagshipCard = ({ project }: { project: Project }) => {
   const currentImg = images[activeImgIdx];
 
   return (
-    <article className={`flagship-card ${!images.length ? "flagship-card-textonly" : ""}`}>
+    <article className={`flagship-card ${!images.length ? "flagship-card-textonly" : ""}`} id={project.id}>
       <div className="flagship-content">
         <div className="flagship-top">
           <span className="project-tag">{project.tag}</span>
           <span className="project-role">{project.role}</span>
         </div>
 
-        <h3 className="project-title">{project.title}</h3>
+        <h3 className="project-title">
+          <a href={`#${project.id}`} className="project-title-link">
+            {project.title}
+          </a>
+        </h3>
         <p className="project-tagline">{project.tagline}</p>
+
+        {project.id === "amber-ocean" && (
+          <div className="system-flow-box">
+            <div className="system-flow-header">
+              <span className="flow-badge">TEXT-TO-SQL PIPELINE ARCHITECTURE</span>
+              <span className="flow-latency">&lt;$100 / 15k sessions</span>
+            </div>
+            <div className="flow-steps">
+              <div className="flow-step">
+                <span className="step-num">01</span>
+                <span className="step-label">Natural Prompt</span>
+                <span className="step-desc">Business question</span>
+              </div>
+              <div className="flow-arrow">→</div>
+              <div className="flow-step">
+                <span className="step-num">02</span>
+                <span className="step-label">Semantic Layer</span>
+                <span className="step-desc">Metric &amp; schema guard</span>
+              </div>
+              <div className="flow-arrow">→</div>
+              <div className="flow-step">
+                <span className="step-num">03</span>
+                <span className="step-label">Custom MCP</span>
+                <span className="step-desc">Tool calling &amp; AST validation</span>
+              </div>
+              <div className="flow-arrow">→</div>
+              <div className="flow-step">
+                <span className="step-num">04</span>
+                <span className="step-label">AWS Redshift</span>
+                <span className="step-desc">Guardrailed SQL run</span>
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="flagship-narrative">
           <div className="narrative-block">
@@ -271,6 +328,13 @@ const FlagshipCard = ({ project }: { project: Project }) => {
             <p>{project.solution}</p>
           </div>
         </div>
+
+        {project.tradeoff && (
+          <div className="tradeoff-block">
+            <span className="tradeoff-label">ARCHITECTURAL DECISION &amp; TRADE-OFF</span>
+            <p>{project.tradeoff}</p>
+          </div>
+        )}
 
         <div className="metrics-box">
           <span className="metrics-heading">VERIFIED PRODUCTION IMPACT</span>
@@ -429,15 +493,26 @@ const Work = () => {
             <div className="group-label">ENTERPRISE PLATFORMS &amp; SYSTEMS</div>
             <div className="secondary-grid">
               {secondary.map((project) => (
-                <article className="secondary-card" key={project.id}>
+                <article className="secondary-card" key={project.id} id={project.id}>
                   <div className="secondary-top">
                     <span className="project-tag">{project.tag}</span>
                     <span className="project-role">{project.role}</span>
                   </div>
 
-                  <h3 className="secondary-title">{project.title}</h3>
+                  <h3 className="secondary-title">
+                    <a href={`#${project.id}`} className="project-title-link">
+                      {project.title}
+                    </a>
+                  </h3>
                   <p className="secondary-tagline">{project.tagline}</p>
                   <p className="secondary-desc">{project.solution}</p>
+
+                  {project.tradeoff && (
+                    <div className="tradeoff-block tradeoff-sm">
+                      <span className="tradeoff-label">ARCHITECTURAL DECISION</span>
+                      <p>{project.tradeoff}</p>
+                    </div>
+                  )}
 
                   <div className="secondary-metrics">
                     {project.metrics.map((m, i) => (
