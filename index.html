@@ -155,11 +155,48 @@
     ]
   }
   </script>
+
+  <style>
+    html,
+    body {
+      background-color: #070a11;
+      color: #f8fafc;
+      margin: 0;
+    }
+
+    #root {
+      min-height: 100vh;
+      min-height: 100svh;
+      background-color: #070a11;
+    }
+
+    noscript {
+      display: block;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: #cbd5e1;
+    }
+
+    noscript h1,
+    noscript h2,
+    noscript h3 {
+      color: #f8fafc;
+    }
+
+    noscript a {
+      color: #2dd4bf;
+    }
+  </style>
 </head>
 
 <body>
+  <div id="root"></div>
+
   <!-- Semantic Pre-Rendered Content for AI Search Crawlers, Non-JS Clients & Accessibility -->
-  <div id="root">
+  <noscript>
     <header>
       <h1>Sourabh Awasekar</h1>
       <p><strong>Applied AI &amp; Product Systems Engineer · Forward-Deployed Engineer</strong></p>
@@ -252,7 +289,7 @@
         <p>Email: <a href="mailto:work@awasekar.com">work@awasekar.com</a> · LinkedIn: <a href="https://www.linkedin.com/in/awasekar/">linkedin.com/in/awasekar</a></p>
       </section>
     </main>
-  </div>
+  </noscript>
 
   <script type="module" src="/src/main.tsx"></script>
 </body>
