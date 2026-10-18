@@ -129,7 +129,7 @@ export const CommitChart: React.FC = () => {
               Engineering Velocity &amp; <span className="text-accent">Commit Graph</span>
             </h2>
             <p className="commit-subtitle">
-              Aggregated git activity and contribution velocity across all projects on my primary local workstation, capturing <strong>{summary.totalCommits.toLocaleString()} commits</strong>.
+              Aggregated git activity and contribution velocity across all projects on my local workstation as well as 4 GitHub repos, capturing <strong>{summary.totalCommits.toLocaleString()} commits</strong>.
             </p>
           </div>
 
@@ -175,7 +175,7 @@ export const CommitChart: React.FC = () => {
             </div>
             <div className="kpi-data">
               <span className="kpi-number">{summary.totalRepos}</span>
-              <span className="kpi-label">Tracked Local Projects</span>
+              <span className="kpi-label">Tracked Projects</span>
             </div>
           </div>
 
