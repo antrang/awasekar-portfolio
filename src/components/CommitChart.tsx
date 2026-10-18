@@ -129,7 +129,7 @@ export const CommitChart: React.FC = () => {
               Engineering Velocity &amp; <span className="text-accent">Commit Graph</span>
             </h2>
             <p className="commit-subtitle">
-              Aggregated git activity and contribution velocity across all projects on my local workstation as well as 4 GitHub repos, capturing <strong>{summary.totalCommits.toLocaleString()} commits</strong>.
+              Aggregated git activity and contribution velocity across all projects, capturing <strong>{summary.totalCommits.toLocaleString()} commits</strong>.
             </p>
           </div>
 
@@ -279,6 +279,14 @@ export const CommitChart: React.FC = () => {
               </div>
             </div>
           )}
+
+          {/* Multi-Profile Distribution Disclaimer Note */}
+          <div className="heatmap-footer-note">
+            <MdInfoOutline className="note-icon" />
+            <span className="note-text">
+              <strong>Multi-Entity Distribution:</strong> This graph aggregates deduplicated engineering contributions across multiple private client codebases, company organizations, and distinct development profiles. The public <code>github.com/antrang</code> profile reflects only open-source personal repositories.
+            </span>
+          </div>
         </div>
       </div>
     </section>

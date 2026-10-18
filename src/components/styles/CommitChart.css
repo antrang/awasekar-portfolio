@@ -319,6 +319,45 @@
   font-family: var(--fontMono);
 }
 
+/* Multi-Profile Distribution Disclaimer Note */
+.heatmap-footer-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--borderColor);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--textMuted);
+}
+
+.heatmap-footer-note .note-icon {
+  color: var(--accentColor);
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.heatmap-footer-note .note-text {
+  flex: 1;
+}
+
+.heatmap-footer-note strong {
+  color: var(--textSecondary);
+  font-weight: 500;
+}
+
+.heatmap-footer-note code {
+  font-family: var(--fontMono);
+  font-size: 11.5px;
+  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  color: var(--accentColor);
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .commit-kpi-grid {
