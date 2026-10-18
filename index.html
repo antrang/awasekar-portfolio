@@ -347,9 +347,19 @@
       margin-bottom: 50px;
     }
 
+    .landing-headline {
+      margin: 0;
+      padding: 0;
+      font-weight: normal;
+      display: flex;
+      flex-direction: column;
+    }
+
     .landing-eyebrow {
+      display: block;
       font-family: var(--fontMono);
       font-size: 13px;
+      font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accentColor);
@@ -357,6 +367,7 @@
     }
 
     .landing-name {
+      display: block;
       font-size: clamp(40px, 5.2vw, 68px);
       font-weight: 700;
       line-height: 1.1;
@@ -549,12 +560,13 @@
 
         <div class="landing-hero-grid">
           <div class="landing-content">
-            <div class="landing-eyebrow">
-              Applied AI Engineer · Product &amp; Systems Builder
-            </div>
-
-            <h1 class="landing-name">
-              Sourabh <span class="landing-name-accent">Awasekar</span>
+            <h1 class="landing-headline">
+              <span class="landing-eyebrow">
+                Applied AI Engineer · Product &amp; Systems Builder
+              </span>
+              <span class="landing-name">
+                Sourabh <span class="landing-name-accent">Awasekar</span>
+              </span>
             </h1>
 
             <p class="landing-tagline">

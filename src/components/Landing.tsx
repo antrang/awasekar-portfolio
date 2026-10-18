@@ -16,12 +16,13 @@ const Landing = () => {
 
         <div className="landing-hero-grid">
           <div className="landing-content">
-            <div className="landing-eyebrow">
-              Applied AI Engineer · Product &amp; Systems Builder
-            </div>
-
-            <h1 className="landing-name">
-              Sourabh <span className="landing-name-accent">Awasekar</span>
+            <h1 className="landing-headline">
+              <span className="landing-eyebrow">
+                Applied AI Engineer · Product &amp; Systems Builder
+              </span>
+              <span className="landing-name">
+                Sourabh <span className="landing-name-accent">Awasekar</span>
+              </span>
             </h1>
 
             <p className="landing-tagline">
