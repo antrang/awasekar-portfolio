@@ -4,7 +4,7 @@ const About = () => {
   return (
     <section className="about-section" id="about">
       <div className="section-container">
-        <div className="section-header-tag">01 / BACKGROUND &amp; PHILOSOPHY</div>
+        <div className="section-header-tag">05 / BACKGROUND &amp; PHILOSOPHY</div>
 
         <div className="about-grid">
           <div className="about-story">

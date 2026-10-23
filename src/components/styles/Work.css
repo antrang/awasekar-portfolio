@@ -571,6 +571,21 @@
   color: var(--textMuted);
 }
 
+.flow-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flow-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accentColor);
+  box-shadow: 0 0 8px var(--accentColor);
+  animation: beaconPulse 2s ease-in-out infinite;
+}
+
 .flow-steps {
   display: flex;
   align-items: center;
@@ -588,6 +603,14 @@
   border-radius: 8px;
   flex: 1 1 110px;
   min-width: 105px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.flow-step.flow-step-active {
+  border-color: rgba(45, 212, 191, 0.6);
+  background: rgba(45, 212, 191, 0.08);
+  box-shadow: 0 0 14px rgba(45, 212, 191, 0.18);
+  transform: translateY(-2px);
 }
 
 .step-num {
@@ -610,9 +633,131 @@
 }
 
 .flow-arrow {
-  color: var(--accentColor);
+  color: var(--textMuted);
   font-family: var(--fontMono);
   font-size: 14px;
+  transition: all 0.35s ease;
+  opacity: 0.4;
+}
+
+.flow-arrow.flow-arrow-active {
+  color: var(--accentColor);
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+/* Audio Equalizer Mini Badge for Plectrum */
+.project-tag-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.audio-equalizer-badge {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 16px;
+  padding: 2px 6px;
+  background: rgba(45, 212, 191, 0.1);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  border-radius: 4px;
+}
+
+.eq-bar {
+  width: 2.5px;
+  background: var(--accentColor);
+  border-radius: 1px;
+  animation: eqBounce 1.2s ease-in-out infinite alternate;
+}
+
+.eq-bar-1 { height: 40%; animation-delay: 0.1s; }
+.eq-bar-2 { height: 85%; animation-delay: 0.35s; }
+.eq-bar-3 { height: 60%; animation-delay: 0.2s; }
+.eq-bar-4 { height: 100%; animation-delay: 0.45s; }
+.eq-bar-5 { height: 50%; animation-delay: 0.25s; }
+
+@keyframes eqBounce {
+  0% { transform: scaleY(0.3); opacity: 0.6; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+
+/* Radar Sparkline Forecast HUD Overlay */
+.browser-body {
+  position: relative;
+}
+
+.radar-sparkline-overlay {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  padding: 10px 14px;
+  background: rgba(7, 10, 17, 0.88);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 3;
+}
+
+.sparkline-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--fontMono);
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--accentColor);
+  letter-spacing: 0.06em;
+}
+
+.sparkline-beacon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--signalEmerald);
+  box-shadow: 0 0 6px var(--signalEmerald);
+  animation: beaconPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes beaconPulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.sparkline-svg {
+  width: 140px;
+  height: 32px;
+  overflow: visible;
+}
+
+.sparkline-path {
+  stroke: var(--accentColor);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sparkline-animated .sparkline-path {
+  stroke-dashoffset: 0;
+}
+
+.sparkline-dot {
+  fill: var(--signalEmerald);
+  filter: drop-shadow(0 0 4px var(--signalEmerald));
+  opacity: 0;
+  transition: opacity 0.4s ease 1.1s;
+}
+
+.sparkline-animated .sparkline-dot {
+  opacity: 1;
 }
 
 /* Architectural Trade-Off Block */

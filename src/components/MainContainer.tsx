@@ -11,6 +11,7 @@ import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
 import { initialFX } from "./utils/initialFX";
+import { initScrollFX } from "./utils/scrollFX";
 
 const TechStack = lazy(() => import("./TechStack"));
 const CommitChart = lazy(() => import("./CommitChart"));
@@ -18,6 +19,8 @@ const CommitChart = lazy(() => import("./CommitChart"));
 const MainContainer = () => {
   useEffect(() => {
     initialFX();
+    const cleanup = initScrollFX();
+    return () => cleanup();
   }, []);
 
   return (
@@ -29,15 +32,15 @@ const MainContainer = () => {
       <main className="container-main">
         <Landing />
         <RecruiterBrief />
-        <About />
-        <WhatIDo />
         <Work />
         <Career />
-        <Suspense fallback={<div className="section-container" style={{ textAlign: "center", color: "var(--textMuted)" }}>Loading Systems Matrix...</div>}>
-          <TechStack />
-        </Suspense>
         <Suspense fallback={<div className="section-container" style={{ textAlign: "center", color: "var(--textMuted)" }}>Loading Code Telemetry...</div>}>
           <CommitChart />
+        </Suspense>
+        <WhatIDo />
+        <About />
+        <Suspense fallback={<div className="section-container" style={{ textAlign: "center", color: "var(--textMuted)" }}>Loading Systems Matrix...</div>}>
+          <TechStack />
         </Suspense>
         <Contact />
       </main>

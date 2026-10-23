@@ -53,7 +53,7 @@ const WhatIDo = () => {
   return (
     <section className="pillars-section" id="pillars">
       <div className="section-container">
-        <div className="section-header-tag">02 / CORE CAPABILITIES</div>
+        <div className="section-header-tag">04 / CORE CAPABILITIES</div>
 
         <div className="pillars-header">
           <h2 className="pillars-title">

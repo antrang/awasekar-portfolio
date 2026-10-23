@@ -173,7 +173,7 @@ const Career = () => {
   return (
     <section className="career-section" id="career">
       <div className="section-container">
-        <div className="section-header-tag">04 / CAREER FLIGHTPATH</div>
+        <div className="section-header-tag">02 / CAREER FLIGHTPATH</div>
 
         <div className="career-header">
           <h2 className="career-title">

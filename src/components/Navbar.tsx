@@ -47,16 +47,6 @@ const Navbar = () => {
           <nav className="navbar-nav" aria-label="Main Navigation">
             <ul>
               <li>
-                <a href="#about" onClick={(e) => handleNavClick(e, "#about")}>
-                  <HoverLinks text="ABOUT" />
-                </a>
-              </li>
-              <li>
-                <a href="#pillars" onClick={(e) => handleNavClick(e, "#pillars")}>
-                  <HoverLinks text="PILLARS" />
-                </a>
-              </li>
-              <li>
                 <a href="#work" onClick={(e) => handleNavClick(e, "#work")}>
                   <HoverLinks text="SYSTEMS" />
                 </a>
@@ -69,6 +59,16 @@ const Navbar = () => {
               <li>
                 <a href="#commits" onClick={(e) => handleNavClick(e, "#commits")}>
                   <HoverLinks text="COMMITS" />
+                </a>
+              </li>
+              <li>
+                <a href="#pillars" onClick={(e) => handleNavClick(e, "#pillars")}>
+                  <HoverLinks text="PILLARS" />
+                </a>
+              </li>
+              <li>
+                <a href="#about" onClick={(e) => handleNavClick(e, "#about")}>
+                  <HoverLinks text="ABOUT" />
                 </a>
               </li>
               <li>

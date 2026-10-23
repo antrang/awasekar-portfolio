@@ -273,7 +273,18 @@ const FlagshipCard = ({ project }: { project: Project }) => {
     <article className={`flagship-card ${!images.length ? "flagship-card-textonly" : ""}`} id={project.id}>
       <div className="flagship-content">
         <div className="flagship-top">
-          <span className="project-tag">{project.tag}</span>
+          <div className="project-tag-wrap">
+            <span className="project-tag">{project.tag}</span>
+            {project.id === "plectrum" && (
+              <div className="audio-equalizer-badge" title="Real-time Audio DSP Engine" aria-label="Audio DSP Active">
+                <span className="eq-bar eq-bar-1"></span>
+                <span className="eq-bar eq-bar-2"></span>
+                <span className="eq-bar eq-bar-3"></span>
+                <span className="eq-bar eq-bar-4"></span>
+                <span className="eq-bar eq-bar-5"></span>
+              </div>
+            )}
+          </div>
           <span className="project-role">{project.role}</span>
         </div>
 
@@ -287,7 +298,10 @@ const FlagshipCard = ({ project }: { project: Project }) => {
         {project.id === "amber-ocean" && (
           <div className="system-flow-box">
             <div className="system-flow-header">
-              <span className="flow-badge">TEXT-TO-SQL PIPELINE ARCHITECTURE</span>
+              <div className="flow-badge-wrap">
+                <span className="flow-pulse-dot"></span>
+                <span className="flow-badge">TEXT-TO-SQL PIPELINE ARCHITECTURE</span>
+              </div>
               <span className="flow-latency">&lt;$100 / 15k sessions</span>
             </div>
             <div className="flow-steps">
@@ -409,6 +423,21 @@ const FlagshipCard = ({ project }: { project: Project }) => {
                 decoding="async"
                 className="media-img"
               />
+              {project.id === "amber-radar" && (
+                <div className="radar-sparkline-overlay" aria-hidden="true">
+                  <div className="sparkline-badge">
+                    <span className="sparkline-beacon"></span>
+                    <span>ML FORECAST ENGINE · R² 0.94</span>
+                  </div>
+                  <svg className="sparkline-svg" viewBox="0 0 200 48" fill="none">
+                    <path
+                      className="sparkline-path"
+                      d="M 6,38 C 35,36 50,28 75,30 C 100,32 115,16 140,14 C 165,12 180,6 194,5"
+                    />
+                    <circle className="sparkline-dot" cx="194" cy="5" r="3.5" />
+                  </svg>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -431,7 +460,7 @@ const Work = () => {
   return (
     <section className="work-section" id="work">
       <div className="section-container">
-        <div className="section-header-tag">03 / PRODUCTION SYSTEMS</div>
+        <div className="section-header-tag">01 / PRODUCTION SYSTEMS</div>
 
         <div className="work-header">
           <div className="work-title-wrap">

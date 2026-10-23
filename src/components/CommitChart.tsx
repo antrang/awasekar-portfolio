@@ -1,8 +1,54 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import { FaGithub, FaCodeBranch } from "react-icons/fa";
 import { MdLocalFireDepartment, MdHistory, MdInfoOutline } from "react-icons/md";
 import gitData from "../data/gitCommits.json";
 import "./styles/CommitChart.css";
+
+const CountUp: React.FC<{ end: number; duration?: number; format?: boolean }> = ({
+  end,
+  duration = 1200,
+  format = true,
+}) => {
+  const [val, setVal] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setVal(end);
+      return;
+    }
+
+    let rafId: number;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          const startTime = performance.now();
+          const step = (currentTime: number) => {
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setVal(Math.round(eased * end));
+            if (progress < 1) {
+              rafId = requestAnimationFrame(step);
+            }
+          };
+          rafId = requestAnimationFrame(step);
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => {
+      observer.disconnect();
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [end, duration, hasAnimated]);
+
+  return <span ref={ref}>{format ? val.toLocaleString() : val}</span>;
+};
 
 interface DayData {
   date: string;
@@ -137,7 +183,7 @@ export const CommitChart: React.FC = () => {
   return (
     <section className="commit-section" id="commits">
       <div className="section-container">
-        <div className="section-header-tag">06 / CODE TELEMETRY</div>
+        <div className="section-header-tag">03 / CODE TELEMETRY</div>
 
         <div className="commit-header">
           <div className="commit-header-left">
@@ -170,7 +216,7 @@ export const CommitChart: React.FC = () => {
               <FaCodeBranch />
             </div>
             <div className="kpi-data">
-              <span className="kpi-number">{summary.totalCommits.toLocaleString()}</span>
+              <span className="kpi-number"><CountUp end={summary.totalCommits} /></span>
               <span className="kpi-label">Total Commits (Deduplicated)</span>
             </div>
           </div>
@@ -180,7 +226,7 @@ export const CommitChart: React.FC = () => {
               <MdLocalFireDepartment />
             </div>
             <div className="kpi-data">
-              <span className="kpi-number">{summary.activeDays}</span>
+              <span className="kpi-number"><CountUp end={summary.activeDays} /></span>
               <span className="kpi-label">Active Days in 2026</span>
             </div>
           </div>
@@ -190,7 +236,7 @@ export const CommitChart: React.FC = () => {
               <MdHistory />
             </div>
             <div className="kpi-data">
-              <span className="kpi-number">{summary.totalRepos}</span>
+              <span className="kpi-number"><CountUp end={summary.totalRepos} /></span>
               <span className="kpi-label">Tracked Projects</span>
             </div>
           </div>
@@ -200,7 +246,7 @@ export const CommitChart: React.FC = () => {
               <MdInfoOutline />
             </div>
             <div className="kpi-data">
-              <span className="kpi-number">{summary.busiestDay.count} / day</span>
+              <span className="kpi-number"><CountUp end={summary.busiestDay.count} /> / day</span>
               <span className="kpi-label">Peak Velocity ({summary.busiestDay.date})</span>
             </div>
           </div>

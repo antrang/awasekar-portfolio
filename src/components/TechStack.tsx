@@ -77,7 +77,7 @@ const TechStack = () => {
   return (
     <section className="techstack-section" id="techstack">
       <div className="section-container">
-        <div className="section-header-tag">05 / SYSTEMS &amp; MLOPS MATRIX</div>
+        <div className="section-header-tag">06 / SYSTEMS &amp; MLOPS MATRIX</div>
 
         <div className="techstack-header">
           <h2 className="techstack-title">
