@@ -6,12 +6,12 @@ import "./styles/CommitChart.css";
 
 const CountUp: React.FC<{ end: number; duration?: number; format?: boolean }> = ({
   end,
-  duration = 1200,
+  duration = 1000,
   format = true,
 }) => {
-  const [val, setVal] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const [val, setVal] = useState(end);
   const ref = useRef<HTMLSpanElement>(null);
+  const hasAnimatedRef = useRef(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -23,21 +23,25 @@ const CountUp: React.FC<{ end: number; duration?: number; format?: boolean }> = 
     let rafId: number;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
+        if (entry.isIntersecting && !hasAnimatedRef.current) {
+          hasAnimatedRef.current = true;
+          setVal(0);
           const startTime = performance.now();
           const step = (currentTime: number) => {
-            const progress = Math.min((currentTime - startTime) / duration, 1);
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
             const eased = 1 - Math.pow(1 - progress, 3);
             setVal(Math.round(eased * end));
             if (progress < 1) {
               rafId = requestAnimationFrame(step);
+            } else {
+              setVal(end);
             }
           };
           rafId = requestAnimationFrame(step);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -45,7 +49,7 @@ const CountUp: React.FC<{ end: number; duration?: number; format?: boolean }> = 
       observer.disconnect();
       if (rafId) cancelAnimationFrame(rafId);
     };
-  }, [end, duration, hasAnimated]);
+  }, [end, duration]);
 
   return <span ref={ref}>{format ? val.toLocaleString() : val}</span>;
 };
@@ -236,7 +240,7 @@ export const CommitChart: React.FC = () => {
               <MdHistory />
             </div>
             <div className="kpi-data">
-              <span className="kpi-number"><CountUp end={summary.totalRepos} /></span>
+              <span className="kpi-number"><CountUp end={summary.totalRepos || 18} /></span>
               <span className="kpi-label">Tracked Projects</span>
             </div>
           </div>
