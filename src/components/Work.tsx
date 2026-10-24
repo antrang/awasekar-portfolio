@@ -28,20 +28,20 @@ const allProjects: Project[] = [
   {
     id: "amber-ocean",
     title: "amber Ocean",
-    tag: "AI DATA PRODUCT · TEXT-TO-SQL",
+    tag: "AGENTIC AI ANALYTICS · SQL, CHARTS & RCAS",
     category: "ai",
     role: "Architect & Lead Builder · amber",
-    tagline: "In-House Text-to-SQL Harness with Semantic Layer & Custom MCP",
+    tagline: "Agentic AI Analytics Harness with Semantic Layer, Skills, Routing & MCP",
     problem:
-      "Business stakeholders across product, marketing, and operations were bottlenecked waiting for data analysts to write ad-hoc SQL queries and build custom charts.",
+      "Business stakeholders across sales, operations, and leadership faced turnaround bottlenecks waiting for data analysts to write ad-hoc SQL, build dashboards, and diagnose metric anomalies.",
     solution:
-      "Devised and built a natural-language AI data harness powered by our centralized Semantic Layer, intelligent agentic routing, and custom MCP server over AWS Redshift.",
+      "Designed an agentic AI analytics harness (centralized semantic layer, domain skills, intelligent model routing, custom MCP server over AWS Redshift) answering business questions with SQL, charts, and root-cause analyses (RCAs).",
     metrics: [
-      "< $100 per 15k sessions",
+      "<$100 per 15k sessions (<$0.01/session)",
+      "80% cut in ad-hoc data requests",
       "3,000+ queries (<$30 compute)",
-      "80%+ ad-hoc backlog cut",
     ],
-    tech: ["Ollama", "Python", "Semantic Layer", "Custom MCP", "AWS Redshift", "n8n"],
+    tech: ["Claude / OpenAI APIs", "Python", "Semantic Layer", "Custom MCP", "AWS Redshift", "PostgreSQL"],
     images: [
       {
         label: "amber Ocean Dashboard",
@@ -51,46 +51,46 @@ const allProjects: Project[] = [
     ],
     link: "https://amberstudent.com",
     tradeoff:
-      "Built a centralized Semantic Layer rather than raw LLM prompt-to-SQL. Standardized business metrics, eliminated hallucinated column references, and cut token consumption by 65%.",
+      "Engineered a centralized Semantic Layer and schema-constrained MCP server rather than unconstrained prompt-to-SQL, eliminating hallucinated joins, guaranteeing metric consistency, and slashing token overhead by 65%.",
   },
   {
     id: "amber-prism",
     title: "amber Prism",
-    tag: "NLP & OPERATIONS INTELLIGENCE",
+    tag: "LLM TRANSCRIPT PLATFORM · OPS INTELLIGENCE",
     category: "ai",
     role: "Architect & Builder · amber",
-    tagline: "Operations Quality Audit & Multi-Channel Transcript NLP Engine",
+    tagline: "LLM-Powered Multi-Channel Transcript Analysis & Sales Pipeline Insights",
     problem:
-      "Auditing thousands of customer call transcripts and chat logs manually was impossible, creating major quality blindspots and unmonitored drop-offs in the sales funnel.",
+      "Manual QA sampling covered only 30% of customer interactions, leaving critical quality blindspots, undiscovered objection patterns, and unmonitored lead churn across the global sales funnel.",
     solution:
-      "Engineered an automated communication transcript pipeline that ingests raw streams across voice calls, WhatsApp, email, and SMS, extracts intent vectors, and triggers real-time operational workflows.",
+      "Built an LLM-powered transcript intelligence platform ingesting omni-channel customer conversations (calls, WhatsApp, email, SMS) to extract objection themes, evaluate sales quality, and surface at-risk deals for 100+ daily active users across Sales, Ops, and Leadership.",
     metrics: [
-      "100% automated transcript QA",
-      "Real-time n8n risk alerts",
-      "$1,500/mo saved via Ollama",
+      "100+ Daily Active Users (Sales, Ops, Leadership)",
+      "30% → 90% audit coverage lift",
+      "Real-time deal-risk & objection alerts",
     ],
-    tech: ["Python", "NLP", "Ollama LLM", "Vector Analysis", "n8n Automations", "Webhooks"],
+    tech: ["LLM APIs (Claude / OpenAI)", "Python", "NLP", "Vector Embeddings", "n8n Webhooks", "PostgreSQL"],
     link: "https://amberstudent.com",
     tradeoff:
-      "Employed local Ollama inference on dedicated instances for high-throughput batch classification, saving $1,500/month in cloud API costs while enforcing strict customer data privacy.",
+      "Structured multi-stage prompt extraction and vector intent clustering rather than monolithic context passing, ensuring high precision on deal-risk indicators while controlling per-transcript token latency.",
   },
   {
     id: "amber-radar",
     title: "amber Radar",
-    tag: "COMMERCIAL B2B SAAS · ML FORECASTING",
+    tag: "COMMERCIAL B2B SAAS · MARKET INTELLIGENCE",
     category: "ai",
     role: "Product & ML Lead · amber",
-    tagline: "Revenue-Generating Market Research & Predictive Pricing Platform",
+    tagline: "Client-Facing Market Intelligence Product for Demand, Supply & Pricing Analysis",
     problem:
-      "Global student housing operators and university partners required accurate forecasts of international student demand, room availability, and dynamic pricing across key markets.",
+      "UK property management groups, PBSA operators, and institutional investors lacked dynamic visibility into localized student demand, real-time supply availability, and competitive pricing across university markets.",
     solution:
-      "Architected an end-to-end commercial intelligence SaaS combining automated daily ELT scrapers, machine learning predictive models, and an interactive Next.js application.",
+      "Built a commercial market intelligence product (Next.js, ML forecasting with Scikit-Learn/Python, automated daily ELT scrapers) delivering granular supply/demand analytics, competitor price benchmarking, and predictive market forecasts.",
     metrics: [
-      "Commercial revenue B2B SaaS",
-      "Research cycles: weeks → mins",
-      "Automated global inventory ingestion",
+      "$30k ARR Generated",
+      "50+ UK Property Groups & Investors",
+      "Research cycles: weeks → sub-minute",
     ],
-    tech: ["Next.js", "Scikit-Learn", "Python", "Automated ELT", "AWS S3 / Redshift"],
+    tech: ["Next.js", "TypeScript", "Scikit-Learn", "Python", "Automated ELT", "AWS Redshift"],
     images: [
       {
         label: "amber Radar Intelligence",
@@ -98,9 +98,9 @@ const allProjects: Project[] = [
         host: "radar.amberstudent.com",
       },
     ],
-    link: "https://amberstudent.com",
+    link: "https://radar.amberstudent.com",
     tradeoff:
-      "Decoupled daily scraper ingestion pipelines from customer-facing serving through S3 staging and automated ELT, guaranteeing high dashboard responsiveness with 0 downtime.",
+      "Decoupled high-frequency web scrapers and ML scoring pipelines from customer-facing serving via S3 staging and pre-aggregated warehouse views, ensuring sub-second dashboard latency for enterprise clients.",
   },
   {
     id: "plectrum",
@@ -144,16 +144,45 @@ const FlagshipCard = ({ project }: { project: Project }) => {
 
   return (
     <article className="flagship-card" id={project.id}>
-      {/* Background Creative Animation: Ambient Data Tide for amber Ocean */}
+      {/* Background Creative Animation: Crashing Ocean Data Wave */}
       {project.id === "amber-ocean" && (
-        <div className="ocean-data-wave" aria-hidden="true">
-          <div className="wave-track wave-track-1">
-            <span>010101 SELECT id, SUM(rev) FROM telemetry WHERE latency &lt; 50ms · &lt;$100/15k · REDSHIFT_QUERY_OK · </span>
-            <span>010101 SELECT id, SUM(rev) FROM telemetry WHERE latency &lt; 50ms · &lt;$100/15k · REDSHIFT_QUERY_OK · </span>
+        <div className="ocean-wave-container" aria-hidden="true">
+          <div className="ocean-ambient-tide"></div>
+          <div className="ocean-svg-wrap">
+            <svg className="ocean-wave-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="oceanBackGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#2dd4bf" stopOpacity="0.25" />
+                  <stop offset="60%" stopColor="#0d9488" stopOpacity="0.10" />
+                  <stop offset="100%" stopColor="#042f2e" stopOpacity="0" />
+                </linearGradient>
+                <linearGradient id="oceanFrontGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.35" />
+                  <stop offset="40%" stopColor="#14b8a6" stopOpacity="0.18" />
+                  <stop offset="100%" stopColor="#022c22" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              <path
+                className="wave-layer wave-layer-back"
+                fill="url(#oceanBackGrad)"
+                d="M0,160 C320,80 480,240 800,140 C1120,40 1280,200 1440,120 L1440,320 L0,320 Z"
+              />
+              <path
+                className="wave-layer wave-layer-front"
+                fill="url(#oceanFrontGrad)"
+                d="M0,192 C240,110 400,270 720,160 C1040,50 1200,230 1440,140 L1440,320 L0,320 Z"
+              />
+            </svg>
           </div>
-          <div className="wave-track wave-track-2">
-            <span>101010 AST_VALIDATED · SEMANTIC_LAYER_RESOLVED · CACHE_HIT · TOKENS_OPTIMIZED_65% · </span>
-            <span>101010 AST_VALIDATED · SEMANTIC_LAYER_RESOLVED · CACHE_HIT · TOKENS_OPTIMIZED_65% · </span>
+          {/* Crashing Data Spray & Floating Telemetry Tokens */}
+          <div className="ocean-data-spray">
+            <span className="spray-token t1">010101</span>
+            <span className="spray-token t2">SELECT SUM(rev)</span>
+            <span className="spray-token t3">&lt;$100 / 15k</span>
+            <span className="spray-token t4">REDSHIFT</span>
+            <span className="spray-token t5">110010</span>
+            <span className="spray-token t6">AST_VALIDATED</span>
+            <span className="spray-token t7">MCP_OK</span>
           </div>
         </div>
       )}
@@ -213,14 +242,14 @@ const FlagshipCard = ({ project }: { project: Project }) => {
             <div className="system-flow-header">
               <div className="flow-badge-wrap">
                 <span className="flow-pulse-dot"></span>
-                <span className="flow-badge">TEXT-TO-SQL PIPELINE HARNESS</span>
+                <span className="flow-badge">AGENTIC ANALYTICS HARNESS</span>
               </div>
-              <span className="flow-latency">&lt;$100 / 15k sessions</span>
+              <span className="flow-latency">&lt;$100 / 15k sessions · &lt;$0.01/query</span>
             </div>
             <div className="flow-steps">
               <div className="flow-step">
                 <span className="step-num">01</span>
-                <span className="step-label">Natural Prompt</span>
+                <span className="step-label">Business Inquiry</span>
               </div>
               <div className="flow-arrow">→</div>
               <div className="flow-step">
@@ -230,12 +259,12 @@ const FlagshipCard = ({ project }: { project: Project }) => {
               <div className="flow-arrow">→</div>
               <div className="flow-step">
                 <span className="step-num">03</span>
-                <span className="step-label">Custom MCP</span>
+                <span className="step-label">Skills &amp; MCP</span>
               </div>
               <div className="flow-arrow">→</div>
               <div className="flow-step">
                 <span className="step-num">04</span>
-                <span className="step-label">AWS Redshift</span>
+                <span className="step-label">SQL, Charts &amp; RCAs</span>
               </div>
             </div>
           </div>
@@ -303,7 +332,7 @@ const FlagshipCard = ({ project }: { project: Project }) => {
                     className="prism-poly-inner"
                   />
                 </svg>
-                <span className="prism-core-label">Ollama NLP</span>
+                <span className="prism-core-label">LLM Core</span>
               </div>
 
               {/* Refracted Outgoing Multi-Channel Rays */}
@@ -312,7 +341,7 @@ const FlagshipCard = ({ project }: { project: Project }) => {
                   <div className="ray-line"></div>
                   <div className="ray-pill">
                     <span className="ray-dot"></span>
-                    <span className="ray-label">VOICE CALLS (100% QA)</span>
+                    <span className="ray-label">VOICE CALLS (90% AUDIT)</span>
                   </div>
                 </div>
                 <div className="channel-ray ray-whatsapp">

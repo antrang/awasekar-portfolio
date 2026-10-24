@@ -134,27 +134,27 @@
             "@type": "CreativeWork",
             "@id": "https://awasekar.com/#amber-ocean",
             "name": "amber Ocean",
-            "genre": "Applied AI & Text-to-SQL Architecture",
-            "description": "In-house Text-to-SQL AI harness with centralized semantic layer & custom Model Context Protocol (MCP) server over AWS Redshift.",
+            "genre": "Agentic AI Analytics & Text-to-SQL Architecture",
+            "description": "Agentic AI analytics harness answering business questions with SQL, charts, and RCAs via centralized Semantic Layer & custom Model Context Protocol (MCP) server over AWS Redshift.",
             "url": "https://awasekar.com/#amber-ocean",
-            "creator": { "@id": "https://awasekar.com/#person" }
-          },
-          {
-            "@type": "CreativeWork",
-            "@id": "https://awasekar.com/#amber-radar",
-            "name": "amber Radar",
-            "genre": "Predictive Market Intelligence SaaS",
-            "description": "Commercial B2B predictive market intelligence SaaS for student accommodation operators and universities.",
-            "url": "https://awasekar.com/#amber-radar",
             "creator": { "@id": "https://awasekar.com/#person" }
           },
           {
             "@type": "CreativeWork",
             "@id": "https://awasekar.com/#amber-prism",
             "name": "amber Prism",
-            "genre": "Operations Intelligence & Sales NLP",
-            "description": "Operations intelligence & sales transcript NLP engine providing 100% automated quality audit coverage.",
+            "genre": "Operations Intelligence & Transcript NLP",
+            "description": "LLM-powered transcript analysis platform for ops quality audits and sales pipeline insights, lifting coverage from 30% to 90% for 100+ daily active users.",
             "url": "https://awasekar.com/#amber-prism",
+            "creator": { "@id": "https://awasekar.com/#person" }
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://awasekar.com/#amber-radar",
+            "name": "amber Radar",
+            "genre": "Commercial Predictive Market Intelligence SaaS",
+            "description": "Commercial B2B predictive market intelligence SaaS for student housing demand, supply and pricing analysis, generating $30k ARR across 50+ UK property groups.",
+            "url": "https://radar.amberstudent.com",
             "creator": { "@id": "https://awasekar.com/#person" }
           },
           {
@@ -699,38 +699,38 @@
         <h2>Flagship Shipped Systems &amp; Production AI</h2>
 
         <article id="amber-ocean">
-          <h3>amber Ocean — AI Data Product &amp; Text-to-SQL Harness</h3>
+          <h3>amber Ocean — Agentic AI Analytics Harness (SQL, Charts &amp; RCAs)</h3>
           <p><strong>Role:</strong> Architect &amp; Lead Builder · amber</p>
-          <p>In-house natural-language text-to-SQL AI harness powered by amber's centralized Semantic Layer, agentic query routing, and custom Model Context Protocol (MCP) server over AWS Redshift.</p>
-          <p><strong>Architecture Pipeline:</strong> Natural User Prompt → Semantic Layer (metric/schema validation) → Custom MCP Server (tool calling &amp; AST validation) → AWS Redshift (guardrailed execution) → Response Stream.</p>
-          <p><strong>Key Architectural Decision:</strong> Built a centralized Semantic Layer rather than raw LLM prompt-to-SQL. Standardized business metrics, eliminated hallucinated column references, and cut token consumption by 65% across multi-turn sessions.</p>
+          <p>Agentic AI analytics harness powered by amber's centralized Semantic Layer, intelligent agent skills, multi-model routing, and custom Model Context Protocol (MCP) server over AWS Redshift, answering natural-language business questions with validated SQL, interactive charts, and root-cause analyses.</p>
+          <p><strong>Architecture Pipeline:</strong> 01 Business Inquiry → 02 Semantic Layer (metric/schema standardization) → 03 Skills &amp; MCP Server (tool calling &amp; AST validation) → 04 SQL, Charts &amp; RCAs (guardrailed Redshift execution).</p>
+          <p><strong>Key Architectural Decision:</strong> Built a centralized Semantic Layer and schema-constrained MCP server rather than unconstrained prompt-to-SQL, eliminating hallucinated table joins, guaranteeing cross-department metric consistency, and slashing token overhead by 65%.</p>
           <ul>
-            <li>&lt;$100 per 15,000 user sessions via strict token and model routing optimizations</li>
+            <li>&lt;$100 per 15,000 user sessions (&lt;$0.01 per session)</li>
             <li>3,000+ production queries processed with near-zero compute overhead (~$30)</li>
-            <li>Eliminated 80%+ of ad-hoc SQL backlog across company departments</li>
+            <li>Eliminated 80%+ of ad-hoc SQL and analytics backlog across company departments</li>
           </ul>
         </article>
 
         <article id="amber-prism">
-          <h3>amber Prism — NLP &amp; Sales Pipeline Quality Auditing</h3>
+          <h3>amber Prism — LLM Transcript Platform &amp; Operations Intelligence</h3>
           <p><strong>Role:</strong> Architect &amp; Builder · amber</p>
-          <p>Automated communication transcript analysis pipeline using local LLM inference (Ollama) and NLP vector classification across voice calls, WhatsApp, email, and SMS, alerting sales managers to high-risk deals via n8n multi-channel webhooks.</p>
-          <p><strong>Key Architectural Decision:</strong> Employed local Ollama inference on dedicated instances for high-throughput batch transcript classification, saving $1,500/month in cloud LLM API costs while enforcing strict customer data privacy.</p>
+          <p>LLM-powered transcript intelligence platform ingesting omni-channel customer conversations (calls, WhatsApp, email, SMS) to extract objection themes, evaluate sales quality, and surface at-risk deals for 100+ daily active users across Sales, Ops, and Leadership.</p>
+          <p><strong>Key Architectural Decision:</strong> Structured multi-stage prompt extraction and vector intent clustering rather than monolithic context passing, ensuring high precision on deal-risk indicators while controlling per-transcript token latency.</p>
           <ul>
-            <li>100% automated transcript QA coverage across the global sales pipeline</li>
-            <li>Real-time deal-risk notifications routed via n8n multi-channel webhooks</li>
-            <li>$1,500/month saved in cloud LLM API costs via dedicated Ollama deployment</li>
+            <li>Adopted by 100+ daily active users across Sales, Ops, and Leadership</li>
+            <li>Lifted quality audit coverage from 30% (manual sampling) to 90%</li>
+            <li>Real-time deal-risk notifications and objection tracking dispatched directly to CRM channels</li>
           </ul>
         </article>
 
         <article id="amber-radar">
-          <h3>amber Radar — Commercial B2B SaaS &amp; ML Forecasting</h3>
+          <h3>amber Radar — Commercial B2B SaaS &amp; Market Intelligence</h3>
           <p><strong>Role:</strong> Product &amp; ML Lead · amber</p>
-          <p>Revenue-generating commercial B2B SaaS platform combining automated daily ELT scrapers, machine learning predictive models, and an interactive Next.js application for student housing demand forecasting.</p>
-          <p><strong>Key Architectural Decision:</strong> Decoupled daily scraper ingestion pipelines from customer-facing serving through S3 staging and automated ELT, guaranteeing high dashboard responsiveness with zero downtime.</p>
+          <p>Revenue-generating commercial B2B market intelligence product (<a href="https://radar.amberstudent.com">radar.amberstudent.com</a>) combining automated daily ELT scrapers, machine learning predictive models, and an interactive Next.js application for PBSA demand, supply, and dynamic pricing forecasting.</p>
+          <p><strong>Key Architectural Decision:</strong> Decoupled high-frequency web scrapers and ML scoring pipelines from customer-facing serving via S3 staging and pre-aggregated warehouse views, ensuring sub-second dashboard latency for enterprise clients.</p>
           <ul>
-            <li>Revenue-generating B2B SaaS licensed by international accommodation providers</li>
-            <li>Compressed research and reporting cycles from several weeks to minutes</li>
+            <li>Generated $30k ARR licensed by 50+ UK property management groups and institutional investors</li>
+            <li>Compressed market research turnaround from several weeks to sub-minute interactive dashboards</li>
             <li>Automated daily ingestion of global inventory, competitor prices, and market shifts</li>
           </ul>
         </article>

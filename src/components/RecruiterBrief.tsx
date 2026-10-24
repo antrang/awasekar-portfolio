@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { MdCheck, MdContentCopy, MdDownload, MdEmail, MdFlashOn } from "react-icons/md";
 import "./styles/RecruiterBrief.css";
 
-const recruiterBlurbText = `Sourabh Awasekar — Applied AI & Product Systems Engineer (5+ YOE, BITS Pilani). Lead — Data & Analytics at amber. Architected amber Ocean (in-house text-to-SQL harness with custom MCP & semantic layer over Redshift at <$100 / 15k sessions) and amber Radar (commercial B2B SaaS). Saved $40k+/yr migrating 120 seats to Apache Superset. Open to Applied AI / Forward Deployed Engineer roles. Contact: work@awasekar.com | Portfolio: https://awasekar.com`;
+const recruiterBlurbText = `Sourabh Awasekar — Applied AI & Product Systems Engineer (5+ YOE, BITS Pilani). Lead — Data & Analytics at amber. Architected amber Ocean (agentic analytics harness with custom MCP & semantic layer over Redshift at <$100 / 15k sessions) and amber Prism (LLM transcript platform; 100+ DAU, 30% to 90% audit coverage). Saved $40k+/yr migrating 120 seats to Apache Superset. Open to Applied AI / Forward Deployed Engineer roles. Contact: work@awasekar.com | Portfolio: https://awasekar.com`;
 
 const RecruiterBrief = () => {
   const [copied, setCopied] = useState(false);
@@ -88,10 +88,10 @@ const RecruiterBrief = () => {
               <h3 className="brief-col-title">Verified Production Proof</h3>
               <ul className="brief-checklist">
                 <li>
-                  <strong>amber Ocean:</strong> Natural-language text-to-SQL harness with centralized Semantic Layer &amp; custom MCP over AWS Redshift at <em>&lt;$100 per 15k sessions</em> (3,000+ queries).
+                  <strong>amber Ocean:</strong> Agentic AI analytics harness with centralized Semantic Layer &amp; custom MCP over AWS Redshift at <em>&lt;$100 per 15k sessions</em> (3,000+ queries).
                 </li>
                 <li>
-                  <strong>amber Radar:</strong> B2B commercial SaaS for predictive student housing demand forecasting &amp; competitor pricing.
+                  <strong>amber Prism:</strong> LLM-powered transcript analysis platform for ops quality audits &amp; sales pipeline insights (100+ DAU across Sales, Ops &amp; Leadership, 30% &rarr; 90% audit coverage).
                 </li>
                 <li>
                   <strong>Warehouse &amp; BI Scaling:</strong> Cut 2 Redshift nodes (-$600/mo) and saved <em>$40,000+/year</em> migrating 120 seats to self-hosted Apache Superset.

@@ -23,42 +23,43 @@ His engineering philosophy is rooted in physical process dynamics from BITS Pila
 
 ## 2. Production Systems & Shipped Products
 
-### 2.1 amber Ocean (Flagship AI Data Product)
-- Category: Applied AI / Text-to-SQL / Enterprise Analytics
+### 2.1 amber Ocean (Flagship Agentic AI Analytics Harness)
+- Category: Agentic AI Analytics / Text-to-SQL / Enterprise BI
 - Role: Architect & Lead Builder at amber (amberstudent.com)
-- Problem: Operational, product, and growth teams faced multi-day turnaround delays for ad-hoc analytical queries, placing unsustainable pressure on data analysts.
+- Problem: Operational, product, and leadership teams faced turnaround delays for ad-hoc analytical queries and root-cause analyses, bottlenecking data analysts.
 - Architectural Solution:
-  - Built a natural-language-to-SQL harness integrating a custom Semantic Layer that standardizes metrics across tools.
+  - Designed an agentic AI analytics harness integrating a centralized Semantic Layer that standardizes metrics across tools.
   - Implemented custom Model Context Protocol (MCP) server over AWS Redshift with schema guardrails and query validation.
-  - Utilized intelligent token optimization and multi-tier model routing (Ollama, Claude, Gemini) to prevent hallucinated queries and excessive token consumption.
+  - Utilized multi-model routing (Claude, OpenAI) and agent skills answering business questions with SQL, charts, and RCAs.
 - Verified Metrics:
-  - Total compute cost under $100 per 15,000 user sessions
+  - Total compute cost under $100 per 15,000 user sessions (<$0.01 per session)
   - 3,000+ production queries processed with ~$30 in total compute overhead
   - Over 80% reduction in ad-hoc SQL support requests across departments
 
 ### 2.2 amber Radar (Commercial B2B Market Intelligence)
 - Category: Predictive Machine Learning / Commercial SaaS
-- Role: Product & ML Lead at amber
-- Problem: Global PBSA (Purpose-Built Student Accommodation) operators and universities required predictive foresight on international student demand, occupancy patterns, and dynamic competitor pricing.
+- Role: Product & ML Lead at amber (radar.amberstudent.com)
+- Problem: UK PBSA (Purpose-Built Student Accommodation) operators and institutional investors lacked dynamic visibility into localized student demand, real-time supply availability, and competitive pricing across university markets.
 - Architectural Solution:
-  - Engineered automated daily ELT scraper pipelines aggregating listings, rates, and occupancy across global university markets.
+  - Engineered automated daily ELT scraper pipelines aggregating listings, rates, and occupancy across university markets.
   - Developed predictive demand models using Scikit-Learn and Python statistical routines.
   - Delivered insights via an interactive, high-performance Next.js commercial web application.
 - Verified Metrics:
-  - Successfully licensed as a paid enterprise B2B SaaS product to international accommodation providers.
+  - Generated $30k ARR licensed by 50+ UK property management groups and institutional investors.
   - Accelerated market research turnaround from several weeks of manual collation to sub-minute interactive dashboards.
 
-### 2.3 amber Prism (NLP & Sales Pipeline Quality Auditing)
-- Category: NLP / Operations Intelligence
+### 2.3 amber Prism (LLM Transcript Platform & Operations Intelligence)
+- Category: LLM Systems / Operations Intelligence / NLP
 - Role: Architect & Lead Builder at amber
-- Problem: Manual QA sampling of thousands of customer interaction transcripts resulted in quality blindspots and undetected lead churn in high-velocity sales pipelines.
+- Problem: Manual QA sampling covered only 30% of customer interactions, leaving critical quality blindspots and undetected lead churn in high-velocity sales pipelines.
 - Architectural Solution:
-  - Automated ingestion of 100% of global customer communication transcripts.
-  - Structured extraction of customer sentiment, objection categories, and deal risk indicators using local LLM inference (Ollama) and NLP vector classification.
-  - Integrated n8n automated webhook triggers that instantly alert sales managers to at-risk deals.
+  - Automated ingestion of omni-channel customer communication transcripts (calls, WhatsApp, email, SMS).
+  - Structured extraction of objection themes, sales quality scoring, and deal-risk indicators using LLM prompt chaining and vector classification.
+  - Integrated real-time alert webhooks that instantly notify sales managers and leadership of at-risk deals.
 - Verified Metrics:
-  - 100% QA audit coverage achieved across the entire global sales funnel.
-  - Real-time deal-risk notifications dispatched directly to CRM and communication channels.
+  - Adopted by 100+ daily active users across Sales, Ops, and Leadership.
+  - Lifted quality audit coverage from 30% (manual sampling) to 90%.
+  - Real-time deal-risk notifications dispatched directly to CRM and team communication channels.
 
 ### 2.4 plectrum.live & PlectrumLabs (Audio Systems & Web Platform)
 - Category: Audio Engineering / Web ML / Native C++ DSP Software

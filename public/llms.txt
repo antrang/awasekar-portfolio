@@ -26,9 +26,9 @@
   - Built enterprise usage billing ($2k/mo saved) and API-first SaaS ($20k/mo revenue) at 5X Data
 
 ## Production Systems Shipped
-- [amber Ocean](https://amberstudent.com): In-house Text-to-SQL AI harness powered by a central semantic layer, intelligent agentic query routing, and a custom MCP server over AWS Redshift. Eliminates 80%+ of ad-hoc SQL backlog across company departments (<$100 per 15k sessions).
-- [amber Radar](https://amberstudent.com): Revenue-generating commercial B2B SaaS platform delivering predictive demand forecasting and dynamic competitive pricing models for global student housing operators. Built with Next.js, Scikit-Learn, and automated daily scrapers.
-- [amber Prism](https://amberstudent.com): Communication transcript NLP engine providing 100% automated quality audit coverage across sales call transcripts and chats, with deal-risk alerts routed via n8n multi-channel webhooks.
+- [amber Ocean](https://amberstudent.com): Agentic AI analytics harness powered by a central semantic layer, skills, agentic routing, and custom MCP server over AWS Redshift, answering business queries with SQL, charts, and RCAs (<$100 per 15k sessions).
+- [amber Radar](https://radar.amberstudent.com): Revenue-generating commercial B2B market intelligence product delivering predictive demand, supply, and dynamic pricing models for 50+ UK property groups ($30k ARR). Built with Next.js, Scikit-Learn, and automated daily scrapers.
+- [amber Prism](https://amberstudent.com): LLM-powered transcript intelligence platform providing quality audit coverage lift from 30% to 90% across 100+ daily active users in Sales, Ops, and Leadership, with real-time deal-risk alerts.
 - [plectrum.live & PlectrumLabs](https://plectrum.live): Music technology platform featuring 18+ in-browser audio ML tools running client-side ($0 server ML compute) plus 5 native C++17/JUCE 8 desktop DSP audio plugins (PluckMaster 7-stage DSP, PluckBoard pitch visualizer, PluckStem stem separator, PluckNote pitch-to-MIDI).
 - [5X Data Platform](https://5x.co): Enterprise data platform engineering including usage-based billing microservices, identity access management (IAM), and custom Streamlit data applications.
 - [Junglee Games Analytics Suite](https://jungleegames.com): Real-money gaming GTM onboarding funnels, goal-based reward microservices (+20% reactivation), and automated fraud/double-spend telemetry.
