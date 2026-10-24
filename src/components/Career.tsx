@@ -28,16 +28,16 @@ const careerHistory: CareerItem[] = [
     summary:
       "Leading data intelligence and architecting production AI Data Products across ed-tech student housing operations and commercial research.",
     achievements: [
-      "Devised and built amber Ocean: Text-to-SQL harness with Semantic Layer & custom MCP (<$100 / 15k sessions)",
-      "Developed amber Radar: revenue-generating predictive market intelligence platform using ML forecasting & Next.js",
-      "Built amber Prism: communication transcript NLP engine automating 100% of sales QA audits",
-      "Trimmed Redshift cluster costs by $600/month (freed 2 nodes) & reduced avg query time by 30 minutes",
+      "Leading the Data & Analytics team across business intelligence, revenue operations, and autonomous AI data product initiatives",
+      "Directed the productization of amber's AI suite (amber Ocean, amber Radar, and amber Prism), converting analyst bottlenecks into self-serve tooling",
+      "Trimmed AWS Redshift cluster spend by $600/month (decommissioned 2 nodes) & cut avg query runtime by 30 mins via DMS caching and key tuning",
       "Migrated 120-seat Tableau Cloud deployment to self-hosted Apache Superset, saving $40,000+/year with 25% faster rendering",
-      "Automated multi-channel reporting using Python, Ollama LLM insights, and n8n workflow triggers",
+      "Orchestrated automated daily ELT scraper pipelines, S3 staging, and Docker containers with Jenkins for zero-downtime market research",
+      "Automated cross-functional intelligence loops using Python, Ollama LLM insights, and multi-channel n8n alert webhooks",
     ],
     takeaway:
       "Building pipelines that quietly do their job every day without anyone noticing is the highest compliment a pipeline can get. ELT >>> ETL.",
-    skills: ["AI Data Products", "Semantic Layer", "Custom MCP", "AWS Redshift", "Superset", "Next.js", "Ollama", "n8n"],
+    skills: ["AI Data Products", "Semantic Layer", "Custom MCP", "AWS Redshift", "Superset", "Next.js", "Ollama", "Docker", "Jenkins", "n8n"],
   },
   {
     id: "turing",
@@ -48,14 +48,14 @@ const careerHistory: CareerItem[] = [
     summary:
       "Led analytics & QA team driving business quality, process efficiency, and enterprise LLM alignment programs.",
     achievements: [
-      "Conducted 100+ prompt engineering and RLHF annotations across multimodal projects for the MMMU benchmark",
-      "Engineered detection model for AI-generated vs human-generated content to reduce AI plagiarism",
-      "Automated feedback categorization using NLP (NLTK, spaCy) for business process optimization",
-      "Built cross-functional Looker Studio dashboards tracking contributor and model performance",
+      "Conducted 100+ verified prompt engineering and RLHF annotations across multimodal projects for the public MMMU benchmark",
+      "Engineered detection model for AI-generated vs human-generated content to protect dataset integrity against machine regurgitation",
+      "Automated feedback categorization using spaCy and NLTK, accelerating contributor QA loops by 3x across multimodal prompt evaluations",
+      "Built cross-functional Looker Studio dashboards tracking contributor velocity, model output consistency, and QA pass rates",
     ],
     takeaway:
       "Rigorous evaluation harnesses and high-quality alignment data are what separate fragile LLM demos from production systems.",
-    skills: ["RLHF", "MMMU Benchmark", "Prompt Engineering", "NLP (spaCy, NLTK)", "Looker Studio"],
+    skills: ["RLHF", "MMMU Benchmark", "Prompt Engineering", "NLP (spaCy, NLTK)", "Looker Studio", "QA Systems"],
   },
   {
     id: "5x",
@@ -67,15 +67,15 @@ const careerHistory: CareerItem[] = [
     summary:
       "Spearheaded end-to-end agile product engineering across data apps, usage billing, and enterprise access governance.",
     achievements: [
-      "Launched 15+ new features, 5 revamps, and 2 full products end-to-end",
-      "Developed in-house usage-based billing system, eliminating third-party dependencies and saving $2,000/month",
-      "Implemented enterprise user identity & access management (IAM) solutions, boosting revenue by $10,000/month",
-      "Built API-first data engineering SaaS that generated $20,000/month from enterprise clients",
+      "Launched 15+ new features, 5 revamps, and 2 full 0-to-1 data products end-to-end",
+      "Engineered in-house usage metering & billing microservices in PostgreSQL/Redis, removing vendor lock-in and saving $2,000/month",
+      "Implemented enterprise identity & access management (IAM / SSO) solutions, unlocking $10,000/month in contract expansions",
+      "Built API-first data engineering SaaS that generated $20,000/month in recurring enterprise revenue",
       "Revamped Utilization page and prediction models, improving forecast accuracy by >50%",
     ],
     takeaway:
       "Treating internal developers with the same product empathy as external customers is the secret to building high-leverage data platforms.",
-    skills: ["Product Strategy", "Usage-Based Billing", "Enterprise IAM", "Streamlit", "REST APIs"],
+    skills: ["Product Strategy", "Usage-Based Billing", "Enterprise IAM", "Streamlit", "PostgreSQL", "REST APIs"],
   },
   {
     id: "crimson",
@@ -86,13 +86,13 @@ const careerHistory: CareerItem[] = [
     summary:
       "Drove product discovery, roadmap, and performance engineering for AI-assisted writing and research tools.",
     achievements: [
-      "Optimized LiteDB queries and implemented grammar card grouping, cutting Trinka AI Word Add-in load time by 40%",
-      "Accelerated ideation, documentation, and stakeholder alignment for Enago Reports web app and browser plugin in <1 month",
-      "Created Amplitude analytics dashboards driving +20% engagement MoM, +8% conversion, and +15% retention",
+      "Optimized LiteDB index structures and grammar card grouping, cutting Trinka AI Word Add-in document load latency by 40%",
+      "Accelerated ideation, documentation, and stakeholder alignment for Enago Reports web app and browser plugin from ideation to dev handoff in <1 month",
+      "Created Amplitude analytics funnels and dashboards driving +20% engagement MoM, +8% conversion, and +15% user retention",
     ],
     takeaway:
       "In client-facing AI applications, local query latency is the difference between daily habitual usage and immediate churn.",
-    skills: ["LiteDB", "Word Add-in", "Amplitude Analytics", "User Research", "Browser Plugins"],
+    skills: ["LiteDB", "Word Add-in", "Amplitude Analytics", "User Research", "Browser Plugins", "Query Tuning"],
   },
   {
     id: "junglee",
@@ -105,13 +105,13 @@ const careerHistory: CareerItem[] = [
       "Delivered real-time gaming analytics, GTM funnels, marketing automation, and retention microservices.",
     achievements: [
       "Executed GTM funnels for Poker launch, achieving ₹1.2 lakh daily revenue in 18 days (~5%/day growth)",
-      "Ideated and built goal-based reward microservice: improved player reactivation by 20% weekly and retention by 10%",
-      "Automated alerts for double-spends and system failure, significantly slashing incident response time",
+      "Ideated and built goal-based reward microservice: improved player reactivation by 20% weekly and 30-day retention by 10%",
+      "Architected real-time anomaly detection pipelines over transaction logs, reducing double-spend discovery latency from 24 hours to under 60 seconds",
       "Shipped 5 features in marketing automation tool (A/B testing outlier filter, in-app notifications, scratch cards)",
     ],
     takeaway:
       "A good reward system and a bad reward system look identical until you check the retention numbers three weeks later.",
-    skills: ["Tableau BI", "Microservices", "A/B Testing", "GTM Execution", "SQL Automation"],
+    skills: ["Tableau BI", "Microservices", "A/B Testing", "GTM Execution", "Anomaly Detection", "SQL Automation"],
   },
   {
     id: "aditya-birla",
@@ -127,7 +127,7 @@ const careerHistory: CareerItem[] = [
     ],
     takeaway:
       "Physical chemical engineering teaches you respect for immutable constraints, mass conservation, and system efficiency.",
-    skills: ["Process Dynamics", "Industrial R&D", "Data Analysis"],
+    skills: ["Process Dynamics", "Industrial R&D", "Data Analysis", "Mass Balances"],
   },
   {
     id: "hisp",
@@ -140,11 +140,11 @@ const careerHistory: CareerItem[] = [
     achievements: [
       "Conceived and implemented geo-tagging of healthcare facilities and resources for national COVID-19 surveillance",
       "Wrangled public health data streams to eliminate redundancy, increasing application efficiency by 25%",
-      "Optimized backend queries and front-end markup, resulting in 40% faster application load times",
+      "Streamlined SQL spatial query plans and frontend markup, resulting in 40% faster application load times",
     ],
     takeaway:
       "Shipping software under high-stakes public pressure demands ruthless simplification and immediate operational reliability.",
-    skills: ["Python", "SQL", "Geo-Tagging", "Performance Optimization"],
+    skills: ["Python", "SQL", "Geo-Tagging", "Spatial Data", "Performance Optimization"],
   },
   {
     id: "bits",
