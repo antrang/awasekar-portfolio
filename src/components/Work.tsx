@@ -144,7 +144,7 @@ const FlagshipCard = ({ project }: { project: Project }) => {
 
   return (
     <article className="flagship-card" id={project.id}>
-      {/* Background Creative Animation: Crashing Ocean Data Wave */}
+      {/* Background Creative Animation: Pure Ocean Swell & Rolling Waves */}
       {project.id === "amber-ocean" && (
         <div className="ocean-wave-container" aria-hidden="true">
           <div className="ocean-ambient-tide"></div>
@@ -173,16 +173,6 @@ const FlagshipCard = ({ project }: { project: Project }) => {
                 d="M0,192 C240,110 400,270 720,160 C1040,50 1200,230 1440,140 L1440,320 L0,320 Z"
               />
             </svg>
-          </div>
-          {/* Crashing Data Spray & Floating Telemetry Tokens */}
-          <div className="ocean-data-spray">
-            <span className="spray-token t1">010101</span>
-            <span className="spray-token t2">SELECT SUM(rev)</span>
-            <span className="spray-token t3">&lt;$100 / 15k</span>
-            <span className="spray-token t4">REDSHIFT</span>
-            <span className="spray-token t5">110010</span>
-            <span className="spray-token t6">AST_VALIDATED</span>
-            <span className="spray-token t7">MCP_OK</span>
           </div>
         </div>
       )}
