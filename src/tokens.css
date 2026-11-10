@@ -1,0 +1,103 @@
+:root {
+  --space-3xs: 2px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  --text-2xs: 0.75rem;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5625rem;
+  --text-2xl: 1.953rem;
+  --text-3xl: 2.441rem;
+
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem);
+  --text-display: clamp(2.5rem, 4.5vw + 0.75rem, 4.5rem);
+  --text-section: clamp(1.75rem, 2vw + 0.75rem, 2.75rem);
+  --text-title: clamp(1.15rem, 0.7vw + 0.85rem, 1.5rem);
+  --text-lead: clamp(1rem, 0.35vw + 0.95rem, 1.25rem);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --dur-micro: 120ms;
+  --dur-short: 200ms;
+  --dur-long: 400ms;
+
+  --color-error: oklch(52% 0.19 27);
+  --color-success: oklch(50% 0.12 150);
+
+  --container: 1180px;
+  --gutter: 32px;
+  --gap-columns: 32px;
+  --section-gap-s: 64px;
+  --section-gap: 80px;
+  --section-gap-l: 112px;
+
+  --z-base: 1;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-sticky-nav: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+
+  --color-paper: oklch(14% 0.015 260);
+  --color-paper-2: oklch(18% 0.02 260);
+  --color-paper-3: oklch(22% 0.025 260);
+  --color-paper-card: oklch(18% 0.02 260 / 0.82);
+
+  --color-ink: oklch(96% 0.005 260);
+  --color-ink-2: oklch(82% 0.01 260);
+  --color-muted: oklch(68% 0.015 260);
+
+  --color-rule: oklch(100% 0 0 / 0.08);
+  --color-rule-subtle: oklch(100% 0 0 / 0.05);
+
+  --color-accent: oklch(78% 0.14 185);
+  --color-accent-ink: oklch(14% 0.015 260);
+  --color-accent-muted: oklch(78% 0.14 185 / 0.12);
+  --color-accent-border: oklch(78% 0.14 185 / 0.25);
+  --color-focus: oklch(78% 0.14 185);
+  --color-signal-emerald: oklch(72% 0.17 155);
+
+  /* Compatibility aliases for existing component styles */
+  --backgroundColor: var(--color-paper);
+  --surfaceColor: var(--color-paper-2);
+  --surfaceCard: var(--color-paper-card);
+  --surfaceCardHover: oklch(24% 0.03 260 / 0.9);
+  --accentColor: var(--color-accent);
+  --accentMuted: var(--color-accent-muted);
+  --accentBorder: var(--color-accent-border);
+  --signalEmerald: var(--color-signal-emerald);
+  --textPrimary: var(--color-ink);
+  --textSecondary: var(--color-ink-2);
+  --textMuted: var(--color-muted);
+  --borderColor: var(--color-rule);
+  --borderColorHover: oklch(100% 0 0 / 0.16);
+
+  --font-display: "Geist Sans", "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Geist Sans", "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --fontSans: var(--font-body);
+  --fontMono: var(--font-mono);
+
+  --radius-card: 16px;
+  --radius-pill: 9999px;
+  --rule-hair: 1px;
+  --shadow-card: none;
+  --tracking-display: -0.025em;
+
+  --cWidth: 88%;
+  --cMaxWidth: 1180px;
+}

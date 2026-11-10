@@ -17,7 +17,7 @@
 }
 
 .work-title {
-  font-size: clamp(30px, 3.5vw, 44px);
+  font-size: var(--text-section);
   line-height: 1.15;
   letter-spacing: -0.03em;
   margin-bottom: 12px;
@@ -25,7 +25,7 @@
 }
 
 .work-subtitle {
-  font-size: 14.5px;
+  font-size: var(--text-sm);
   line-height: 1.6;
   color: var(--textSecondary);
   margin: 0;
@@ -45,7 +45,7 @@
 
 .filter-tab {
   font-family: var(--fontMono);
-  font-size: 12px;
+  font-size: var(--text-xs);
   letter-spacing: 0.04em;
   color: var(--textMuted);
   background: transparent;
@@ -65,9 +65,9 @@
 .filter-tab-active,
 .filter-tab-active:hover {
   background: var(--accentColor) !important;
-  color: #070a11 !important;
+  color: var(--color-accent-ink) !important;
   font-weight: 600;
-  box-shadow: 0 2px 14px rgba(45, 212, 191, 0.45);
+  box-shadow: none;
 }
 
 /* Flagship Cards Container */
@@ -187,7 +187,7 @@
 
 .project-tag {
   font-family: var(--fontMono);
-  font-size: 10.5px;
+  font-size: var(--text-xs);
   color: var(--accentColor);
   letter-spacing: 0.08em;
   font-weight: 600;
@@ -195,12 +195,12 @@
 
 .project-role {
   font-family: var(--fontMono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   color: var(--textMuted);
 }
 
 .project-title {
-  font-size: clamp(22px, 2.4vw, 28px);
+  font-size: var(--text-title);
   letter-spacing: -0.025em;
   color: var(--textPrimary);
   margin-bottom: 4px;
@@ -217,7 +217,7 @@
 }
 
 .project-tagline {
-  font-size: 13.5px;
+  font-size: var(--text-sm);
   color: var(--textSecondary);
   margin-bottom: 14px;
   line-height: 1.45;
@@ -241,7 +241,7 @@
   border: 1px solid rgba(45, 212, 191, 0.2);
   border-radius: 9999px;
   font-family: var(--fontMono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   font-weight: 600;
   color: var(--textPrimary);
   white-space: nowrap;
@@ -275,14 +275,14 @@
 
 .summary-label {
   font-family: var(--fontMono);
-  font-size: 9.5px;
+  font-size: var(--text-xs);
   font-weight: 600;
   letter-spacing: 0.08em;
   color: var(--accentColor);
 }
 
 .summary-text {
-  font-size: 12px;
+  font-size: var(--text-xs);
   line-height: 1.45;
   color: var(--textSecondary);
   margin: 0;
@@ -326,7 +326,7 @@
 
 .flow-badge {
   font-family: var(--fontMono);
-  font-size: 9.5px;
+  font-size: var(--text-xs);
   font-weight: 600;
   letter-spacing: 0.08em;
   color: var(--accentColor);
@@ -334,7 +334,7 @@
 
 .flow-latency {
   font-family: var(--fontMono);
-  font-size: 10px;
+  font-size: var(--text-2xs);
   color: var(--textMuted);
 }
 
@@ -366,14 +366,14 @@
 
 .step-num {
   font-family: var(--fontMono);
-  font-size: 9px;
+  font-size: var(--text-2xs);
   color: var(--accentColor);
   letter-spacing: 0.05em;
   flex-shrink: 0;
 }
 
 .step-label {
-  font-size: 10.5px;
+  font-size: var(--text-xs);
   font-weight: 600;
   color: var(--textPrimary);
   white-space: nowrap;
@@ -384,7 +384,7 @@
 .flow-arrow {
   color: var(--textMuted);
   font-family: var(--fontMono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   transition: all 0.35s ease;
   opacity: 0.4;
   flex-shrink: 0;
@@ -446,7 +446,7 @@
 
 .tech-chip {
   font-family: var(--fontMono);
-  font-size: 10px;
+  font-size: var(--text-xs);
   color: var(--textSecondary);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--borderColor);
@@ -459,7 +459,7 @@
   align-items: center;
   gap: 5px;
   font-family: var(--fontMono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   color: var(--accentColor);
   padding: 5px 12px;
   border-radius: 9999px;
@@ -530,7 +530,7 @@
 
 .browser-address {
   font-family: var(--fontMono);
-  font-size: 10px;
+  font-size: var(--text-2xs);
   color: var(--textMuted);
   background: rgba(0, 0, 0, 0.35);
   padding: 2px 8px;
@@ -549,7 +549,7 @@
 
 .switch-tab {
   font-family: var(--fontMono);
-  font-size: 9.5px;
+  font-size: var(--text-2xs);
   letter-spacing: 0.02em;
   color: var(--textMuted);
   background: rgba(255, 255, 255, 0.04);
@@ -635,7 +635,7 @@
 
 .prism-stage-tag {
   font-family: var(--fontMono);
-  font-size: 8.5px;
+  font-size: var(--text-2xs);
   font-weight: 600;
   letter-spacing: 0.08em;
   color: var(--textMuted);
@@ -651,7 +651,7 @@
 
 .stream-line {
   font-family: var(--fontMono);
-  font-size: 9px;
+  font-size: var(--text-2xs);
   color: var(--textSecondary);
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -704,7 +704,7 @@
 
 .prism-core-label {
   font-family: var(--fontMono);
-  font-size: 8.5px;
+  font-size: var(--text-2xs);
   color: var(--accentColor);
   letter-spacing: 0.06em;
   margin-top: 4px;
@@ -736,7 +736,7 @@
   padding: 3px 7px;
   border-radius: 9999px;
   font-family: var(--fontMono);
-  font-size: 8.5px;
+  font-size: var(--text-2xs);
   font-weight: 600;
   letter-spacing: 0.05em;
   white-space: nowrap;
@@ -810,7 +810,7 @@
   background: rgba(0, 0, 0, 0.45);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   font-family: var(--fontMono);
-  font-size: 8.5px;
+  font-size: var(--text-2xs);
   color: var(--textMuted);
   display: flex;
   align-items: center;
@@ -934,7 +934,7 @@
   border: 1px solid rgba(45, 212, 191, 0.25);
   border-radius: 9999px;
   font-family: var(--fontMono);
-  font-size: 8.5px;
+  font-size: var(--text-2xs);
   font-weight: 600;
   color: var(--accentColor);
   letter-spacing: 0.06em;
@@ -1027,11 +1027,11 @@
   }
 
   .project-title {
-    font-size: 20px;
+    font-size: var(--text-lg);
   }
 
   .project-tagline {
-    font-size: 13px;
+    font-size: var(--text-sm);
     margin-bottom: 10px;
   }
 
@@ -1041,12 +1041,12 @@
   }
 
   .metric-pill {
-    font-size: 10px;
+    font-size: var(--text-xs);
     padding: 3px 8px;
   }
 
   .summary-text {
-    font-size: 11.5px;
+    font-size: var(--text-xs);
   }
 
   .filter-tabs {
@@ -1055,7 +1055,7 @@
   }
 
   .filter-tab {
-    font-size: 11px;
+    font-size: var(--text-xs);
     padding: 6px 12px;
   }
 }
@@ -1063,7 +1063,12 @@
 @media (prefers-reduced-motion: reduce) {
   .ocean-ambient-tide,
   .wave-layer-back,
-  .wave-layer-front {
+  .wave-layer-front,
+  .radar-sweep-beam,
+  .radar-blip,
+  .eq-bar,
+  .hud-status-ping,
+  .radar-live-beacon {
     animation: none !important;
   }
 }

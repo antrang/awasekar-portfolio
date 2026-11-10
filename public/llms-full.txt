@@ -1,4 +1,4 @@
-# Sourabh Awasekar — Comprehensive Engineering Architecture & Systems Portfolio
+# Sourabh Awasekar: Comprehensive Engineering Architecture & Systems Portfolio
 
 > Canonical Domain: https://awasekar.com
 > Canonical Resume: https://awasekar.com/Awasekar_Sourabh_Resume_2026.pdf
@@ -115,7 +115,7 @@ His engineering philosophy is rooted in physical process dynamics from BITS Pila
 
 ## 3. Career Timeline & Chronology
 
-- May 2025 – Present: Lead — Data & Analytics (+ AI Data Products), amber (Pune, India)
+- May 2025 to Present: Lead, Data & Analytics (+ AI Data Products), amber (Pune, India)
 - Nov 2024 – May 2025: Lead Business Analyst & Business Analyst, Turing (Palo Alto, Remote)
 - Oct 2023 – Sep 2024: Associate Product Manager, 5X Data (Singapore, Remote)
 - Jan 2023 – Apr 2023: Associate Product Manager, Crimson AI (Mumbai, India)

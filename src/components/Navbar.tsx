@@ -57,18 +57,8 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
-                <a href="#commits" onClick={(e) => handleNavClick(e, "#commits")}>
-                  <HoverLinks text="COMMITS" />
-                </a>
-              </li>
-              <li>
-                <a href="#pillars" onClick={(e) => handleNavClick(e, "#pillars")}>
-                  <HoverLinks text="PILLARS" />
-                </a>
-              </li>
-              <li>
-                <a href="#about" onClick={(e) => handleNavClick(e, "#about")}>
-                  <HoverLinks text="ABOUT" />
+                <a href="#telemetry" onClick={(e) => handleNavClick(e, "#telemetry")}>
+                  <HoverLinks text="TELEMETRY" />
                 </a>
               </li>
               <li>

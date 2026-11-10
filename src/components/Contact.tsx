@@ -6,16 +6,15 @@ const Contact = () => {
   return (
     <footer className="contact-section" id="contact">
       <div className="section-container">
-        <div className="section-header-tag">07 / GET IN TOUCH</div>
         <h2 className="sr-only">Contact Channels, Founder Advisory &amp; Recruiting Inquiries</h2>
 
         <div className="contact-grid">
           {/* Founder Advisory Callout */}
           <div className="advisory-card">
-            <div className="advisory-tag">FOR STARTUP FOUNDERS</div>
+            <span className="advisory-tag">Founder Advisory</span>
             <h3 className="advisory-title">Data &amp; AI Advisory</h3>
             <p className="advisory-desc">
-              Outside of amber, I take on a small number of data and AI consulting projects. If you&apos;re trying to figure out your data stack, want an AI feature shipped fast, or just want a second opinion on whether your pipeline is held together with duct tape (it usually is), feel free to reach out.
+              Selective technical consulting for startups and engineering teams looking to accelerate their data architecture and applied AI capabilities.
             </p>
             <div className="advisory-points">
               <div className="adv-point">◈ 0-to-1 AI product prototyping &amp; architecture</div>
@@ -34,10 +33,10 @@ const Contact = () => {
 
           {/* Recruiter & Career Channels */}
           <div className="recruiter-card">
-            <div className="advisory-tag">FOR RECRUITERS &amp; ENGINEERING LEADERS</div>
-            <h3 className="advisory-title">Let&apos;s Build the Future</h3>
+            <span className="advisory-tag">Engineering Roles</span>
+            <h3 className="advisory-title">Let’s Build Together</h3>
             <p className="advisory-desc">
-              Open to high-impact roles in <strong>Applied AI Engineering</strong>, <strong>AI/ML Product Engineering</strong>, and <strong>Forward-Deployed Engineering</strong>.
+              Open to high-impact opportunities in <strong>Applied AI Engineering</strong>, <strong>AI Product Engineering</strong>, and <strong>Forward-Deployed Engineering</strong>.
             </p>
 
             <div className="contact-links-grid">
@@ -111,14 +110,14 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Colophon & Copyright */}
+        {/* Colophon & Copyright without dot strings */}
         <div className="contact-colophon">
           <div className="colophon-left">
             <span>© {new Date().getFullYear()} Sourabh Awasekar</span>
-            <span className="colophon-divider">·</span>
+            <span className="colophon-hairline">|</span>
             <span>Pune, India</span>
-            <span className="colophon-divider">·</span>
-            <span>Built with React 18, TypeScript &amp; Vite</span>
+            <span className="colophon-hairline">|</span>
+            <span>React 18 &amp; TypeScript</span>
           </div>
 
           <div className="colophon-right">

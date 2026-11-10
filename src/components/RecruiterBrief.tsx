@@ -2,7 +2,36 @@ import { useEffect, useRef, useState } from "react";
 import { MdCheck, MdContentCopy, MdDownload, MdEmail, MdFlashOn } from "react-icons/md";
 import "./styles/RecruiterBrief.css";
 
-const recruiterBlurbText = `Sourabh Awasekar — Applied AI & Product Systems Engineer (5+ YOE, BITS Pilani). Lead — Data & Analytics at amber. Architected amber Ocean (agentic analytics harness with custom MCP & semantic layer over Redshift at <$100 / 15k sessions) and amber Prism (LLM transcript platform; 100+ DAU, 30% to 90% audit coverage). Saved $40k+/yr migrating 120 seats to Apache Superset. Open to Applied AI / Forward Deployed Engineer roles. Contact: work@awasekar.com | Portfolio: https://awasekar.com`;
+const recruiterBlurbText = `SOURABH AWASEKAR
+Applied AI & Product Systems Engineer
+Current: Lead, Data & Analytics (+ AI Data Products) at amber
+Location: Pune, India (Open to Remote / Select Relocation)
+Education: BITS Pilani (5+ YOE)
+
+Target Roles:
+• Applied AI Engineer
+• Forward Deployed Engineer (FDE)
+• AI Product Systems Engineer
+• Lead, Data & Analytics
+
+Key Verified Impact:
+• amber Ocean: Agentic text-to-SQL harness with custom MCP & semantic layer over Redshift (<$100 / 15k sessions, 3,000+ queries).
+• amber Prism: Multi-channel LLM transcript platform (100+ DAU, 30% to 90% audit coverage, real-time deal-risk alerts).
+• Warehouse & BI Scaling: Saved $40k+/yr migrating 120 seats to self-hosted Apache Superset; trimmed 2 Redshift nodes (-$600/mo).
+• Frontier AI Alignment: 100+ multimodal prompt evaluations & RLHF annotations for MMMU benchmark at Turing.
+
+Core Tech Stack:
+• Applied AI & Agents: Custom MCP Servers, Semantic Layers, Production RAG, Claude & OpenAI APIs, Ollama, RLHF & Evals (MMMU)
+• Languages & Systems: Python (Certified), TypeScript, SQL (Certified), Next.js, React, Node.js, C++17 (JUCE DSP)
+• Data Platforms & BI: AWS Redshift, Apache Superset (Self-Hosted), PostgreSQL, Snowflake, BigQuery, Metabase, Tableau
+• Cloud & MLOps: AWS (S3, EC2, Lambda, DMS), Docker, Jenkins Pipelines, n8n Automation, PostHog
+
+Contact & Links:
+• Email: work@awasekar.com
+• Portfolio: https://awasekar.com
+• LinkedIn: https://www.linkedin.com/in/awasekar/
+• GitHub: https://github.com/antrang
+• Canonical Resume: https://awasekar.com/Awasekar_Sourabh_Resume_2026.pdf`;
 
 const RecruiterBrief = () => {
   const [copied, setCopied] = useState(false);

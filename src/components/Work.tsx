@@ -28,20 +28,20 @@ const allProjects: Project[] = [
   {
     id: "amber-ocean",
     title: "amber Ocean",
-    tag: "AGENTIC AI ANALYTICS · SQL, CHARTS & RCAS",
+    tag: "Agentic AI Analytics",
     category: "ai",
-    role: "Architect & Lead Builder · amber",
-    tagline: "Agentic AI Analytics Harness with Semantic Layer, Skills, Routing & MCP",
+    role: "Architect & Lead Builder, amber",
+    tagline: "Agentic analytics harness with semantic layer and custom MCP server over Redshift",
     problem:
-      "Business stakeholders across sales, operations, and leadership faced turnaround bottlenecks waiting for data analysts to write ad-hoc SQL, build dashboards, and diagnose metric anomalies.",
+      "Analysts faced backlog bottlenecks fielding ad-hoc SQL inquiries, repetitive dashboard updates, and manual metric anomaly diagnosis.",
     solution:
-      "Designed an agentic AI analytics harness (centralized semantic layer, domain skills, intelligent model routing, custom MCP server over AWS Redshift) answering business questions with SQL, charts, and root-cause analyses (RCAs).",
+      "Architected an autonomous analytics harness pairing amber's centralized semantic layer and schema-constrained MCP server with multi-model routing.",
     metrics: [
-      "<$100 per 15k sessions (<$0.01/session)",
-      "80% cut in ad-hoc data requests",
+      "<$100 per 15k sessions",
+      "80% cut in SQL backlog",
       "3,000+ queries (<$30 compute)",
     ],
-    tech: ["Claude / OpenAI APIs", "Python", "Semantic Layer", "Custom MCP", "AWS Redshift", "PostgreSQL"],
+    tech: ["Claude / Gemini APIs", "Python", "Semantic Layer", "Custom MCP", "AWS Redshift", "PostgreSQL"],
     images: [
       {
         label: "amber Ocean Dashboard",
@@ -51,44 +51,44 @@ const allProjects: Project[] = [
     ],
     link: "https://amberstudent.com",
     tradeoff:
-      "Engineered a centralized Semantic Layer and schema-constrained MCP server rather than unconstrained prompt-to-SQL, eliminating hallucinated joins, guaranteeing metric consistency, and slashing token overhead by 65%.",
+      "Constrained agent execution through a centralized semantic layer rather than open prompt-to-SQL, eliminating join hallucinations and slashing token cost by 65%.",
   },
   {
     id: "amber-prism",
     title: "amber Prism",
-    tag: "LLM TRANSCRIPT PLATFORM · OPS INTELLIGENCE",
+    tag: "Transcript Intelligence & NLP",
     category: "ai",
-    role: "Architect & Builder · amber",
-    tagline: "LLM-Powered Multi-Channel Transcript Analysis & Sales Pipeline Insights",
+    role: "Architect & Builder, amber",
+    tagline: "Multi-channel transcript intelligence platform and real-time deal risk tracking",
     problem:
-      "Manual QA sampling covered only 30% of customer interactions, leaving critical quality blindspots, undiscovered objection patterns, and unmonitored lead churn across the global sales funnel.",
+      "Manual QA covered only 30% of customer interactions, creating critical quality and objection blindspots across global sales pipelines.",
     solution:
-      "Built an LLM-powered transcript intelligence platform ingesting omni-channel customer conversations (calls, WhatsApp, email, SMS) to extract objection themes, evaluate sales quality, and surface at-risk deals for 100+ daily active users across Sales, Ops, and Leadership.",
+      "Ingests omni-channel customer conversations (calls, WhatsApp, email) to extract objections, audit sales quality, and surface at-risk deals.",
     metrics: [
-      "100+ Daily Active Users (Sales, Ops, Leadership)",
-      "30% → 90% audit coverage lift",
-      "Real-time deal-risk & objection alerts",
+      "100+ daily active users",
+      "30% to 90% audit coverage",
+      "Real-time pipeline risk alerts",
     ],
-    tech: ["LLM APIs (Claude / OpenAI)", "Python", "NLP", "Vector Embeddings", "n8n Webhooks", "PostgreSQL"],
+    tech: ["Claude API", "Python", "NLP Intent Vectors", "n8n Webhooks", "PostgreSQL"],
     link: "https://amberstudent.com",
     tradeoff:
-      "Structured multi-stage prompt extraction and vector intent clustering rather than monolithic context passing, ensuring high precision on deal-risk indicators while controlling per-transcript token latency.",
+      "Multi-stage structured prompt extraction and vector intent clustering rather than monolithic context passing, ensuring precision on deal-risk indicators.",
   },
   {
     id: "amber-radar",
     title: "amber Radar",
-    tag: "COMMERCIAL B2B SAAS · MARKET INTELLIGENCE",
+    tag: "Commercial B2B Market SaaS",
     category: "ai",
-    role: "Product & ML Lead · amber",
-    tagline: "Client-Facing Market Intelligence Product for Demand, Supply & Pricing Analysis",
+    role: "Product & ML Lead, amber",
+    tagline: "Client-facing predictive market intelligence for demand, supply, and dynamic pricing",
     problem:
-      "UK property management groups, PBSA operators, and institutional investors lacked dynamic visibility into localized student demand, real-time supply availability, and competitive pricing across university markets.",
+      "UK property operators and institutional investors lacked dynamic market visibility into student housing demand, supply shifts, and competitor pricing.",
     solution:
-      "Built a commercial market intelligence product (Next.js, ML forecasting with Scikit-Learn/Python, automated daily ELT scrapers) delivering granular supply/demand analytics, competitor price benchmarking, and predictive market forecasts.",
+      "Engineered a commercial SaaS product combining daily automated ELT scrapers, Scikit-Learn predictive modeling, and an interactive Next.js application.",
     metrics: [
-      "$30k ARR Generated",
-      "50+ UK Property Groups & Investors",
-      "Research cycles: weeks → sub-minute",
+      "$30k ARR generated",
+      "50+ UK property groups",
+      "Research: weeks to sub-minute",
     ],
     tech: ["Next.js", "TypeScript", "Scikit-Learn", "Python", "Automated ELT", "AWS Redshift"],
     images: [
@@ -100,25 +100,25 @@ const allProjects: Project[] = [
     ],
     link: "https://radar.amberstudent.com",
     tradeoff:
-      "Decoupled high-frequency web scrapers and ML scoring pipelines from customer-facing serving via S3 staging and pre-aggregated warehouse views, ensuring sub-second dashboard latency for enterprise clients.",
+      "Decoupled scrapers and ML scoring from client queries via S3 staging and pre-aggregated warehouse views, ensuring sub-second dashboard rendering.",
   },
   {
     id: "plectrum",
     title: "plectrum.live & PlectrumLabs",
-    tag: "AUDIO SYSTEMS & WEB PLATFORM",
+    tag: "Audio Systems & Desktop DSP",
     category: "audio",
     role: "Founder & Systems Engineer",
-    tagline: "Browser Audio Suite + 5 Native C++17/JUCE 8 Desktop DSP Plugins",
+    tagline: "Client-side ML audio tools and 5 native C++17/JUCE 8 desktop DSP plugins",
     problem:
-      "Music producers face expensive commercial licensing and high cloud latency for essential audio tools like mastering, pitch-to-MIDI, stem separation, and scale training.",
+      "Musicians face expensive commercial licensing and cloud latency for essential audio DSP tasks like pitch tracking, mastering, and stem separation.",
     solution:
-      "Built plectrum.live with client-side ML (TensorFlow.js, ONNX Runtime Web, Tone.js) plus a family of 5 native C++17/JUCE 8 desktop products (PluckMaster 7-stage DSP, PluckBoard, PluckNote, PluckStem, Splectrum).",
+      "Built plectrum.live with client-side ML in Web Audio plus a suite of 5 native desktop plugins (PluckMaster 7-stage DSP, PluckBoard, PluckNote, PluckStem).",
     metrics: [
-      "18+ browser audio tools ($0 compute)",
+      "18+ browser audio tools",
       "5 native desktop products (AU/VST3)",
-      "Sub-ms latency local DSP",
+      "Sub-millisecond local DSP",
     ],
-    tech: ["Next.js 16", "C++17", "JUCE 8", "ONNX Runtime Web", "TensorFlow.js", "Docker"],
+    tech: ["Next.js", "C++17 / JUCE 8", "ONNX Runtime Web", "TensorFlow.js", "Web Audio API"],
     images: [
       {
         label: "plectrum.live (Web Suite)",
@@ -133,7 +133,7 @@ const allProjects: Project[] = [
     ],
     link: "https://plectrum.live",
     tradeoff:
-      "Executed browser ML via ONNX Runtime Web and Web Audio API rather than server-side inference, achieving zero server compute costs with sub-millisecond local DSP.",
+      "Executed ML inference client-side via ONNX Runtime Web rather than server endpoints, achieving $0 compute cost with sub-millisecond local response.",
   },
 ];
 
@@ -144,7 +144,7 @@ const FlagshipCard = ({ project }: { project: Project }) => {
 
   return (
     <article className="flagship-card" id={project.id}>
-      {/* Background Creative Animation: Pure Ocean Swell & Rolling Waves */}
+      {/* Background Creative Animation: Pure Ocean Swell */}
       {project.id === "amber-ocean" && (
         <div className="ocean-wave-container" aria-hidden="true">
           <div className="ocean-ambient-tide"></div>
@@ -152,14 +152,14 @@ const FlagshipCard = ({ project }: { project: Project }) => {
             <svg className="ocean-wave-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="oceanBackGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#2dd4bf" stopOpacity="0.25" />
-                  <stop offset="60%" stopColor="#0d9488" stopOpacity="0.10" />
-                  <stop offset="100%" stopColor="#042f2e" stopOpacity="0" />
+                  <stop offset="0%" stopColor="var(--color-accent)" stopOpacity="0.25" />
+                  <stop offset="60%" stopColor="var(--color-accent)" stopOpacity="0.10" />
+                  <stop offset="100%" stopColor="var(--color-paper)" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient id="oceanFrontGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.35" />
-                  <stop offset="40%" stopColor="#14b8a6" stopOpacity="0.18" />
-                  <stop offset="100%" stopColor="#022c22" stopOpacity="0" />
+                  <stop offset="0%" stopColor="var(--color-accent)" stopOpacity="0.35" />
+                  <stop offset="40%" stopColor="var(--color-accent)" stopOpacity="0.18" />
+                  <stop offset="100%" stopColor="var(--color-paper)" stopOpacity="0" />
                 </linearGradient>
               </defs>
               <path
@@ -207,58 +207,24 @@ const FlagshipCard = ({ project }: { project: Project }) => {
           {project.metrics.map((metric, i) => (
             <div className="metric-pill" key={i}>
               <span className="pill-dot"></span>
-              <span>{metric}</span>
+              <span className="num">{metric}</span>
             </div>
           ))}
         </div>
 
-        {/* Streamlined Architecture & Trade-Off Box (No Nested Clutter) */}
+        {/* Streamlined Architecture & Trade-Off Box */}
         <div className="project-summary-box">
           <div className="summary-line">
-            <span className="summary-label">ARCHITECTURE</span>
+            <span className="summary-label">Architecture</span>
             <p className="summary-text">{project.solution}</p>
           </div>
           {project.tradeoff && (
             <div className="summary-line summary-tradeoff">
-              <span className="summary-label">DECISION &amp; TRADE-OFF</span>
+              <span className="summary-label">Trade-off</span>
               <p className="summary-text">{project.tradeoff}</p>
             </div>
           )}
         </div>
-
-        {/* Compact Pipeline Ribbon for Ocean */}
-        {project.id === "amber-ocean" && (
-          <div className="system-flow-box">
-            <div className="system-flow-header">
-              <div className="flow-badge-wrap">
-                <span className="flow-pulse-dot"></span>
-                <span className="flow-badge">AGENTIC ANALYTICS HARNESS</span>
-              </div>
-              <span className="flow-latency">&lt;$100 / 15k sessions · &lt;$0.01/query</span>
-            </div>
-            <div className="flow-steps">
-              <div className="flow-step">
-                <span className="step-num">01</span>
-                <span className="step-label">Business Inquiry</span>
-              </div>
-              <div className="flow-arrow">→</div>
-              <div className="flow-step">
-                <span className="step-num">02</span>
-                <span className="step-label">Semantic Layer</span>
-              </div>
-              <div className="flow-arrow">→</div>
-              <div className="flow-step">
-                <span className="step-num">03</span>
-                <span className="step-label">Skills &amp; MCP</span>
-              </div>
-              <div className="flow-arrow">→</div>
-              <div className="flow-step">
-                <span className="step-num">04</span>
-                <span className="step-label">SQL, Charts &amp; RCAs</span>
-              </div>
-            </div>
-          </div>
-        )}
 
         <div className="project-footer">
           <div className="tech-chip-list">
@@ -277,7 +243,7 @@ const FlagshipCard = ({ project }: { project: Project }) => {
               className="project-link-btn"
               data-cursor="disable"
             >
-              <span>Live Site</span>
+              <span>Inspect</span>
               <MdArrowOutward />
             </a>
           )}
@@ -286,7 +252,6 @@ const FlagshipCard = ({ project }: { project: Project }) => {
 
       {/* Media Column */}
       <div className="flagship-media">
-        {/* Case 1: amber-prism — Custom Refractive Prism Visual */}
         {project.id === "amber-prism" ? (
           <div className="prism-refraction-mockup" aria-label="amber Prism Communication Refraction Engine">
             <div className="browser-bar">
@@ -295,22 +260,19 @@ const FlagshipCard = ({ project }: { project: Project }) => {
                 <span className="dot dot-yellow"></span>
                 <span className="dot dot-green"></span>
               </div>
-              <div className="browser-address">prism.amberstudent.com · QA REFRACTION ENGINE</div>
+              <div className="browser-address">prism.amberstudent.com</div>
             </div>
 
             <div className="prism-stage">
-              {/* Incoming White Raw Transcript Stream */}
               <div className="prism-incoming-stream">
-                <span className="prism-stage-tag">RAW TRANSCRIPT DATA</span>
+                <span className="prism-stage-tag">Raw Transcripts</span>
                 <div className="stream-data-lines">
-                  <span className="stream-line">call_audio_492.wav</span>
-                  <span className="stream-line">wa_session_8812.json</span>
-                  <span className="stream-line">ticket_escalation.eml</span>
+                  <span className="stream-line">audio_session_492</span>
+                  <span className="stream-line">whatsapp_lead_8812</span>
+                  <span className="stream-line">email_deal_audit</span>
                 </div>
-                <div className="stream-beam-guide"></div>
               </div>
 
-              {/* Central Geometric Glass Prism */}
               <div className="prism-core-wrap">
                 <svg className="prism-svg" viewBox="0 0 100 90" fill="none">
                   <polygon
@@ -325,46 +287,29 @@ const FlagshipCard = ({ project }: { project: Project }) => {
                 <span className="prism-core-label">LLM Core</span>
               </div>
 
-              {/* Refracted Outgoing Multi-Channel Rays */}
               <div className="prism-refracted-rays">
                 <div className="channel-ray ray-calls">
-                  <div className="ray-line"></div>
                   <div className="ray-pill">
                     <span className="ray-dot"></span>
-                    <span className="ray-label">VOICE CALLS (90% AUDIT)</span>
+                    <span className="ray-label">Voice Calls (90% audit)</span>
                   </div>
                 </div>
                 <div className="channel-ray ray-whatsapp">
-                  <div className="ray-line"></div>
                   <div className="ray-pill">
                     <span className="ray-dot"></span>
-                    <span className="ray-label">WHATSAPP CHATS</span>
+                    <span className="ray-label">WhatsApp Chats</span>
                   </div>
                 </div>
                 <div className="channel-ray ray-email">
-                  <div className="ray-line"></div>
                   <div className="ray-pill">
                     <span className="ray-dot"></span>
-                    <span className="ray-label">CUSTOMER EMAIL</span>
-                  </div>
-                </div>
-                <div className="channel-ray ray-sms">
-                  <div className="ray-line"></div>
-                  <div className="ray-pill">
-                    <span className="ray-dot"></span>
-                    <span className="ray-label">SMS DEAL ALERTS</span>
+                    <span className="ray-label">Email &amp; Deal Alerts</span>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div className="prism-hud-footer">
-              <span className="hud-status-ping"></span>
-              <span>REAL-TIME MULTI-DIMENSIONAL INTENT CLASSIFICATION · N8N RISK WEBHOOKS</span>
-            </div>
           </div>
         ) : (
-          /* Case 2: Browser Mockup for Ocean, Radar, and Plectrum */
           currentImg && (
             <div className="browser-mockup">
               <div className="browser-bar">
@@ -394,7 +339,7 @@ const FlagshipCard = ({ project }: { project: Project }) => {
               <div className="browser-body">
                 <img
                   src={currentImg.src}
-                  alt={`${project.title} — ${currentImg.label}`}
+                  alt={`${project.title}, ${currentImg.label}`}
                   width={800}
                   height={500}
                   loading="lazy"
@@ -402,23 +347,16 @@ const FlagshipCard = ({ project }: { project: Project }) => {
                   className="media-img"
                 />
 
-                {/* Radar Overlay: 360° Circular Sweep HUD */}
                 {project.id === "amber-radar" && (
                   <div className="radar-sweep-overlay" aria-hidden="true">
                     <div className="radar-screen">
                       <div className="radar-ring radar-ring-1"></div>
                       <div className="radar-ring radar-ring-2"></div>
-                      <div className="radar-ring radar-ring-3"></div>
                       <div className="radar-crosshair-h"></div>
                       <div className="radar-crosshair-v"></div>
                       <div className="radar-sweep-beam"></div>
                       <div className="radar-blip blip-1" title="Market Price Delta"></div>
                       <div className="radar-blip blip-2" title="Student Housing Demand"></div>
-                      <div className="radar-blip blip-3" title="Forecast Dynamic Node"></div>
-                    </div>
-                    <div className="radar-hud-tag">
-                      <span className="radar-live-beacon"></span>
-                      <span>360° MARKET RADAR SWEEP · ML FORECAST R² 0.94</span>
                     </div>
                   </div>
                 )}
@@ -442,15 +380,13 @@ const Work = () => {
   return (
     <section className="work-section" id="work">
       <div className="section-container">
-        <div className="section-header-tag">01 / PRODUCTION SYSTEMS</div>
-
         <div className="work-header">
           <div className="work-title-wrap">
             <h2 className="work-title">
               Shipped Systems &amp; <span className="text-accent">Production AI</span>
             </h2>
             <p className="work-subtitle">
-              A curated showcase of deployed AI products, enterprise platforms, and native DSP software. No redundant filler—inspect system architecture, verified production impact, and live code below.
+              Curated showcase of deployed AI products, enterprise platforms, and native DSP software with verified production impact.
             </p>
           </div>
 
@@ -467,19 +403,18 @@ const Work = () => {
               onClick={() => setSelectedFilter("ai")}
               data-cursor="disable"
             >
-              Applied AI &amp; NLP (3)
+              Applied AI (3)
             </button>
             <button
               className={`filter-tab ${selectedFilter === "audio" ? "filter-tab-active" : ""}`}
               onClick={() => setSelectedFilter("audio")}
               data-cursor="disable"
             >
-              Audio DSP &amp; Native (1)
+              Audio DSP (1)
             </button>
           </div>
         </div>
 
-        {/* Flagship Production Grid */}
         <div className="flagship-grid">
           {filteredProjects.map((project) => (
             <FlagshipCard project={project} key={project.id} />

@@ -74,7 +74,7 @@ const MONTH_NAMES = [
 
 const WEEKDAY_LABELS = ["", "Mon", "", "Wed", "", "Fri", ""];
 
-export const CommitChart: React.FC = () => {
+export const CommitChart: React.FC<{ embedded?: boolean }> = ({ embedded }) => {
   const [hoveredCell, setHoveredCell] = useState<HoveredCell | null>(null);
   const { summary, calendarDays } = gitData;
 
@@ -184,34 +184,31 @@ export const CommitChart: React.FC = () => {
     }
   };
 
-  return (
-    <section className="commit-section" id="commits">
-      <div className="section-container">
-        <div className="section-header-tag">03 / CODE TELEMETRY</div>
-
-        <div className="commit-header">
-          <div className="commit-header-left">
-            <h2 className="commit-title">
-              Engineering Velocity &amp; <span className="text-accent">Commit Graph</span>
-            </h2>
-            <p className="commit-subtitle">
-              Aggregated git activity and contribution velocity across all projects, capturing <strong>{summary.totalCommits.toLocaleString()} commits</strong>.
-            </p>
-          </div>
-
-          <div className="github-profile-link">
-            <a
-              href="https://github.com/antrang"
-              target="_blank"
-              rel="noreferrer"
-              className="github-btn"
-              data-cursor="disable"
-            >
-              <FaGithub />
-              <span>github.com/antrang</span>
-            </a>
-          </div>
+  const content = (
+    <>
+      <div className="commit-header">
+        <div className="commit-header-left">
+          <h3 className="commit-title">
+            Engineering Velocity &amp; <span className="text-accent">Commit Graph</span>
+          </h3>
+          <p className="commit-subtitle">
+            Aggregated git activity and contribution velocity across production projects, capturing <strong>{summary.totalCommits.toLocaleString()} commits</strong>.
+          </p>
         </div>
+
+        <div className="github-profile-link">
+          <a
+            href="https://github.com/antrang"
+            target="_blank"
+            rel="noreferrer"
+            className="github-btn"
+            data-cursor="disable"
+          >
+            <FaGithub />
+            <span>github.com/antrang</span>
+          </a>
+        </div>
+      </div>
 
         {/* Telemetry Metric KPI Cards */}
         <div className="commit-kpi-grid">
@@ -368,6 +365,21 @@ export const CommitChart: React.FC = () => {
             </span>
           </div>
         </div>
+    </>
+  );
+
+  if (embedded) {
+    return (
+      <div className="commit-embedded" id="commits">
+        {content}
+      </div>
+    );
+  }
+
+  return (
+    <section className="commit-section" id="commits">
+      <div className="section-container">
+        {content}
       </div>
     </section>
   );

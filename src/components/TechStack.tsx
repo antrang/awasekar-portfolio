@@ -73,59 +73,71 @@ const certifications = [
   "Certified SQL",
 ];
 
-const TechStack = () => {
-  return (
-    <section className="techstack-section" id="techstack">
-      <div className="section-container">
-        <div className="section-header-tag">06 / SYSTEMS &amp; MLOPS MATRIX</div>
+const TechStack = ({ embedded }: { embedded?: boolean }) => {
+  const content = (
+    <>
+      <div className="techstack-header">
+        <h3 className="techstack-title">
+          Technical Stack &amp; <span className="text-accent">Tooling Spectrum</span>
+        </h3>
+        <p className="techstack-subtitle">
+          Core languages, frameworks, data platforms, and MLOps tooling deployed across production systems.
+        </p>
+      </div>
 
-        <div className="techstack-header">
-          <h2 className="techstack-title">
-            Technical Stack &amp; <span className="text-accent">Tooling Spectrum</span>
-          </h2>
-          <p className="techstack-subtitle">
-            An inventory of the languages, frameworks, data warehouses, and MLOps tooling I use to deploy production-ready systems.
-          </p>
+      <div className="techstack-grid">
+        {skillCategories.map((cat, idx) => (
+          <div className="tech-category-card" key={idx}>
+            <div className="cat-top">
+              <span className="cat-tag">{cat.tag}</span>
+              <h4 className="cat-title">{cat.title}</h4>
+            </div>
+
+            <div className="cat-skills-list">
+              {cat.skills.map((skill, sIdx) => (
+                <div className="cat-skill-item" key={sIdx}>
+                  <div className="skill-name-row">
+                    <span className="skill-item-name">{skill.name}</span>
+                    <span className="skill-item-note">{skill.note}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Certifications Strip */}
+      <div className="certifications-box">
+        <div className="cert-header">
+          <MdWorkspacePremium className="cert-icon" />
+          <span className="cert-title">Verified Certifications &amp; Honors</span>
         </div>
 
-        <div className="techstack-grid">
-          {skillCategories.map((cat, idx) => (
-            <div className="tech-category-card" key={idx}>
-              <div className="cat-top">
-                <span className="cat-tag">{cat.tag}</span>
-                <h3 className="cat-title">{cat.title}</h3>
-              </div>
-
-              <div className="cat-skills-list">
-                {cat.skills.map((skill, sIdx) => (
-                  <div className="cat-skill-item" key={sIdx}>
-                    <div className="skill-name-row">
-                      <span className="skill-item-name">{skill.name}</span>
-                      <span className="skill-item-note">{skill.note}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+        <div className="cert-grid">
+          {certifications.map((cert, idx) => (
+            <div className="cert-item" key={idx}>
+              <span className="cert-bullet">◈</span>
+              <span className="cert-text">{cert}</span>
             </div>
           ))}
         </div>
+      </div>
+    </>
+  );
 
-        {/* Certifications Strip */}
-        <div className="certifications-box">
-          <div className="cert-header">
-            <MdWorkspacePremium className="cert-icon" />
-            <span className="cert-title">VERIFIED CERTIFICATIONS &amp; HONORS</span>
-          </div>
+  if (embedded) {
+    return (
+      <div className="techstack-embedded" id="techstack">
+        {content}
+      </div>
+    );
+  }
 
-          <div className="cert-grid">
-            {certifications.map((cert, idx) => (
-              <div className="cert-item" key={idx}>
-                <span className="cert-bullet">◈</span>
-                <span className="cert-text">{cert}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+  return (
+    <section className="techstack-section" id="techstack">
+      <div className="section-container">
+        {content}
       </div>
     </section>
   );

@@ -1,86 +1,15 @@
-:root {
-  font-family: "Geist Sans", "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --fontSans: "Geist Sans", "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
-  --fontMono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-
-  font-optical-sizing: auto;
-  font-style: normal;
-  line-height: 1.6;
-  scroll-behavior: smooth;
-  color-scheme: dark;
-  color: var(--textPrimary);
-  background-color: var(--backgroundColor);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  --backgroundColor: #070a11;
-  --surfaceColor: #0d121d;
-  --surfaceCard: rgba(13, 18, 29, 0.78);
-  --surfaceCardHover: rgba(19, 26, 42, 0.9);
-  --accentColor: #2dd4bf;
-  --accentMuted: rgba(45, 212, 191, 0.12);
-  --accentBorder: rgba(45, 212, 191, 0.25);
-  --signalEmerald: #10b981;
-  --textPrimary: #f8fafc;
-  --textSecondary: #cbd5e1;
-  --textMuted: #94a3b8;
-  --borderColor: rgba(255, 255, 255, 0.08);
-  --borderColorHover: rgba(255, 255, 255, 0.16);
-
-  --cWidth: calc(100% - 32px);
-  --cMaxWidth: 1180px;
-  --vh: 100vh;
-  --vh: 100svh;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--fontSans);
-  color: var(--textPrimary);
-  letter-spacing: -0.025em;
-  font-weight: 600;
-  margin-top: 0;
-}
-
-body {
-  margin: 0;
-  height: auto;
-  background-color: var(--backgroundColor);
-  color: var(--textPrimary);
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-a {
-  color: inherit;
-  text-decoration: inherit;
-  transition: color 0.2s ease, opacity 0.2s ease;
-}
-
-a:hover {
-  color: var(--accentColor);
-}
-
-main {
-  opacity: 1;
-}
+/* Hallmark · shape: settled · genre: modern-minimal · theme: brand · redesign: full
+ * paper: oklch(14% 0.015 260) · accent: oklch(78% 0.14 185) · display: Geist Sans · body: Geist Sans · hero: stage · nav: edge-aligned · footer: mast · signature: flagship systems
+ * axes: dark/grotesk-sans/cool · posture: stage · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 · weakest: S, consolidated to 4 high-signal objects */
+@import url("./tokens.css");
+@import url("./base.css");
 
 .container-main {
   width: 100%;
   margin: auto;
   position: relative;
-  z-index: 1;
+  z-index: var(--z-base);
 }
 
 .section-container {
@@ -88,27 +17,18 @@ main {
   max-width: var(--cMaxWidth);
   margin-left: auto;
   margin-right: auto;
-  padding: 80px 0;
+  padding: var(--space-4xl) 0;
   position: relative;
 }
 
-@media screen and (min-width: 1024px) {
-  :root {
-    --cWidth: 88%;
-  }
-}
-
 @media screen and (max-width: 1023px) {
-  :root {
-    --cWidth: 92%;
-  }
   .section-container {
-    padding: 60px 0;
+    padding: var(--space-3xl) 0;
     width: 92%;
   }
 }
 
-/* Entrance animation: replaces GSAP fade-in on load */
+/* Entrance animation */
 @keyframes fx-fade-in-up {
   from {
     opacity: 0.85;
@@ -121,51 +41,33 @@ main {
 }
 
 .fx-fade-in-up {
-  animation: fx-fade-in-up 0.6s cubic-bezier(0.33, 1, 0.68, 1) both;
+  animation: fx-fade-in-up 0.5s cubic-bezier(0.33, 1, 0.68, 1) both;
 }
 
-/* Scroll Reveal System: Spring-based entry transitions honoring DESIGN.md */
+/* Scroll Reveal System: visible by default for accessibility & no-js */
 .reveal-on-scroll {
+  opacity: 1;
+  transform: none;
+}
+
+html.js .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(18px) scale(0.985);
-  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(16px) scale(0.99);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
-.reveal-on-scroll.is-visible {
+html.js .reveal-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html.js .reveal-on-scroll,
   .reveal-on-scroll {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
   }
-  .flow-step,
-  .flow-arrow,
-  .sparkline-path,
-  .eq-bar,
-  .recruiter-brief-card::before {
-    animation: none !important;
-    transition: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    stroke-dashoffset: 0 !important;
-  }
-}
-
-/* Accessibility: Screen-reader-only utility for semantic heading outlines */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
 }

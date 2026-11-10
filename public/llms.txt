@@ -1,4 +1,4 @@
-# Sourabh Awasekar — Applied AI & Product Systems Engineer
+# Sourabh Awasekar: Applied AI & Product Systems Engineer
 
 > Applied AI and Product Systems Engineer with 5+ years of production experience architecting text-to-SQL harnesses, centralized semantic layers, custom Model Context Protocol (MCP) servers, scalable data platforms, and native C++ DSP audio software. Currently leading Data Intelligence & AI Data Products at amber.
 > Canonical Domain: https://awasekar.com
@@ -9,37 +9,35 @@
 > GitHub: https://github.com/antrang
 
 ## Recruiter Quick-Facts
-- Target Positions: Applied AI Engineer, Forward Deployed Engineer (FDE), AI Product Systems Engineer, Lead — Data & Analytics
+- Target Positions: Applied AI Engineer, Forward Deployed Engineer (FDE), AI Product Systems Engineer, Lead, Data & Analytics
 - Primary Focus: Production LLM Systems, Text-to-SQL with Semantic Layers & MCP, Data Warehouse Cost Optimization, Full-Stack Product Engineering
 - Notice & Availability: Open to high-impact engineering opportunities and selective technical advisory
 - Contact Channel: work@awasekar.com | LinkedIn: https://www.linkedin.com/in/awasekar/
 
 ## Executive Profile & Verified Impact
-- Current Role: Lead — Data & Analytics (+ AI Data Products) at amber (May 2025 – Present)
-- Education: BITS Pilani (Goa Campus) — 5-Year Integrated Dual Degree: B.E. Chemical Engineering + M.Sc. Chemistry with Minor in Accounting & Finance (2015 – 2021)
+- Current Role: Lead, Data & Analytics (+ AI Data Products) at amber (May 2025 to Present)
+- Education: BITS Pilani (Goa Campus): 5-Year Integrated Dual Degree: B.E. Chemical Engineering + M.Sc. Chemistry with Minor in Accounting & Finance (2015 to 2021)
 - Verified Production Metrics:
-  - Processed 3,000+ natural-language SQL queries on amber Ocean at <$100 per 15,000 user sessions
+  - Processed 3,000+ natural-language SQL queries on amber Ocean at <$100 per 15,000 user sessions (<$0.01/session)
   - Trimmed Redshift cluster costs by $600/month (-2 nodes) and cut average query runtime by 30 minutes
   - Saved $40,000+/year by migrating 120 Tableau Cloud seats to self-hosted Apache Superset with 25% faster rendering
   - Launched Poker GTM reaching ₹1.2 lakh daily revenue in 18 days (~5% daily growth) at Junglee Games
   - Contributed 100+ multimodal prompt evaluations and RLHF annotations to the MMMU benchmark at Turing
   - Built enterprise usage billing ($2k/mo saved) and API-first SaaS ($20k/mo revenue) at 5X Data
 
-## Production Systems Shipped
-- [amber Ocean](https://amberstudent.com): Agentic AI analytics harness powered by a central semantic layer, skills, agentic routing, and custom MCP server over AWS Redshift, answering business queries with SQL, charts, and RCAs (<$100 per 15k sessions).
-- [amber Radar](https://radar.amberstudent.com): Revenue-generating commercial B2B market intelligence product delivering predictive demand, supply, and dynamic pricing models for 50+ UK property groups ($30k ARR). Built with Next.js, Scikit-Learn, and automated daily scrapers.
-- [amber Prism](https://amberstudent.com): LLM-powered transcript intelligence platform providing quality audit coverage lift from 30% to 90% across 100+ daily active users in Sales, Ops, and Leadership, with real-time deal-risk alerts.
-- [plectrum.live & PlectrumLabs](https://plectrum.live): Music technology platform featuring 18+ in-browser audio ML tools running client-side ($0 server ML compute) plus 5 native C++17/JUCE 8 desktop DSP audio plugins (PluckMaster 7-stage DSP, PluckBoard pitch visualizer, PluckStem stem separator, PluckNote pitch-to-MIDI).
-- [5X Data Platform](https://5x.co): Enterprise data platform engineering including usage-based billing microservices, identity access management (IAM), and custom Streamlit data applications.
-- [Junglee Games Analytics Suite](https://jungleegames.com): Real-money gaming GTM onboarding funnels, goal-based reward microservices (+20% reactivation), and automated fraud/double-spend telemetry.
-- [Turing Enterprise AI / RLHF](https://turing.com): Multimodal evaluations for the MMMU benchmark, AI-vs-human content detection classifiers, and automated feedback categorization.
-- [Crimson AI / Trinka AI](https://trinka.ai): Academic writing assistant performance optimization (-40% Word Add-in load latency) and Amplitude analytics.
-- [HISP India COVID-19 Surveillance](https://hispindia.org): Public health spatial data infrastructure, healthcare resource geo-tagging, and query deduplication (+25% efficiency).
+## Flagship Production Systems Shipped
+- [amber Ocean](https://awasekar.com/#amber-ocean): Agentic AI analytics harness powered by amber’s centralized semantic layer, domain skills, multi-model routing, and custom MCP server over AWS Redshift, answering natural-language business inquiries with SQL, charts, and root-cause analyses (<$100 per 15k sessions).
+- [amber Radar](https://awasekar.com/#amber-radar): Revenue-generating commercial B2B market intelligence product (radar.amberstudent.com) delivering predictive demand, supply, and dynamic pricing models for 50+ UK property groups ($30k ARR). Built with Next.js, Scikit-Learn, and automated daily scrapers.
+- [amber Prism](https://awasekar.com/#amber-prism): LLM-powered transcript intelligence platform providing quality audit coverage lift from 30% to 90% across 100+ daily active users in Sales, Ops, and Leadership, with real-time deal-risk alerts.
+- [plectrum.live & PlectrumLabs](https://awasekar.com/#plectrum): Music technology platform featuring 18+ in-browser audio ML tools running client-side ($0 server ML compute) plus 5 native C++17/JUCE 8 desktop DSP audio plugins (PluckMaster 7-stage DSP, PluckBoard pitch visualizer, PluckStem stem separator, PluckNote pitch-to-MIDI).
+- [Career Flightpath](https://awasekar.com/#career): Chronology across amber, Turing, 5X Data, Crimson AI, Junglee Games, and BITS Pilani.
+- [Engineering Telemetry & Stack](https://awasekar.com/#telemetry): Verified GitHub contribution telemetry and complete tooling spectrum across AI, languages, databases, and cloud infrastructure.
+- [Contact & Advisory](https://awasekar.com/#contact): Founder advisory scope and canonical recruiter channels.
 
 ## Core Technical Proficiencies
 - AI & LLMs: Text-to-SQL, Model Context Protocol (MCP), Centralized Semantic Layers, Ollama, Claude API, Gemini API, RAG & Vector Retrieval, RLHF, Prompt Engineering, MMMU Benchmark, n8n Automation.
 - Full-Stack & Systems: Python, TypeScript, SQL, Next.js (App Router/SSR), React, C++17 / JUCE 8 Audio DSP, Node.js, Web Audio API, TensorFlow.js, ONNX Runtime Web.
 - Data Platforms & Cloud: AWS Redshift, Snowflake, PostgreSQL, Google BigQuery, Apache Superset, Metabase, Tableau, Looker Studio, AWS S3 / EC2 / ECR / DMS, Docker, Jenkins.
 
-## Optional Extended Documentation
-- Full Documentation: https://awasekar.com/llms-full.txt
+## Extended Documentation
+- Full Architecture Documentation: https://awasekar.com/llms-full.txt
