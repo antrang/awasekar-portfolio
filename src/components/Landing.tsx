@@ -205,7 +205,9 @@ const Landing = () => {
               <div className="drawer-header">
                 <div className="drawer-title-wrap">
                   <MdFlashOn className="drawer-icon" />
-                  <h3 id="brief-title" className="drawer-title">Recruiter Fast-Track Summary</h3>
+                  <h3 id="brief-title" className="drawer-title">
+                    Recruiter Fast-Track <span className="text-accent">Summary</span>
+                  </h3>
                 </div>
                 <button
                   type="button"

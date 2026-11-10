@@ -12,7 +12,9 @@ const Contact = () => {
           {/* Founder Advisory Callout */}
           <div className="advisory-card">
             <span className="advisory-tag">Founder Advisory</span>
-            <h3 className="advisory-title">Data &amp; AI Advisory</h3>
+            <h3 className="advisory-title">
+              Data &amp; AI <span className="text-accent">Advisory</span>
+            </h3>
             <p className="advisory-desc">
               Selective technical consulting for startups and engineering teams looking to accelerate their data architecture and applied AI capabilities.
             </p>
@@ -34,7 +36,9 @@ const Contact = () => {
           {/* Recruiter & Career Channels */}
           <div className="recruiter-card">
             <span className="advisory-tag">Engineering Roles</span>
-            <h3 className="advisory-title">Let’s Build Together</h3>
+            <h3 className="advisory-title">
+              Let’s Build <span className="text-accent">Together</span>
+            </h3>
             <p className="advisory-desc">
               Open to high-impact opportunities in <strong>Applied AI Engineering</strong>, <strong>AI Product Engineering</strong>, and <strong>Forward-Deployed Engineering</strong>.
             </p>
