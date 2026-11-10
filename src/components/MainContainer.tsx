@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import Career from "./Career";
+import CommitChart from "./CommitChart";
 import Contact from "./Contact";
 import Cursor from "./Cursor";
 import Landing from "./Landing";
 import MatrixBackground from "./MatrixBackground";
 import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
-import Telemetry from "./Telemetry";
+import TechStack from "./TechStack";
 import Work from "./Work";
 import { initialFX } from "./utils/initialFX";
 import { initScrollFX } from "./utils/scrollFX";
@@ -28,7 +29,8 @@ const MainContainer = () => {
         <Landing />
         <Work />
         <Career />
-        <Telemetry />
+        <CommitChart />
+        <TechStack />
         <Contact />
       </main>
     </div>

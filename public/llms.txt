@@ -31,7 +31,8 @@
 - [amber Prism](https://awasekar.com/#amber-prism): LLM-powered transcript intelligence platform providing quality audit coverage lift from 30% to 90% across 100+ daily active users in Sales, Ops, and Leadership, with real-time deal-risk alerts.
 - [plectrum.live & PlectrumLabs](https://awasekar.com/#plectrum): Music technology platform featuring 18+ in-browser audio ML tools running client-side ($0 server ML compute) plus 5 native C++17/JUCE 8 desktop DSP audio plugins (PluckMaster 7-stage DSP, PluckBoard pitch visualizer, PluckStem stem separator, PluckNote pitch-to-MIDI).
 - [Career Flightpath](https://awasekar.com/#career): Chronology across amber, Turing, 5X Data, Crimson AI, Junglee Games, and BITS Pilani.
-- [Engineering Telemetry & Stack](https://awasekar.com/#telemetry): Verified GitHub contribution telemetry and complete tooling spectrum across AI, languages, databases, and cloud infrastructure.
+- [Engineering Velocity & Commit Graph](https://awasekar.com/#telemetry): Verified GitHub contribution telemetry and velocity across private and public production repositories.
+- [Technical Stack & Tooling Spectrum](https://awasekar.com/#stack): Core languages, frameworks, data platforms, and MLOps tooling deployed across production systems.
 - [Contact & Advisory](https://awasekar.com/#contact): Founder advisory scope and canonical recruiter channels.
 
 ## Core Technical Proficiencies

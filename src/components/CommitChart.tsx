@@ -188,9 +188,9 @@ export const CommitChart: React.FC<{ embedded?: boolean }> = ({ embedded }) => {
     <>
       <div className="commit-header">
         <div className="commit-header-left">
-          <h3 className="commit-title">
+          <h2 className="commit-title">
             Engineering Velocity &amp; <span className="text-accent">Commit Graph</span>
-          </h3>
+          </h2>
           <p className="commit-subtitle">
             Aggregated git activity and contribution velocity across production projects, capturing <strong>{summary.totalCommits.toLocaleString()} commits</strong>.
           </p>
@@ -370,15 +370,17 @@ export const CommitChart: React.FC<{ embedded?: boolean }> = ({ embedded }) => {
 
   if (embedded) {
     return (
-      <div className="commit-embedded" id="commits">
+      <div className="commit-embedded" id="telemetry">
+        <span id="commits" className="sr-only" aria-hidden="true" />
         {content}
       </div>
     );
   }
 
   return (
-    <section className="commit-section" id="commits">
+    <section className="commit-section" id="telemetry">
       <div className="section-container">
+        <span id="commits" className="sr-only" aria-hidden="true" />
         {content}
       </div>
     </section>

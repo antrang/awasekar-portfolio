@@ -77,9 +77,9 @@ const TechStack = ({ embedded }: { embedded?: boolean }) => {
   const content = (
     <>
       <div className="techstack-header">
-        <h3 className="techstack-title">
+        <h2 className="techstack-title">
           Technical Stack &amp; <span className="text-accent">Tooling Spectrum</span>
-        </h3>
+        </h2>
         <p className="techstack-subtitle">
           Core languages, frameworks, data platforms, and MLOps tooling deployed across production systems.
         </p>
@@ -128,15 +128,19 @@ const TechStack = ({ embedded }: { embedded?: boolean }) => {
 
   if (embedded) {
     return (
-      <div className="techstack-embedded" id="techstack">
+      <div className="techstack-embedded" id="stack">
+        <span id="techstack" className="sr-only" aria-hidden="true" />
+        <span id="skills" className="sr-only" aria-hidden="true" />
         {content}
       </div>
     );
   }
 
   return (
-    <section className="techstack-section" id="techstack">
+    <section className="techstack-section" id="stack">
       <div className="section-container">
+        <span id="techstack" className="sr-only" aria-hidden="true" />
+        <span id="skills" className="sr-only" aria-hidden="true" />
         {content}
       </div>
     </section>
