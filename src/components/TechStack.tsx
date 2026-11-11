@@ -1,4 +1,4 @@
-import { MdWorkspacePremium } from "react-icons/md";
+import { MdWorkspacePremium, MdArrowOutward } from "react-icons/md";
 import "./styles/TechStack.css";
 
 interface SkillCategory {
@@ -66,11 +66,53 @@ const skillCategories: SkillCategory[] = [
   },
 ];
 
-const certifications = [
-  "Applied Data Science II: Machine Learning & Statistical Analysis (with honors)",
-  "AI Agents Fundamentals",
-  "Scientific Computing and Python for Data Science",
-  "Certified SQL",
+interface Certification {
+  title: string;
+  issuer: string;
+  url: string;
+}
+
+const certifications: Certification[] = [
+  {
+    title: "Applied Data Science II: Machine Learning & Statistical Analysis (with honors)",
+    issuer: "WorldQuant University • Credly",
+    url: "https://www.credly.com/badges/7051fb57-3b02-40e4-b142-d9cd9ab76c27",
+  },
+  {
+    title: "Applied Data Science I: Scientific Computing & Python (with honors)",
+    issuer: "WorldQuant University • Credly",
+    url: "https://www.credly.com/badges/2315b781-f7ee-4e2b-af6d-666ef81d9a91",
+  },
+  {
+    title: "AI Agents Fundamentals",
+    issuer: "Hugging Face",
+    url: "https://us.aws.cdn.hf.co/xet-bridge-us/67a47037749ea2c4b9fafd4b/be666e44b5d64024c24c871a5b5a5b2a5546d8421d9ed7f43ce1f818fdcc5cde?response-content-disposition=inline%3B+filename*%3DUTF-8%27%272025-02-14.png%3B+filename%3D%222025-02-14.png%22%3B&xip=3cQch71uSG8&user_id=6adc7fdb6bb58d3c7b23a9f6&X-Xet-Cas-Uid=6adc7fdb6bb58d3c7b23a9f6&response-content-type=image%2Fpng&Expires=1794370082&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly91cy5hd3MuY2RuLmhmLmNvL3hldC1icmlkZ2UtdXMvNjdhNDcwMzc3NDllYTJjNGI5ZmFmZDRiL2JlNjY2ZTQ0YjVkNjQwMjRjMjRjODcxYTViNWE1YjJhNTU0NmQ4NDIxZDllZDdmNDNjZTFmODE4ZmRjYzVjZGVcXD9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPWlubGluZSUzQitmaWxlbmFtZSUyQSUzRFVURi04JTI3JTI3MjAyNS0wMi0xNC5wbmclM0IrZmlsZW5hbWUlM0QlMjIyMDI1LTAyLTE0LnBuZyUyMiUzQiZ4aXA9M2NRY2g3MXVTRzgmdXNlcl9pZD02YWRjN2ZkYjZiYjU4ZDNjN2IyM2E5ZjYmWC1YZXQtQ2FzLVVpZD02YWRjN2ZkYjZiYjU4ZDNjN2IyM2E5ZjYmcmVzcG9uc2UtY29udGVudC10eXBlPWltYWdlJTJGcG5nIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJFcG9jaFRpbWUiOjE3OTQzNzAwODJ9fX1dfQ__&Signature=MEYCIQDp-EPS%7EBsPiHN-rM25f%7EbZ%7ES9i6kWlYZClRVaHQit7JwIhAIqsftyhpVouZkDj5awNReiaQcYxcLIe5Y9XYPzY-RXA&Key-Pair-Id=01KXEF4KZ1B6FV465MAWR4M21F&Hash-Algorithm=SHA256",
+  },
+  {
+    title: "Machine Learning",
+    issuer: "Cutshort",
+    url: "https://cutshort.io/certificate/107824",
+  },
+  {
+    title: "SQL (SoloLearn)",
+    issuer: "SoloLearn",
+    url: "https://www.sololearn.com/Certificate/CT-6FPN0BCJ/pdf",
+  },
+  {
+    title: "SQL (Programming Hub)",
+    issuer: "Programming Hub",
+    url: "https://storage.googleapis.com/programminghub/certificate%2F1619888362677.pdf",
+  },
+  {
+    title: "Big Data Analytics",
+    issuer: "Programming Hub",
+    url: "https://storage.googleapis.com/programminghub/certificate%2F1621792894661.pdf",
+  },
+  {
+    title: "Python 3",
+    issuer: "Programming Hub",
+    url: "https://storage.googleapis.com/programminghub/certificate%2F1618586556710.pdf",
+  },
 ];
 
 const TechStack = ({ embedded }: { embedded?: boolean }) => {
@@ -110,16 +152,31 @@ const TechStack = ({ embedded }: { embedded?: boolean }) => {
       {/* Certifications Strip */}
       <div className="certifications-box">
         <div className="cert-header">
-          <MdWorkspacePremium className="cert-icon" />
-          <span className="cert-title">Verified Certifications &amp; Honors</span>
+          <div className="cert-header-left">
+            <MdWorkspacePremium className="cert-icon" />
+            <span className="cert-title">Verified Certifications &amp; Honors</span>
+          </div>
+          <span className="cert-count-badge">8 Credentials</span>
         </div>
 
         <div className="cert-grid">
           {certifications.map((cert, idx) => (
-            <div className="cert-item" key={idx}>
+            <a
+              key={idx}
+              href={cert.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cert-item cert-link"
+              data-cursor="disable"
+              aria-label={`Verify ${cert.title} certificate on ${cert.issuer} (opens in new tab)`}
+            >
               <span className="cert-bullet">◈</span>
-              <span className="cert-text">{cert}</span>
-            </div>
+              <div className="cert-info">
+                <span className="cert-text">{cert.title}</span>
+                <span className="cert-issuer">{cert.issuer}</span>
+              </div>
+              <MdArrowOutward className="cert-arrow" aria-hidden="true" />
+            </a>
           ))}
         </div>
       </div>
