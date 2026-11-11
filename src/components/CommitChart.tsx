@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from "react";
 import { FaGithub, FaCodeBranch } from "react-icons/fa";
-import { MdLocalFireDepartment, MdHistory, MdInfoOutline } from "react-icons/md";
+import { MdLocalFireDepartment, MdHistory, MdInfoOutline, MdTrendingUp } from "react-icons/md";
 import gitData from "../data/gitCommits.json";
 import "./styles/CommitChart.css";
 
@@ -233,12 +233,12 @@ export const CommitChart: React.FC<{ embedded?: boolean }> = ({ embedded }) => {
           </div>
 
           <div className="commit-kpi-card">
-            <div className="kpi-icon-wrap kpi-accent">
-              <MdHistory />
+            <div className="kpi-icon-wrap kpi-amber">
+              <MdTrendingUp />
             </div>
             <div className="kpi-data">
-              <span className="kpi-number"><CountUp end={summary.totalRepos || 18} /></span>
-              <span className="kpi-label">Tracked Projects</span>
+              <span className="kpi-number"><CountUp end={summary.longestStreak} /> days</span>
+              <span className="kpi-label">Longest Streak</span>
             </div>
           </div>
 
@@ -249,6 +249,16 @@ export const CommitChart: React.FC<{ embedded?: boolean }> = ({ embedded }) => {
             <div className="kpi-data">
               <span className="kpi-number"><CountUp end={summary.busiestDay.count} /> / day</span>
               <span className="kpi-label">Peak Velocity ({summary.busiestDay.date})</span>
+            </div>
+          </div>
+
+          <div className="commit-kpi-card">
+            <div className="kpi-icon-wrap kpi-accent">
+              <MdHistory />
+            </div>
+            <div className="kpi-data">
+              <span className="kpi-number"><CountUp end={summary.totalRepos || 18} /></span>
+              <span className="kpi-label">Tracked Projects</span>
             </div>
           </div>
         </div>

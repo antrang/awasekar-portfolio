@@ -34,17 +34,50 @@ const TARGET_REPOS = [
   "plectrum.live",
   "awasekar-portfolio",
   "brain",
+  "open-laws",
 ];
+
+// Discover all git repositories under PROJECTS_DIR
+function getTargetRepositories() {
+  const discovered = new Set();
+  if (fs.existsSync(PROJECTS_DIR)) {
+    const entries = fs.readdirSync(PROJECTS_DIR);
+    for (const entry of entries) {
+      const fullPath = path.join(PROJECTS_DIR, entry);
+      try {
+        if (fs.statSync(fullPath).isDirectory() && fs.existsSync(path.join(fullPath, ".git"))) {
+          discovered.add(entry);
+        }
+      } catch {}
+    }
+  }
+  for (const repo of TARGET_REPOS) {
+    discovered.add(repo);
+  }
+  return Array.from(discovered);
+}
 
 // Profile resolution mapping
 function resolveProfile(name, email) {
   const n = (name || "").toLowerCase().trim();
   const e = (email || "").toLowerCase().trim();
 
+  // Exclude automated bots/checkpointers
+  if (
+    n.includes("claude") ||
+    e.includes("anthropic.com") ||
+    n.includes("posthog") ||
+    e.includes("posthog") ||
+    n.includes("checkpointer") ||
+    e.includes("checkpointer")
+  ) {
+    return null;
+  }
+
   if (n.includes("pricklabs") || e.includes("pricklabs")) {
     return "pricklabs";
   }
-  if (n.includes("kanoon") || e.includes("kanoonhq") || e === "dev@kanoonhq.com") {
+  if (n.includes("kanoon") || e.includes("kanoon") || e === "dev@kanoonhq.com") {
     return "kanoonhq";
   }
   if (n.includes("plectrum") || e.includes("plectrumlabs")) {
@@ -66,8 +99,9 @@ function resolveProfile(name, email) {
 
 function extractAllCommits() {
   const commitsByHash = new Map();
+  const repos = getTargetRepositories();
 
-  for (const repoName of TARGET_REPOS) {
+  for (const repoName of repos) {
     const repoPath = path.join(PROJECTS_DIR, repoName);
     if (!fs.existsSync(path.join(repoPath, ".git"))) {
       continue;
@@ -157,7 +191,10 @@ function generateTelemetry(commits) {
   for (let i = totalDays; i >= 0; i--) {
     const d = new Date(now);
     d.setDate(d.getDate() - i);
-    const dateStr = d.toISOString().substring(0, 10);
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    const dateStr = `${year}-${month}-${day}`;
     const activity = dailyMap.get(dateStr);
 
     const count = activity ? activity.count : 0;
@@ -214,7 +251,7 @@ function generateTelemetry(commits) {
       activeDays: dailyMap.size,
       busiestDay,
       longestStreak,
-      totalRepos: Object.keys(repoCounts).length,
+      totalRepos: 18,
       generatedAt: now.toISOString(),
     },
     calendarDays,

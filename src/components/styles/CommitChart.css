@@ -59,7 +59,7 @@
 /* KPI Counter Cards */
 .commit-kpi-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 16px;
   margin-bottom: 28px;
 }
@@ -107,6 +107,11 @@
 .kpi-icon-wrap.kpi-streak {
   color: #fbbf24;
   background: rgba(251, 191, 36, 0.1);
+}
+
+.kpi-icon-wrap.kpi-amber {
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
 }
 
 .kpi-data {
@@ -419,17 +424,25 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+  .commit-kpi-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
   .commit-kpi-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 580px) {
   .commit-kpi-grid {
     grid-template-columns: 1fr;
   }
+}
 
+@media (max-width: 768px) {
   .heatmap-header {
     flex-direction: column;
     align-items: flex-start;
