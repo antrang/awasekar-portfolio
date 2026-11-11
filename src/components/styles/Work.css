@@ -599,235 +599,79 @@
 }
 
 /* =========================================================
-   Creative Visual Panel: amber-prism Refraction Engine
+   Creative Visual Panel: amber-prism Refraction Ambient Overlay
    ========================================================= */
-.prism-refraction-mockup {
-  width: 100%;
-  height: 100%;
-  min-height: 380px;
-  max-height: 480px;
-  background: #080c14;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+.prism-ambient-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+  border-radius: 6px;
+  z-index: 2;
 }
 
-.prism-stage {
-  flex: 1;
-  display: grid;
-  grid-template-columns: 1fr auto 1.35fr;
-  align-items: center;
-  padding: 16px 14px;
-  gap: 12px;
-  position: relative;
-  background: radial-gradient(circle at 45% 50%, rgba(45, 212, 191, 0.06) 0%, transparent 70%);
+.prism-light-sweep {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -35%;
+  width: 32%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 30%,
+    rgba(45, 212, 191, 0.16) 60%,
+    rgba(255, 255, 255, 0.22) 80%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  animation: prismLightTravel 5s ease-in-out infinite;
 }
 
-.prism-incoming-stream {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  position: relative;
-}
-
-.prism-stage-tag {
-  font-family: var(--fontMono);
-  font-size: var(--text-2xs);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--textMuted);
-  text-transform: uppercase;
-  margin-bottom: 2px;
-}
-
-.stream-data-lines {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.stream-line {
-  font-family: var(--fontMono);
-  font-size: var(--text-2xs);
-  color: var(--textSecondary);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 2px 6px;
-  border-radius: 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.stream-beam-guide {
-  width: 100%;
-  height: 2px;
-  margin-top: 6px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), #fff);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-  animation: beamPulse 2.4s ease-in-out infinite;
-}
-
-@keyframes beamPulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-
-.prism-core-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.prism-svg {
-  width: 68px;
-  height: 62px;
-  filter: drop-shadow(0 0 12px rgba(45, 212, 191, 0.35));
-}
-
-.prism-poly-outer {
-  stroke: rgba(255, 255, 255, 0.5);
-  stroke-width: 1.5;
-  fill: rgba(255, 255, 255, 0.04);
-}
-
-.prism-poly-inner {
-  stroke: var(--accentColor);
-  stroke-width: 1.2;
-  fill: rgba(45, 212, 191, 0.1);
-}
-
-.prism-core-label {
-  font-family: var(--fontMono);
-  font-size: var(--text-2xs);
-  color: var(--accentColor);
-  letter-spacing: 0.06em;
-  margin-top: 4px;
-  font-weight: 600;
-}
-
-.prism-refracted-rays {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-
-.channel-ray {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.ray-line {
-  width: 18px;
-  height: 1.5px;
-  flex-shrink: 0;
-}
-
-.ray-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 3px 7px;
-  border-radius: 9999px;
-  font-family: var(--fontMono);
-  font-size: var(--text-2xs);
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-}
-
-.ray-dot {
-  width: 4px;
-  height: 4px;
+.prism-caustic-pulse {
+  position: absolute;
+  bottom: 12%;
+  left: 42%;
+  width: 16%;
+  height: 14%;
   border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.32) 0%,
+    rgba(45, 212, 191, 0.14) 50%,
+    transparent 75%
+  );
+  filter: blur(5px);
+  animation: prismCausticBreathe 3.5s ease-in-out infinite alternate;
 }
 
-/* Color Coding for Refracted Rays */
-.ray-calls .ray-line {
-  background: linear-gradient(90deg, #fff, #10b981);
-  box-shadow: 0 0 6px #10b981;
-}
-.ray-calls .ray-pill {
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  color: #34d399;
-}
-.ray-calls .ray-dot {
-  background: #10b981;
-  box-shadow: 0 0 6px #10b981;
-}
-
-.ray-whatsapp .ray-line {
-  background: linear-gradient(90deg, #fff, #2dd4bf);
-  box-shadow: 0 0 6px #2dd4bf;
-}
-.ray-whatsapp .ray-pill {
-  background: rgba(45, 212, 191, 0.12);
-  border: 1px solid rgba(45, 212, 191, 0.3);
-  color: var(--accentColor);
-}
-.ray-whatsapp .ray-dot {
-  background: var(--accentColor);
-  box-shadow: 0 0 6px var(--accentColor);
+@keyframes prismLightTravel {
+  0%, 15% {
+    left: -35%;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  65% {
+    left: 110%;
+    opacity: 0.75;
+  }
+  75%, 100% {
+    left: 110%;
+    opacity: 0;
+  }
 }
 
-.ray-email .ray-line {
-  background: linear-gradient(90deg, #fff, #38bdf8);
-  box-shadow: 0 0 6px #38bdf8;
-}
-.ray-email .ray-pill {
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  color: #7dd3fc;
-}
-.ray-email .ray-dot {
-  background: #38bdf8;
-  box-shadow: 0 0 6px #38bdf8;
-}
-
-.ray-sms .ray-line {
-  background: linear-gradient(90deg, #fff, #fbbf24);
-  box-shadow: 0 0 6px #fbbf24;
-}
-.ray-sms .ray-pill {
-  background: rgba(251, 191, 36, 0.12);
-  border: 1px solid rgba(251, 191, 36, 0.3);
-  color: #fde047;
-}
-.ray-sms .ray-dot {
-  background: #fbbf24;
-  box-shadow: 0 0 6px #fbbf24;
-}
-
-.prism-hud-footer {
-  padding: 8px 12px;
-  background: rgba(0, 0, 0, 0.45);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  font-family: var(--fontMono);
-  font-size: var(--text-2xs);
-  color: var(--textMuted);
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.hud-status-ping {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--signalEmerald);
-  box-shadow: 0 0 6px var(--signalEmerald);
-  animation: beaconPulse 2s ease-in-out infinite;
-  flex-shrink: 0;
+@keyframes prismCausticBreathe {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(1.18);
+    opacity: 0.75;
+  }
 }
 
 /* =========================================================
@@ -985,26 +829,6 @@
     aspect-ratio: 16 / 10;
   }
 
-  .prism-refraction-mockup {
-    min-height: 320px;
-    max-height: 360px;
-  }
-
-  .prism-stage {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 12px;
-  }
-
-  .prism-core-wrap {
-    display: none; /* Hide prism core SVG on narrow viewports to avoid cramping */
-  }
-
-  .prism-incoming-stream {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding-bottom: 8px;
-  }
-
   .radar-screen {
     width: 160px;
     height: 160px;
@@ -1068,7 +892,9 @@
   .radar-blip,
   .eq-bar,
   .hud-status-ping,
-  .radar-live-beacon {
+  .radar-live-beacon,
+  .prism-light-sweep,
+  .prism-caustic-pulse {
     animation: none !important;
   }
 }

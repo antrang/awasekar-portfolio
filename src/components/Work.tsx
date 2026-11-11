@@ -70,6 +70,13 @@ const allProjects: Project[] = [
       "Real-time pipeline risk alerts",
     ],
     tech: ["Claude API", "Python", "NLP Intent Vectors", "n8n Webhooks", "PostgreSQL"],
+    images: [
+      {
+        label: "amber Prism Architecture",
+        src: "/images/prism.webp",
+        host: "prism.amberstudent.com",
+      },
+    ],
     link: "https://amberstudent.com",
     tradeoff:
       "Multi-stage structured prompt extraction and vector intent clustering rather than monolithic context passing, ensuring precision on deal-risk indicators.",
@@ -252,117 +259,65 @@ const FlagshipCard = ({ project }: { project: Project }) => {
 
       {/* Media Column */}
       <div className="flagship-media">
-        {project.id === "amber-prism" ? (
-          <div className="prism-refraction-mockup" aria-label="amber Prism Communication Refraction Engine">
+        {currentImg && (
+          <div className="browser-mockup">
             <div className="browser-bar">
               <div className="browser-dots">
                 <span className="dot dot-red"></span>
                 <span className="dot dot-yellow"></span>
                 <span className="dot dot-green"></span>
               </div>
-              <div className="browser-address">prism.amberstudent.com</div>
+              <div className="browser-address">{currentImg.host}</div>
+
+              {images.length > 1 && (
+                <div className="browser-switcher">
+                  {images.map((img, idx) => (
+                    <button
+                      key={idx}
+                      className={`switch-tab ${activeImgIdx === idx ? "switch-tab-active" : ""}`}
+                      onClick={() => setActiveImgIdx(idx)}
+                      data-cursor="disable"
+                    >
+                      {img.label}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
-            <div className="prism-stage">
-              <div className="prism-incoming-stream">
-                <span className="prism-stage-tag">Raw Transcripts</span>
-                <div className="stream-data-lines">
-                  <span className="stream-line">audio_session_492</span>
-                  <span className="stream-line">whatsapp_lead_8812</span>
-                  <span className="stream-line">email_deal_audit</span>
-                </div>
-              </div>
+            <div className="browser-body">
+              <img
+                src={currentImg.src}
+                alt={`${project.title}, ${currentImg.label}`}
+                width={800}
+                height={500}
+                loading="lazy"
+                decoding="async"
+                className="media-img"
+              />
 
-              <div className="prism-core-wrap">
-                <svg className="prism-svg" viewBox="0 0 100 90" fill="none">
-                  <polygon
-                    points="50,10 8,82 92,82"
-                    className="prism-poly-outer"
-                  />
-                  <polygon
-                    points="50,20 18,76 82,76"
-                    className="prism-poly-inner"
-                  />
-                </svg>
-                <span className="prism-core-label">LLM Core</span>
-              </div>
+              {project.id === "amber-radar" && (
+                <div className="radar-sweep-overlay" aria-hidden="true">
+                  <div className="radar-screen">
+                    <div className="radar-ring radar-ring-1"></div>
+                    <div className="radar-ring radar-ring-2"></div>
+                    <div className="radar-crosshair-h"></div>
+                    <div className="radar-crosshair-v"></div>
+                    <div className="radar-sweep-beam"></div>
+                    <div className="radar-blip blip-1" title="Market Price Delta"></div>
+                    <div className="radar-blip blip-2" title="Student Housing Demand"></div>
+                  </div>
+                </div>
+              )}
 
-              <div className="prism-refracted-rays">
-                <div className="channel-ray ray-calls">
-                  <div className="ray-pill">
-                    <span className="ray-dot"></span>
-                    <span className="ray-label">Voice Calls (90% audit)</span>
-                  </div>
+              {project.id === "amber-prism" && (
+                <div className="prism-ambient-overlay" aria-hidden="true">
+                  <div className="prism-light-sweep"></div>
+                  <div className="prism-caustic-pulse"></div>
                 </div>
-                <div className="channel-ray ray-whatsapp">
-                  <div className="ray-pill">
-                    <span className="ray-dot"></span>
-                    <span className="ray-label">WhatsApp Chats</span>
-                  </div>
-                </div>
-                <div className="channel-ray ray-email">
-                  <div className="ray-pill">
-                    <span className="ray-dot"></span>
-                    <span className="ray-label">Email &amp; Deal Alerts</span>
-                  </div>
-                </div>
-              </div>
+              )}
             </div>
           </div>
-        ) : (
-          currentImg && (
-            <div className="browser-mockup">
-              <div className="browser-bar">
-                <div className="browser-dots">
-                  <span className="dot dot-red"></span>
-                  <span className="dot dot-yellow"></span>
-                  <span className="dot dot-green"></span>
-                </div>
-                <div className="browser-address">{currentImg.host}</div>
-
-                {images.length > 1 && (
-                  <div className="browser-switcher">
-                    {images.map((img, idx) => (
-                      <button
-                        key={idx}
-                        className={`switch-tab ${activeImgIdx === idx ? "switch-tab-active" : ""}`}
-                        onClick={() => setActiveImgIdx(idx)}
-                        data-cursor="disable"
-                      >
-                        {img.label}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <div className="browser-body">
-                <img
-                  src={currentImg.src}
-                  alt={`${project.title}, ${currentImg.label}`}
-                  width={800}
-                  height={500}
-                  loading="lazy"
-                  decoding="async"
-                  className="media-img"
-                />
-
-                {project.id === "amber-radar" && (
-                  <div className="radar-sweep-overlay" aria-hidden="true">
-                    <div className="radar-screen">
-                      <div className="radar-ring radar-ring-1"></div>
-                      <div className="radar-ring radar-ring-2"></div>
-                      <div className="radar-crosshair-h"></div>
-                      <div className="radar-crosshair-v"></div>
-                      <div className="radar-sweep-beam"></div>
-                      <div className="radar-blip blip-1" title="Market Price Delta"></div>
-                      <div className="radar-blip blip-2" title="Student Housing Demand"></div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          )
         )}
       </div>
     </article>
