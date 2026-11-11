@@ -243,16 +243,6 @@ export const CommitChart: React.FC<{ embedded?: boolean }> = ({ embedded }) => {
           </div>
 
           <div className="commit-kpi-card">
-            <div className="kpi-icon-wrap kpi-streak">
-              <MdInfoOutline />
-            </div>
-            <div className="kpi-data">
-              <span className="kpi-number"><CountUp end={summary.busiestDay.count} /> / day</span>
-              <span className="kpi-label">Peak Velocity ({summary.busiestDay.date})</span>
-            </div>
-          </div>
-
-          <div className="commit-kpi-card">
             <div className="kpi-icon-wrap kpi-accent">
               <MdHistory />
             </div>
@@ -267,7 +257,11 @@ export const CommitChart: React.FC<{ embedded?: boolean }> = ({ embedded }) => {
         <div className="commit-heatmap-card">
           <div className="heatmap-header">
             <div className="heatmap-summary">
-              <strong>{summary.totalCommits.toLocaleString()} commits</strong> in the last 12 months
+              <span><strong>{summary.totalCommits.toLocaleString()} commits</strong> in the last 12 months</span>
+              <span className="heatmap-summary-sep">·</span>
+              <span className="heatmap-peak-badge">
+                Peak: <strong>{summary.busiestDay.count}/day</strong> ({summary.busiestDay.date})
+              </span>
             </div>
 
             {/* Static Telemetry Inspector Badge */}
