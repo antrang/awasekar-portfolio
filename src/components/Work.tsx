@@ -15,7 +15,6 @@ interface Project {
   category: "ai" | "audio";
   role: string;
   tagline: string;
-  problem: string;
   solution: string;
   metrics: string[];
   tech: string[];
@@ -32,8 +31,6 @@ const allProjects: Project[] = [
     category: "ai",
     role: "Architect & Lead Builder, amber",
     tagline: "Agentic analytics harness with semantic layer and custom MCP server over Redshift",
-    problem:
-      "Analysts faced backlog bottlenecks fielding ad-hoc SQL inquiries, repetitive dashboard updates, and manual metric anomaly diagnosis.",
     solution:
       "Architected an autonomous analytics harness pairing amber's centralized semantic layer and schema-constrained MCP server with multi-model routing.",
     metrics: [
@@ -60,8 +57,6 @@ const allProjects: Project[] = [
     category: "ai",
     role: "Architect & Builder, amber",
     tagline: "Multi-channel transcript intelligence platform and real-time deal risk tracking",
-    problem:
-      "Manual QA covered only 30% of customer interactions, creating critical quality and objection blindspots across global sales pipelines.",
     solution:
       "Ingests omni-channel customer conversations (calls, WhatsApp, email) to extract objections, audit sales quality, and surface at-risk deals.",
     metrics: [
@@ -88,8 +83,6 @@ const allProjects: Project[] = [
     category: "ai",
     role: "Product & ML Lead, amber",
     tagline: "Client-facing predictive market intelligence for demand, supply, and dynamic pricing",
-    problem:
-      "UK property operators and institutional investors lacked dynamic market visibility into student housing demand, supply shifts, and competitor pricing.",
     solution:
       "Engineered a commercial SaaS product combining daily automated ELT scrapers, Scikit-Learn predictive modeling, and an interactive Next.js application.",
     metrics: [
@@ -116,8 +109,6 @@ const allProjects: Project[] = [
     category: "audio",
     role: "Founder & Systems Engineer",
     tagline: "Client-side ML audio tools and 5 native C++17/JUCE 8 desktop DSP plugins",
-    problem:
-      "Musicians face expensive commercial licensing and cloud latency for essential audio DSP tasks like pitch tracking, mastering, and stem separation.",
     solution:
       "Built plectrum.live with client-side ML in Web Audio plus a suite of 5 native desktop plugins (PluckMaster 7-stage DSP, PluckBoard, PluckNote, PluckStem).",
     metrics: [

@@ -6,7 +6,6 @@ interface CareerItem {
   id: string;
   role: string;
   company: string;
-  companyUrl?: string;
   location: string;
   period: string;
   statusBadge?: string;
@@ -21,7 +20,6 @@ const careerHistory: CareerItem[] = [
     id: "amber",
     role: "Lead, Data & Analytics (+ AI Data Products)",
     company: "amber",
-    companyUrl: "https://amberstudent.com",
     location: "Pune, India",
     period: "May 2025 to Present",
     statusBadge: "Current Leadership",
@@ -57,7 +55,6 @@ const careerHistory: CareerItem[] = [
     id: "5x",
     role: "Associate Product Manager",
     company: "5X Data",
-    companyUrl: "https://5x.co",
     location: "Singapore, Remote",
     period: "Oct 2023 to Sep 2024",
     summary:
@@ -91,7 +88,6 @@ const careerHistory: CareerItem[] = [
     id: "junglee",
     role: "Product Analyst",
     company: "Junglee Games",
-    companyUrl: "https://jungleegames.com",
     location: "Gurugram, India",
     period: "Jun 2021 to Nov 2022",
     summary:

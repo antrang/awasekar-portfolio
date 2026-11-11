@@ -16,6 +16,8 @@ const SocialIcons = () => {
             rel="noreferrer"
             aria-label="GitHub Profile"
             data-cursor="disable"
+            data-umami-event="Social Link Click"
+            data-umami-event-platform="GitHub"
           >
             <FaGithub />
           </a>
@@ -27,6 +29,8 @@ const SocialIcons = () => {
             rel="noreferrer"
             aria-label="LinkedIn Profile"
             data-cursor="disable"
+            data-umami-event="Social Link Click"
+            data-umami-event-platform="LinkedIn"
           >
             <FaLinkedinIn />
           </a>
@@ -38,6 +42,8 @@ const SocialIcons = () => {
             rel="noreferrer"
             aria-label="Instagram Profile"
             data-cursor="disable"
+            data-umami-event="Social Link Click"
+            data-umami-event-platform="Instagram"
           >
             <FaInstagram />
           </a>

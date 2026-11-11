@@ -28,6 +28,8 @@ const Navbar = () => {
               target="_blank"
               rel="noreferrer"
               download="Awasekar_Sourabh_Resume_2026.pdf"
+              data-umami-event="Resume Download"
+              data-umami-event-location="Navbar"
             >
               RESUME PDF
             </a>
@@ -39,6 +41,8 @@ const Navbar = () => {
             data-cursor="disable"
             target="_blank"
             rel="noreferrer"
+            data-umami-event="LinkedIn Click"
+            data-umami-event-location="Navbar"
           >
             <span className="connect-indicator"></span>
             linkedin.com/in/awasekar

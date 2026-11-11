@@ -48,6 +48,8 @@ const Contact = () => {
                 href="mailto:work@awasekar.com"
                 className="contact-channel"
                 data-cursor="disable"
+                data-umami-event="Email Click"
+                data-umami-event-location="Contact Section"
               >
                 <div className="channel-icon">
                   <MdEmail />
@@ -65,6 +67,9 @@ const Contact = () => {
                 rel="noreferrer"
                 className="contact-channel"
                 data-cursor="disable"
+                data-umami-event="Social Link Click"
+                data-umami-event-platform="LinkedIn"
+                data-umami-event-location="Contact Section"
               >
                 <div className="channel-icon">
                   <FaLinkedin />
@@ -82,6 +87,9 @@ const Contact = () => {
                 rel="noreferrer"
                 className="contact-channel"
                 data-cursor="disable"
+                data-umami-event="Social Link Click"
+                data-umami-event-platform="GitHub"
+                data-umami-event-location="Contact Section"
               >
                 <div className="channel-icon">
                   <FaGithub />
@@ -100,6 +108,8 @@ const Contact = () => {
                 rel="noreferrer"
                 download="Awasekar_Sourabh_Resume_2026.pdf"
                 data-cursor="disable"
+                data-umami-event="Resume Download"
+                data-umami-event-location="Contact Section"
               >
                 <div className="channel-icon">
                   <MdDownload />

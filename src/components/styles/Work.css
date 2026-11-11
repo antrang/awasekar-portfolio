@@ -292,110 +292,6 @@
   color: #38bdf8;
 }
 
-/* Compact Pipeline Ribbon for Ocean */
-.system-flow-box {
-  margin-bottom: 14px;
-  padding: 10px 12px;
-  background: rgba(45, 212, 191, 0.03);
-  border: 1px solid rgba(45, 212, 191, 0.18);
-  border-radius: 10px;
-}
-
-.system-flow-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-
-.flow-badge-wrap {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.flow-pulse-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accentColor);
-  box-shadow: 0 0 6px var(--accentColor);
-  animation: beaconPulse 2s ease-in-out infinite;
-}
-
-.flow-badge {
-  font-family: var(--fontMono);
-  font-size: var(--text-xs);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--accentColor);
-}
-
-.flow-latency {
-  font-family: var(--fontMono);
-  font-size: var(--text-2xs);
-  color: var(--textMuted);
-}
-
-.flow-steps {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.flow-step {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 4px 8px;
-  background: rgba(13, 18, 29, 0.85);
-  border: 1px solid var(--borderColor);
-  border-radius: 6px;
-  flex: 1;
-  min-width: 0;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.flow-step.flow-step-active {
-  border-color: rgba(45, 212, 191, 0.6);
-  background: rgba(45, 212, 191, 0.08);
-  box-shadow: 0 0 12px rgba(45, 212, 191, 0.18);
-  transform: translateY(-1px);
-}
-
-.step-num {
-  font-family: var(--fontMono);
-  font-size: var(--text-2xs);
-  color: var(--accentColor);
-  letter-spacing: 0.05em;
-  flex-shrink: 0;
-}
-
-.step-label {
-  font-size: var(--text-xs);
-  font-weight: 600;
-  color: var(--textPrimary);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.flow-arrow {
-  color: var(--textMuted);
-  font-family: var(--fontMono);
-  font-size: var(--text-xs);
-  transition: all 0.35s ease;
-  opacity: 0.4;
-  flex-shrink: 0;
-}
-
-.flow-arrow.flow-arrow-active {
-  color: var(--accentColor);
-  opacity: 1;
-  transform: translateX(1px);
-}
-
 /* Audio Equalizer Mini Badge for Plectrum */
 .audio-equalizer-badge {
   display: inline-flex;
@@ -712,7 +608,6 @@
 
 .radar-ring-1 { width: 35%; height: 35%; }
 .radar-ring-2 { width: 68%; height: 68%; }
-.radar-ring-3 { width: 96%; height: 96%; }
 
 .radar-crosshair-h {
   position: absolute;
@@ -761,41 +656,10 @@
 
 .blip-1 { top: 28%; left: 62%; animation-delay: 0.4s; }
 .blip-2 { top: 68%; left: 32%; animation-delay: 1.2s; }
-.blip-3 { top: 40%; left: 78%; animation-delay: 1.8s; }
 
 @keyframes blipPing {
   0%, 100% { opacity: 0.25; transform: scale(0.8); }
   50% { opacity: 1; transform: scale(1.3); }
-}
-
-.radar-hud-tag {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 10px;
-  padding: 3px 10px;
-  background: rgba(7, 10, 17, 0.88);
-  border: 1px solid rgba(45, 212, 191, 0.25);
-  border-radius: 9999px;
-  font-family: var(--fontMono);
-  font-size: var(--text-2xs);
-  font-weight: 600;
-  color: var(--accentColor);
-  letter-spacing: 0.06em;
-}
-
-.radar-live-beacon {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--signalEmerald);
-  box-shadow: 0 0 6px var(--signalEmerald);
-  animation: beaconPulse 1.8s ease-in-out infinite;
-}
-
-@keyframes beaconPulse {
-  0%, 100% { opacity: 0.4; transform: scale(0.9); }
-  50% { opacity: 1; transform: scale(1.15); }
 }
 
 /* =========================================================
@@ -832,16 +696,6 @@
   .radar-screen {
     width: 160px;
     height: 160px;
-  }
-
-  .flow-steps {
-    overflow-x: auto;
-    padding-bottom: 4px;
-  }
-
-  .flow-step {
-    flex: 0 0 auto;
-    min-width: 90px;
   }
 }
 
@@ -891,8 +745,6 @@
   .radar-sweep-beam,
   .radar-blip,
   .eq-bar,
-  .hud-status-ping,
-  .radar-live-beacon,
   .prism-light-sweep,
   .prism-caustic-pulse {
     animation: none !important;

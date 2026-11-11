@@ -135,6 +135,8 @@ const Landing = () => {
                 rel="noreferrer"
                 download="Awasekar_Sourabh_Resume_2026.pdf"
                 data-cursor="disable"
+                data-umami-event="Resume Download"
+                data-umami-event-location="Hero Section"
               >
                 <MdDownload />
                 <span>Resume (PDF)</span>
@@ -290,6 +292,7 @@ const Landing = () => {
                   onClick={handleCopy}
                   className="btn-primary drawer-btn"
                   data-cursor="disable"
+                  data-umami-event="Copy 60s Summary"
                 >
                   {copied ? <MdCheck /> : <MdContentCopy />}
                   <span>{copied ? "Copied to Clipboard!" : "Copy 60s Summary"}</span>
@@ -302,6 +305,8 @@ const Landing = () => {
                   rel="noreferrer"
                   download="Awasekar_Sourabh_Resume_2026.pdf"
                   data-cursor="disable"
+                  data-umami-event="Resume Download"
+                  data-umami-event-location="Executive Summary Drawer"
                 >
                   <MdDownload />
                   <span>Download Resume PDF</span>

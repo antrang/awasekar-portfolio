@@ -74,7 +74,7 @@ const MONTH_NAMES = [
 
 const WEEKDAY_LABELS = ["", "Mon", "", "Wed", "", "Fri", ""];
 
-export const CommitChart: React.FC<{ embedded?: boolean }> = ({ embedded }) => {
+const CommitChart: React.FC = () => {
   const [hoveredCell, setHoveredCell] = useState<HoveredCell | null>(null);
   const { summary, calendarDays } = gitData;
 
@@ -371,15 +371,6 @@ export const CommitChart: React.FC<{ embedded?: boolean }> = ({ embedded }) => {
         </div>
     </>
   );
-
-  if (embedded) {
-    return (
-      <div className="commit-embedded" id="telemetry">
-        <span id="commits" className="sr-only" aria-hidden="true" />
-        {content}
-      </div>
-    );
-  }
 
   return (
     <section className="commit-section" id="telemetry">
