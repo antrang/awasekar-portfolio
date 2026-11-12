@@ -7,7 +7,7 @@
 > Active Social / Code Repositories:
 > - LinkedIn: https://www.linkedin.com/in/awasekar/
 > - GitHub: https://github.com/antrang
-> - Personal Ecosystem: https://plectrum.live | https://plectrumlabs.com
+> - Personal Ecosystem: https://live.plectrumlabs.com | https://plectrumlabs.com
 
 ---
 
@@ -66,7 +66,7 @@ His engineering philosophy is rooted in physical process dynamics from BITS Pila
 - Role: Founder & Systems Engineer
 - Problem: Music creators face steep subscription fees and cloud latency for essential audio tools such as audio mastering, stem separation, and pitch analysis.
 - Architectural Solution:
-  - Web Architecture (plectrum.live): 18+ browser audio tools executing 100% client-side using Web Audio API, TensorFlow.js, and ONNX Runtime Web ($0 server-side compute cost).
+  - Web Architecture (live.plectrumlabs.com): 18+ browser audio tools executing 100% client-side using Web Audio API, TensorFlow.js, and ONNX Runtime Web ($0 server-side compute cost).
   - Desktop Architecture (PlectrumLabs): Suite of 5 native C++17 and JUCE 8 desktop audio applications and VST3/AU audio plugins, including PluckMaster (7-stage mastering chain), PluckBoard (real-time pitch visualization), and PluckStem (neural stem separation).
 - Verified Metrics:
   - Sub-millisecond latency local DSP on macOS and Windows platforms.

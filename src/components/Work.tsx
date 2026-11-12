@@ -119,9 +119,9 @@ const allProjects: Project[] = [
     tech: ["Next.js", "C++17 / JUCE 8", "ONNX Runtime Web", "TensorFlow.js", "Web Audio API"],
     images: [
       {
-        label: "plectrum.live (Web Suite)",
+        label: "live.plectrumlabs.com (Web Suite)",
         src: "/images/plectrumlive.webp",
-        host: "plectrum.live",
+        host: "live.plectrumlabs.com",
       },
       {
         label: "PlectrumLabs (Desktop DSP)",
@@ -129,7 +129,7 @@ const allProjects: Project[] = [
         host: "plectrumlabs.com",
       },
     ],
-    link: "https://plectrum.live",
+    link: "https://live.plectrumlabs.com",
     tradeoff:
       "Executed ML inference client-side via ONNX Runtime Web rather than server endpoints, achieving $0 compute cost with sub-millisecond local response.",
   },
