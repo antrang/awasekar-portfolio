@@ -204,6 +204,43 @@
   letter-spacing: -0.025em;
   color: var(--textPrimary);
   margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-title-dual {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.brand-entity {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.brand-badge-inline {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  vertical-align: middle;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45));
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.project-title-link:hover .brand-badge-inline {
+  transform: scale(1.12);
+}
+
+.brand-ampersand {
+  color: var(--textMuted);
+  font-weight: 400;
+  margin: 0 1px;
 }
 
 .project-title-link {
@@ -404,13 +441,15 @@
   background: rgba(255, 255, 255, 0.03);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   gap: 8px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .browser-dots {
   display: flex;
   align-items: center;
   gap: 5px;
+  flex-shrink: 0;
 }
 
 .dot {
@@ -435,36 +474,56 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 220px;
+  max-width: 150px;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .browser-switcher {
-  display: flex;
-  gap: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2px;
+  border-radius: 8px;
+  flex-shrink: 0;
 }
 
 .switch-tab {
-  font-family: var(--fontMono);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--fontSans);
   font-size: var(--text-2xs);
-  letter-spacing: 0.02em;
+  font-weight: 500;
   color: var(--textMuted);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 2px 6px;
-  border-radius: 4px;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 3px 8px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.switch-tab-icon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .switch-tab:hover {
   color: var(--textPrimary);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .switch-tab-active {
-  color: var(--accentColor) !important;
-  background: var(--accentMuted) !important;
-  border-color: var(--accentBorder) !important;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
   font-weight: 600;
 }
 

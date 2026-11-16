@@ -7,7 +7,7 @@
 > Active Social / Code Repositories:
 > - LinkedIn: https://www.linkedin.com/in/awasekar/
 > - GitHub: https://github.com/antrang
-> - Personal Ecosystem: https://live.plectrumlabs.com | https://plectrumlabs.com
+> - Personal Ecosystem: https://plectrumlabs.com | https://live.plectrumlabs.com
 
 ---
 
@@ -61,13 +61,14 @@ His engineering philosophy is rooted in physical process dynamics from BITS Pila
   - Lifted quality audit coverage from 30% (manual sampling) to 90%.
   - Real-time deal-risk notifications dispatched directly to CRM and team communication channels.
 
-### 2.4 plectrum.live & PlectrumLabs (Audio Systems & Web Platform)
+### 2.4 PlectrumLabs & Plectrum Live (Audio Systems & Web Platform)
 - Category: Audio Engineering / Web ML / Native C++ DSP Software
 - Role: Founder & Systems Engineer
 - Problem: Music creators face steep subscription fees and cloud latency for essential audio tools such as audio mastering, stem separation, and pitch analysis.
 - Architectural Solution:
-  - Web Architecture (live.plectrumlabs.com): 18+ browser audio tools executing 100% client-side using Web Audio API, TensorFlow.js, and ONNX Runtime Web ($0 server-side compute cost).
-  - Desktop Architecture (PlectrumLabs): Suite of 5 native C++17 and JUCE 8 desktop audio applications and VST3/AU audio plugins, including PluckMaster (7-stage mastering chain), PluckBoard (real-time pitch visualization), and PluckStem (neural stem separation).
+  - Built a dual-tier audio stack: an in-browser studio running client-side AI tools (stem separation, mastering, chord detection) paired with 5 native C++ desktop plugins for zero-latency studio work.
+  - Web Architecture (Plectrum Live - live.plectrumlabs.com): 18+ browser audio tools executing 100% client-side using Web Audio API, TensorFlow.js, and ONNX Runtime Web ($0 server-side compute cost).
+  - Desktop Architecture (PlectrumLabs - plectrumlabs.com): Suite of 5 native C++17 and JUCE 8 desktop audio applications and VST3/AU audio plugins, including PluckMaster (7-stage mastering chain), PluckBoard 2.0 (real-time pitch and Web MIDI engine), and PluckStem 2.0 (6-stem neural audio separation with multi-bus DAW routing).
 - Verified Metrics:
   - Sub-millisecond latency local DSP on macOS and Windows platforms.
   - Universal binary distribution with notarized macOS disk images (.dmg) and Audio Units / VST3 formats.

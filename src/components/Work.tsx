@@ -6,6 +6,7 @@ interface ProjectImage {
   label: string;
   src: string;
   host: string;
+  icon?: string;
 }
 
 interface Project {
@@ -104,13 +105,13 @@ const allProjects: Project[] = [
   },
   {
     id: "plectrum",
-    title: "plectrum.live & PlectrumLabs",
+    title: "PlectrumLabs & Plectrum Live",
     tag: "Audio Systems & Desktop DSP",
     category: "audio",
     role: "Founder & Systems Engineer",
     tagline: "Client-side ML audio tools and 5 native C++17/JUCE 8 desktop DSP plugins",
     solution:
-      "Built plectrum.live with client-side ML in Web Audio plus a suite of 5 native desktop plugins (PluckMaster 7-stage DSP, PluckBoard, PluckNote, PluckStem).",
+      "Built a dual-tier audio stack: an in-browser studio running client-side AI tools (stem separation, mastering, chord detection) paired with 5 native C++ desktop plugins for zero-latency studio work.",
     metrics: [
       "18+ browser audio tools",
       "5 native desktop products (AU/VST3)",
@@ -119,17 +120,19 @@ const allProjects: Project[] = [
     tech: ["Next.js", "C++17 / JUCE 8", "ONNX Runtime Web", "TensorFlow.js", "Web Audio API"],
     images: [
       {
-        label: "live.plectrumlabs.com (Web Suite)",
-        src: "/images/plectrumlive.webp",
-        host: "live.plectrumlabs.com",
-      },
-      {
-        label: "PlectrumLabs (Desktop DSP)",
+        label: "PlectrumLabs",
         src: "/images/plectrumlabs.webp",
         host: "plectrumlabs.com",
+        icon: "/images/plectrum-labs-logo.webp",
+      },
+      {
+        label: "Plectrum Live",
+        src: "/images/plectrumlive.webp",
+        host: "live.plectrumlabs.com",
+        icon: "/images/plectrum-live-logo.webp",
       },
     ],
-    link: "https://live.plectrumlabs.com",
+    link: "https://plectrumlabs.com",
     tradeoff:
       "Executed ML inference client-side via ONNX Runtime Web rather than server endpoints, achieving $0 compute cost with sub-millisecond local response.",
   },
@@ -194,9 +197,35 @@ const FlagshipCard = ({ project }: { project: Project }) => {
         </div>
 
         <h3 className="project-title">
-          <a href={`#${project.id}`} className="project-title-link">
-            {project.title}
-          </a>
+          {project.id === "plectrum" ? (
+            <a href={`#${project.id}`} className="project-title-link project-title-dual">
+              <span className="brand-entity">
+                <img
+                  src="/images/plectrum-labs-logo.webp"
+                  alt="PlectrumLabs"
+                  width={22}
+                  height={22}
+                  className="brand-badge-inline"
+                />
+                <span>PlectrumLabs</span>
+              </span>
+              <span className="brand-ampersand">&amp;</span>
+              <span className="brand-entity">
+                <img
+                  src="/images/plectrum-live-logo.webp"
+                  alt="Plectrum Live"
+                  width={22}
+                  height={22}
+                  className="brand-badge-inline"
+                />
+                <span>Plectrum Live</span>
+              </span>
+            </a>
+          ) : (
+            <a href={`#${project.id}`} className="project-title-link">
+              {project.title}
+            </a>
+          )}
         </h3>
         <p className="project-tagline">{project.tagline}</p>
 
@@ -269,7 +298,16 @@ const FlagshipCard = ({ project }: { project: Project }) => {
                       onClick={() => setActiveImgIdx(idx)}
                       data-cursor="disable"
                     >
-                      {img.label}
+                      {img.icon && (
+                        <img
+                          src={img.icon}
+                          alt=""
+                          width={14}
+                          height={14}
+                          className="switch-tab-icon"
+                        />
+                      )}
+                      <span>{img.label}</span>
                     </button>
                   ))}
                 </div>
