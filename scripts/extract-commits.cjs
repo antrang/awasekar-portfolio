@@ -181,14 +181,14 @@ function generateTelemetry(commits) {
     repoCounts[c.repo] = (repoCounts[c.repo] || 0) + 1;
   }
 
-  // 52-week calendar grid ending on current date
+  // 52-week calendar grid: ensure full weeks from Sunday 52 weeks ago through Saturday of current week
   const now = new Date();
   const dayOfWeek = now.getDay(); // 0 = Sun, 6 = Sat
-  // 52 weeks = 52 * 7 days
-  const totalDays = 52 * 7 + dayOfWeek;
+  const totalDaysPast = 52 * 7 + dayOfWeek;
+  const daysUntilSaturday = 6 - dayOfWeek;
   const calendarDays = [];
 
-  for (let i = totalDays; i >= 0; i--) {
+  for (let i = totalDaysPast; i >= -daysUntilSaturday; i--) {
     const d = new Date(now);
     d.setDate(d.getDate() - i);
     const year = d.getFullYear();
@@ -220,17 +220,16 @@ function generateTelemetry(commits) {
     }
   }
 
-  // Calculate streaks
+  // Calculate streaks with UTC timestamp precision
   const sortedDays = Array.from(dailyMap.keys()).sort();
   let longestStreak = 0;
   let tempStreak = 0;
   let prevDate = null;
 
   for (const dStr of sortedDays) {
-    const cur = new Date(dStr);
+    const cur = new Date(dStr + "T00:00:00Z");
     if (prevDate) {
-      const diffTime = Math.abs(cur - prevDate);
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      const diffDays = Math.round((cur - prevDate) / (1000 * 60 * 60 * 24));
       if (diffDays === 1) {
         tempStreak++;
       } else {
@@ -251,7 +250,7 @@ function generateTelemetry(commits) {
       activeDays: dailyMap.size,
       busiestDay,
       longestStreak,
-      totalRepos: 18,
+      totalRepos: 21,
       generatedAt: now.toISOString(),
     },
     calendarDays,
